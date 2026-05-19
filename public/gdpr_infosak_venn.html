@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GDPR-artiklar &amp; informationssäkerhetsmål</title>
+<style>
+/* ── Self-hosted fonts (inga externa anrop, ingen Google Fonts) ──────────── */
+@font-face { font-family: 'Fraunces'; font-style: normal; font-display: swap; font-weight: 100 900; src: url('fonts/fraunces-latin-full-normal.woff2') format('woff2-variations'); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family: 'Fraunces'; font-style: normal; font-display: swap; font-weight: 100 900; src: url('fonts/fraunces-latin-ext-full-normal.woff2') format('woff2-variations'); unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+@font-face { font-family: 'Fraunces'; font-style: italic; font-display: swap; font-weight: 100 900; src: url('fonts/fraunces-latin-full-italic.woff2') format('woff2-variations'); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family: 'Fraunces'; font-style: italic; font-display: swap; font-weight: 100 900; src: url('fonts/fraunces-latin-ext-full-italic.woff2') format('woff2-variations'); unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+@font-face { font-family: 'IBM Plex Sans'; font-style: normal; font-display: swap; font-weight: 400; src: url('fonts/ibm-plex-sans-latin-400-normal.woff2') format('woff2'); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family: 'IBM Plex Sans'; font-style: normal; font-display: swap; font-weight: 400; src: url('fonts/ibm-plex-sans-latin-ext-400-normal.woff2') format('woff2'); unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+@font-face { font-family: 'IBM Plex Sans'; font-style: normal; font-display: swap; font-weight: 500; src: url('fonts/ibm-plex-sans-latin-500-normal.woff2') format('woff2'); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family: 'IBM Plex Sans'; font-style: normal; font-display: swap; font-weight: 500; src: url('fonts/ibm-plex-sans-latin-ext-500-normal.woff2') format('woff2'); unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+@font-face { font-family: 'IBM Plex Sans'; font-style: normal; font-display: swap; font-weight: 600; src: url('fonts/ibm-plex-sans-latin-600-normal.woff2') format('woff2'); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family: 'IBM Plex Sans'; font-style: normal; font-display: swap; font-weight: 600; src: url('fonts/ibm-plex-sans-latin-ext-600-normal.woff2') format('woff2'); unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+@font-face { font-family: 'IBM Plex Mono'; font-style: normal; font-display: swap; font-weight: 400; src: url('fonts/ibm-plex-mono-latin-400-normal.woff2') format('woff2'); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family: 'IBM Plex Mono'; font-style: normal; font-display: swap; font-weight: 400; src: url('fonts/ibm-plex-mono-latin-ext-400-normal.woff2') format('woff2'); unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+@font-face { font-family: 'IBM Plex Mono'; font-style: normal; font-display: swap; font-weight: 500; src: url('fonts/ibm-plex-mono-latin-500-normal.woff2') format('woff2'); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family: 'IBM Plex Mono'; font-style: normal; font-display: swap; font-weight: 500; src: url('fonts/ibm-plex-mono-latin-ext-500-normal.woff2') format('woff2'); unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+
+  :root {
+    --paper: #F3EDDF;
+    --paper-deep: #EDE4D0;
+    --ink: #1B1A17;
+    --ink-soft: #4A4439;
+    --ink-mute: #8A8272;
+    --c-color: #22345A;   /* Konfidentialitet - djup indigo */
+    --i-color: #B84A2F;   /* Riktighet - terracotta */
+    --a-color: #4F6B3A;   /* Tillgänglighet - mossgrön */
+    --gold: #9C7A2E;
+    --privacy: #5B4065;   /* Personlig integritet - muted plum */
+    --rule: #B5A98B;
+  }
+  *, *::before, *::after { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    background: var(--paper);
+    background-image:
+      radial-gradient(circle at 20% 10%, rgba(156,122,46,0.05), transparent 40%),
+      radial-gradient(circle at 85% 90%, rgba(91,64,101,0.05), transparent 40%);
+    color: var(--ink);
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 15px;
+    line-height: 1.55;
+    padding: 48px 32px 64px;
+    min-height: 100vh;
+  }
+  /* Subtle grain */
+  body::before {
+    content: "";
+    position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/><feColorMatrix values='0 0 0 0 0.1  0 0 0 0 0.1  0 0 0 0 0.05  0 0 0 0.035 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+    pointer-events: none;
+    mix-blend-mode: multiply;
+    opacity: 0.55;
+    z-index: 0;
+  }
+  .sheet {
+    position: relative;
+    max-width: 1180px;
+    margin: 0 auto;
+    z-index: 1;
+  }
+  /* === Header === */
+  .eyebrow {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin: 0 0 12px;
+  }
+  h1 {
+    font-family: "Fraunces", serif;
+    font-weight: 500;
+    font-variation-settings: "opsz" 120;
+    font-size: clamp(32px, 4.5vw, 52px);
+    line-height: 1.05;
+    letter-spacing: -0.015em;
+    margin: 0 0 14px;
+    max-width: 860px;
+  }
+  h1 em {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--privacy);
+  }
+  .lede {
+    font-family: "Fraunces", serif;
+    font-variation-settings: "opsz" 14;
+    font-size: 17px;
+    line-height: 1.5;
+    color: var(--ink-soft);
+    max-width: 720px;
+    margin: 0 0 8px;
+  }
+  .term-note {
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 13px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    max-width: 720px;
+    margin: 14px 0 0;
+    padding: 12px 16px;
+    background: rgba(156,122,46,0.06);
+    border-left: 3px solid var(--privacy);
+    border-radius: 3px;
+  }
+  .term-note strong { color: var(--ink); font-weight: 600; }
+  .term-note em { font-style: italic; color: var(--ink); }
+  .meta {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--ink-mute);
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px;
+  }
+  .meta span b { color: var(--ink); font-weight: 500; }
+
+  /* === Main composition === */
+  .composition {
+    position: relative;
+    margin: 48px auto 0;
+    padding: 44px 28px 40px;
+    border: 1.5px solid var(--privacy);
+    border-radius: 12px;
+    background:
+      radial-gradient(ellipse at center, rgba(91,64,101,0.025), transparent 70%),
+      linear-gradient(180deg, rgba(91,64,101,0.04), transparent 20%, transparent 80%, rgba(91,64,101,0.04));
+  }
+  .composition::before {
+    content: "Dataskydd / personlig integritet — GDPR";
+    position: absolute;
+    top: -10px;
+    left: 28px;
+    padding: 0 14px;
+    background: var(--paper);
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--privacy);
+    font-weight: 500;
+  }
+  .composition::after {
+    content: "ramverket som omsluter allt";
+    position: absolute;
+    bottom: -10px;
+    right: 28px;
+    padding: 0 14px;
+    background: var(--paper);
+    font-family: "Fraunces", serif;
+    font-style: italic;
+    font-size: 13px;
+    color: var(--privacy);
+  }
+
+  /* === Venn diagram === */
+  .venn-wrap {
+    position: relative;
+    width: 100%;
+    max-width: 780px;
+    margin: 0 auto;
+    aspect-ratio: 1 / 0.987;
+    overflow: visible;
+  }
+  .venn-svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .venn-svg circle {
+    fill-opacity: 0.18;
+    mix-blend-mode: multiply;
+    stroke-width: 2;
+    transition: fill-opacity 220ms ease;
+  }
+  .venn-svg .label-circle {
+    font-family: "Fraunces", serif;
+    font-weight: 600;
+    font-size: 22px;
+    letter-spacing: 0.02em;
+  }
+  .venn-svg .label-sub {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 9.5px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+  .venn-svg .ring-label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.32em;
+    font-weight: 500;
+  }
+
+  /* Extended-goal nodes sitting on the ring */
+  .goal-node {
+    position: absolute;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 6px 12px 5px;
+    background: var(--paper);
+    border: 1.5px solid var(--gold);
+    border-radius: 10px;
+    white-space: nowrap;
+    box-shadow: 0 2px 8px -3px rgba(156,122,46,0.35);
+    z-index: 3;
+    text-align: center;
+  }
+  .goal-node .sv {
+    font-family: "Fraunces", serif;
+    font-weight: 500;
+    font-size: 13px;
+    color: var(--gold);
+    font-variation-settings: "opsz" 36;
+    letter-spacing: 0.005em;
+    line-height: 1.1;
+  }
+  .goal-node .eng {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 8px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    font-weight: 400;
+    line-height: 1.2;
+    margin-top: 3px;
+  }
+  /* Corner positions — pushed inward so pills don't read as headers over the CIA labels */
+  .goal-nw { top:  3.6%; left: 20%; transform: translate(-50%, -50%); }
+  .goal-ne { top:  3.6%; left: 80%; transform: translate(-50%, -50%); }
+  .goal-sw { top: 95.7%; left: 20%; transform: translate(-50%, -50%); }
+  .goal-se { top: 95.7%; left: 80%; transform: translate(-50%, -50%); }
+
+  /* Zones (absolutely positioned on top of SVG) */
+  .zone {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    text-align: center;
+  }
+  .zone-label {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 9px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+    margin-bottom: 2px;
+  }
+  .chip {
+    display: inline-block;
+    padding: 3px 9px;
+    border-radius: 999px;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 10.5px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    color: var(--ink);
+    cursor: help;
+    transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
+    position: relative;
+    white-space: nowrap;
+  }
+  .chip:hover, .chip:focus {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 10px -4px rgba(0,0,0,0.25);
+    background: #fff;
+    z-index: 50;
+  }
+  .chip:focus {
+    outline: 2px solid var(--gold);
+    outline-offset: 2px;
+  }
+  .chip:focus:not(:focus-visible) { outline: none; }
+  .chip[data-c="c"] { border-color: var(--c-color); color: var(--c-color); }
+  .chip[data-c="i"] { border-color: var(--i-color); color: var(--i-color); }
+  .chip[data-c="a"] { border-color: var(--a-color); color: var(--a-color); }
+  .chip[data-c="ci"] { background: #2B3E5E12; border-color: #6A5840; color: #3A2F20; }
+  .chip[data-c="ca"] { background: #3A523822; border-color: #3A5238; color: #2F3A27; }
+  .chip[data-c="ia"] { background: #8C583B22; border-color: #8C583B; color: #6D3E24; }
+  .chip[data-c="cia"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+
+  /* Tooltip */
+  .chip::after {
+    content: attr(data-tip);
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--ink);
+    color: var(--paper);
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-size: 11.5px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 1.4;
+    white-space: normal;
+    width: max-content;
+    max-width: 260px;
+    text-align: left;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 150ms ease;
+    z-index: 100;
+    box-shadow: 0 8px 24px -8px rgba(0,0,0,0.4);
+  }
+  .chip::before {
+    content: "";
+    position: absolute;
+    bottom: calc(100% + 2px);
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: var(--ink);
+    opacity: 0;
+    transition: opacity 150ms ease;
+    z-index: 101;
+  }
+  .chip:hover::after, .chip:hover::before,
+  .chip:focus::after, .chip:focus::before { opacity: 1; }
+
+  /* Zone positions — matched to SVG circle centres (viewBox now 0 -50 780 770) */
+  .zone-c     { top: 29%;  left: 10%; align-items: flex-start; }
+  .zone-i     { top: 29%;  right:10%; align-items: flex-end; }
+  .zone-a     { top: 78%;  left: 50%; transform: translateX(-50%); }
+  .zone-ci    { top: 20%;  left: 50%; transform: translateX(-50%); }
+  .zone-ca    { top: 57%;  left: 25%; }
+  .zone-ia    { top: 57%;  right:25%; align-items: flex-end; }
+  .zone-cia   { top: 46%;  left: 50%; transform: translateX(-50%); }
+
+  .zone .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: inherit;
+    max-width: 150px;
+  }
+  .zone-ci .chips, .zone-cia .chips { max-width: 220px; justify-content: center; }
+  .zone-a .chips { max-width: 220px; justify-content: center; }
+  .zone-ca .chips, .zone-ia .chips { max-width: 130px; }
+  .zone-i .chips { justify-content: flex-end; }
+
+  /* === Privacy strips (articles that live ONLY inside the privacy frame) === */
+  .privacy-strip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 28px;
+    justify-content: center;
+    padding: 4px 6px;
+  }
+  .privacy-strip.top    { margin-bottom: 28px; padding-bottom: 22px; border-bottom: 1px dashed rgba(91,64,101,0.3); }
+  .privacy-strip.bottom { margin-top: 28px;    padding-top: 22px;    border-top:    1px dashed rgba(91,64,101,0.3); }
+  .strip-intro {
+    flex: 1 1 100%;
+    text-align: center;
+    font-family: "Fraunces", serif;
+    font-style: italic;
+    font-variation-settings: "opsz" 14;
+    font-size: 12.5px;
+    color: var(--privacy);
+    opacity: 0.85;
+    margin-bottom: -8px;
+    letter-spacing: 0.01em;
+  }
+  .pr-cluster {
+    flex: 1 1 220px;
+    max-width: 320px;
+    min-width: 200px;
+  }
+  .pr-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 9px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--privacy);
+    padding-bottom: 5px;
+    margin-bottom: 8px;
+    border-bottom: 1px solid rgba(91,64,101,0.35);
+    font-weight: 500;
+  }
+  .pr-label .ch {
+    font-family: "Fraunces", serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 10px;
+    color: var(--ink-mute);
+    letter-spacing: 0;
+    text-transform: none;
+    margin-left: auto;
+  }
+  .pr-cluster .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  .chip.privacy {
+    border-color: rgba(91,64,101,0.55);
+    color: var(--privacy);
+    background: rgba(91,64,101,0.05);
+    font-size: 10px;
+    padding: 2px 7px;
+  }
+  .chip.privacy:hover { background: rgba(91,64,101,0.12); }
+
+  /* === Extended goals === */
+  .extended {
+    margin-top: 56px;
+  }
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    gap: 18px;
+    padding-bottom: 10px;
+    border-bottom: 1.5px solid var(--ink);
+    margin-bottom: 28px;
+  }
+  .section-head h2 {
+    font-family: "Fraunces", serif;
+    font-weight: 500;
+    font-variation-settings: "opsz" 72;
+    font-size: 28px;
+    letter-spacing: -0.01em;
+    margin: 0;
+    color: var(--ink);
+  }
+  .section-head .tag {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-mute);
+  }
+  .section-head .count {
+    margin-left: auto;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11px;
+    color: var(--ink-mute);
+    letter-spacing: 0.05em;
+  }
+  .ext-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+  }
+  .ext-card {
+    background: var(--paper);
+    padding: 20px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-height: 210px;
+  }
+  .ext-card .eng {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .ext-card h3 {
+    font-family: "Fraunces", serif;
+    font-weight: 500;
+    font-variation-settings: "opsz" 48;
+    font-size: 22px;
+    margin: 0;
+    letter-spacing: -0.005em;
+    color: var(--ink);
+  }
+  .ext-card .desc {
+    font-family: "Fraunces", serif;
+    font-variation-settings: "opsz" 14;
+    font-size: 13.5px;
+    color: var(--ink-soft);
+    font-style: italic;
+    line-height: 1.45;
+    flex-grow: 1;
+  }
+  .ext-card .chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 4px;
+  }
+
+  /* === Legend / key === */
+  .key {
+    margin-top: 48px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px 28px;
+  }
+  .key-item {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .swatch {
+    flex-shrink: 0;
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    margin-top: 3px;
+    border: 2px solid;
+  }
+  .swatch.c { background: #22345A33; border-color: var(--c-color); }
+  .swatch.i { background: #B84A2F33; border-color: var(--i-color); }
+  .swatch.a { background: #4F6B3A33; border-color: var(--a-color); }
+  .swatch.p { background: #5B406533; border-color: var(--privacy); }
+  .key-item .txt {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+  .key-item .txt b {
+    font-family: "Fraunces", serif;
+    font-weight: 600;
+    font-size: 14px;
+  }
+  .key-item .txt span {
+    display: block;
+    color: var(--ink-soft);
+    font-size: 12.5px;
+  }
+
+  /* === Footnote === */
+  .foot {
+    margin-top: 56px;
+    padding-top: 22px;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .foot-privacy {
+    padding: 14px 18px;
+    background: rgba(22, 24, 33, 0.03);
+    border: 1px solid rgba(22, 24, 33, 0.12);
+    border-radius: 6px;
+    font-size: 12px;
+    line-height: 1.5;
+    color: var(--ink-soft);
+    font-family: "IBM Plex Sans", sans-serif;
+  }
+  .foot-privacy strong { color: var(--ink); font-weight: 600; }
+  .foot-privacy em { font-style: italic; color: var(--ink); }
+  .foot-privacy a {
+    color: var(--privacy);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    text-decoration-thickness: 1px;
+    white-space: nowrap;
+  }
+  .foot-privacy a:hover { color: var(--ink); }
+
+  .foot-license {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 18px;
+    background: rgba(156,122,46,0.06);
+    border: 1px solid rgba(156,122,46,0.25);
+    border-radius: 6px;
+    font-size: 12px;
+    line-height: 1.5;
+    color: var(--ink-soft);
+    font-family: "IBM Plex Sans", sans-serif;
+  }
+  .cc-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    padding: 5px 10px;
+    border: 1.5px solid var(--ink);
+    border-radius: 4px;
+    color: var(--ink);
+    background: var(--paper);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .foot-license .title {
+    font-family: "Fraunces", serif;
+    font-style: italic;
+    color: var(--ink);
+    font-size: 13px;
+  }
+  .foot-license a {
+    color: var(--privacy);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    text-decoration-thickness: 1px;
+  }
+  .foot-license a:hover { color: var(--ink); }
+  .foot-meta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 12px;
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 10.5px;
+    letter-spacing: 0.05em;
+    color: var(--ink-mute);
+  }
+
+  @media (max-width: 780px) {
+    .venn-wrap { aspect-ratio: 1 / 1.1; }
+    .zone .chips { max-width: 140px; font-size: 10px; }
+    .chip { font-size: 10px; padding: 2px 7px; }
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <!-- HEADER -->
+  <header>
+    <p class="eyebrow">Dataskydd · Informationssäkerhet</p>
+    <h1>GDPR-artiklar i ljuset av <em>informationssäkerhetens mål</em></h1>
+    <p class="lede">
+      Kärnan i Art. 32.1(b) — konfidentialitet, integritet/riktighet, tillgänglighet och motståndskraft —
+      knyter GDPR:s säkerhetskrav till informationssäkerhetens klassiska mål. Venn-diagrammet visar
+      konfidentialitet, riktighet och tillgänglighet som tre huvudperspektiv, medan kompletterande mål
+      som ansvarighet, reviderbarhet, äkthet och oavvislighet visas som stödjande kluster.
+      Övriga GDPR-artiklar placeras i dataskyddsramen runt säkerhetsmålen och visar hur
+      <em>personlig integritet</em> ges rättsligt innehåll.
+    </p>
+    <p class="term-note">
+      <strong>Terminologinotis:</strong> ”Riktighet” används här i informationssäkerhetens betydelse av <em>integrity</em>
+      (data har inte manipulerats). GDPR använder också ”riktighet” som princip i Art. 5(1)(d) — där det syftar på
+      <em>accuracy</em>, dvs att personuppgifterna är korrekta och vid behov uppdaterade. Två närliggande men inte
+      identiska begrepp.
+    </p>
+    <div class="meta">
+      <span><b>3 + 4</b> säkerhetsmål (CIA + bevisegenskaper)</span>
+      <span><b>GDPR Kap. I–XI</b> kartlagda</span>
+      <span>Håll muspekaren — eller tabba — till en <b>artikelchip</b> för kort beskrivning</span>
+    </div>
+  </header>
+
+  <!-- MAIN COMPOSITION: Privacy frame around CIA Venn -->
+  <section class="composition">
+
+    <!-- TOP STRIP: Principles, grounds, rights — upstream of security -->
+    <div class="privacy-strip top">
+      <p class="strip-intro">— bestämmelser som definierar <em>vad</em> som ska skyddas och <em>för vem</em> —</p>
+
+      <div class="pr-cluster">
+        <span class="pr-label">Omfattning &amp; definitioner <span class="ch">Kap. I</span></span>
+        <div class="chips">
+          <span class="chip privacy" data-tip="Syfte och mål — förordningens grundläggande mål och skydd av fysiska personers rättigheter.">Art. 1</span>
+          <span class="chip privacy" data-tip="Materiellt tillämpningsområde — när GDPR gäller i sak.">Art. 2</span>
+          <span class="chip privacy" data-tip="Territoriellt tillämpningsområde — extraterritoriell räckvidd, etablering och erbjudande av varor/tjänster i EU.">Art. 3</span>
+          <span class="chip privacy" data-tip="Definitioner — personuppgifter, behandling, ansvarig, biträde, samtycke m.m.">Art. 4</span>
+        </div>
+      </div>
+
+      <div class="pr-cluster">
+        <span class="pr-label">Principer &amp; laglig grund <span class="ch">Kap. II</span></span>
+        <div class="chips">
+          <span class="chip privacy" data-tip="Laglighet, korrekthet och öppenhet — behandling ska vara laglig, rättvis och transparent.">Art. 5(1)(a)</span>
+          <span class="chip privacy" data-tip="Ändamålsbegränsning — uppgifter samlas in för särskilda, uttryckligt angivna och berättigade ändamål.">Art. 5(1)(b)</span>
+          <span class="chip privacy" data-tip="Laglig grund för behandling — samtycke, avtal, rättslig förpliktelse, vitala intressen, allmänt intresse, berättigat intresse.">Art. 6</span>
+          <span class="chip privacy" data-tip="Villkor för samtycke — utöver bevisdelen som rör oavvislighet.">Art. 7</span>
+          <span class="chip privacy" data-tip="Villkor för barns samtycke i informationssamhällets tjänster (åldersgräns 16 år, lägre enligt nationell rätt).">Art. 8</span>
+          <span class="chip privacy" data-tip="Behandling av uppgifter som rör fällande domar i brottmål och överträdelser.">Art. 10</span>
+          <span class="chip privacy" data-tip="Behandling som inte kräver identifiering — ansvarig behöver inte samla in ytterligare uppgifter enbart för att efterleva förordningen.">Art. 11</span>
+        </div>
+      </div>
+
+      <div class="pr-cluster">
+        <span class="pr-label">Registrerades rättigheter <span class="ch">Kap. III</span></span>
+        <div class="chips">
+          <span class="chip privacy" data-tip="Klar och begriplig information samt modaliteter för att utöva rättigheter (utom identitetsverifiering, som ligger under Äkthet).">Art. 12</span>
+          <span class="chip privacy" data-tip="Information som ska tillhandahållas när uppgifter samlas in från den registrerade själv.">Art. 13</span>
+          <span class="chip privacy" data-tip="Information som ska tillhandahållas när uppgifter inte samlats in från den registrerade.">Art. 14</span>
+          <span class="chip privacy" data-tip="Rätt till radering (&quot;rätten att bli bortglömd&quot;).">Art. 17</span>
+          <span class="chip privacy" data-tip="Rätt till begränsning av behandling — pausa behandlingen utan att radera.">Art. 18</span>
+          <span class="chip privacy" data-tip="Anmälningsskyldighet avseende rättelse, radering eller begränsning till mottagare av uppgifterna.">Art. 19</span>
+          <span class="chip privacy" data-tip="Rätt att göra invändningar mot behandling, särskilt vid berättigat intresse och direktmarknadsföring.">Art. 21</span>
+          <span class="chip privacy" data-tip="Automatiserat individuellt beslutsfattande inklusive profilering — rätten att inte bli föremål för sådana beslut.">Art. 22</span>
+          <span class="chip privacy" data-tip="Begränsningar i rättigheter genom unionsrätt eller nationell rätt (t.ex. nationell säkerhet, brottsbekämpning).">Art. 23</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="venn-wrap">
+      <svg class="venn-svg" viewBox="0 -50 780 770" preserveAspectRatio="xMidYMid meet" aria-label="Venn-diagram av CIA-triaden">
+        <!-- Extended-goals ring as a rounded rectangle — contains all CIA labels -->
+        <rect class="ext-ring" x="15" y="-45" width="750" height="755" rx="80" ry="80"
+          fill="#9C7A2E" fill-opacity="0.03"
+          stroke="#9C7A2E" stroke-width="1.5"
+          stroke-dasharray="3 7" opacity="0.7"/>
+        <!-- Vertical labels on left and right edges, centered on rect -->
+        <text class="ring-label" x="38" y="332" fill="#9C7A2E" text-anchor="middle" opacity="0.7" transform="rotate(-90 38 332)">UTVIDGADE SÄKERHETSMÅL</text>
+        <text class="ring-label" x="742" y="332" fill="#9C7A2E" text-anchor="middle" opacity="0.7" transform="rotate(-90 742 332)">UTVIDGADE SÄKERHETSMÅL</text>
+
+        <!-- Circles -->
+        <circle cx="285" cy="245" r="215" fill="#22345A" stroke="#22345A"/>
+        <circle cx="495" cy="245" r="215" fill="#B84A2F" stroke="#B84A2F"/>
+        <circle cx="390" cy="425" r="215" fill="#4F6B3A" stroke="#4F6B3A"/>
+
+        <!-- Labels — inside each circle's non-overlap crescent -->
+        <text class="label-circle" x="202" y="130" fill="#22345A" text-anchor="middle">Konfidentialitet</text>
+        <text class="label-sub"    x="202" y="148" fill="#22345A" text-anchor="middle">CONFIDENTIALITY · C</text>
+
+        <text class="label-circle" x="578" y="130" fill="#B84A2F" text-anchor="middle">Riktighet</text>
+        <text class="label-sub"    x="578" y="148" fill="#B84A2F" text-anchor="middle">INTEGRITY · I</text>
+
+        <text class="label-circle" x="390" y="520" fill="#4F6B3A" text-anchor="middle">Tillgänglighet</text>
+        <text class="label-sub"    x="390" y="538" fill="#4F6B3A" text-anchor="middle">AVAILABILITY · A</text>
+      </svg>
+
+      <!-- Extended goals — four nodes on the outer ring -->
+      <div class="goal-node goal-nw"><span class="sv">Ansvarighet</span><span class="eng">Accountability</span></div>
+      <div class="goal-node goal-ne"><span class="sv">Reviderbarhet</span><span class="eng">Auditability</span></div>
+      <div class="goal-node goal-sw"><span class="sv">Äkthet</span><span class="eng">Authenticity</span></div>
+      <div class="goal-node goal-se"><span class="sv">Oavvislighet</span><span class="eng">Non-repudiation</span></div>
+
+      <!-- C only -->
+      <div class="zone zone-c">
+        <span class="zone-label">Endast C</span>
+        <div class="chips">
+          <span class="chip" data-c="c" data-tip="Särskilda kategorier av personuppgifter — hälsa, biometri, etnicitet m.m. Kräver förhöjt skydd och begränsad åtkomst.">Art. 9</span>
+          <span class="chip" data-c="c" data-tip="Behandling under ansvarigs eller biträdes överinseende — personer med åtkomst får endast behandla enligt instruktion från den personuppgiftsansvarige.">Art. 29</span>
+          <span class="chip" data-c="c" data-tip="Information till den registrerade vid personuppgiftsincident som innebär hög risk — skydd av exponerade uppgifter.">Art. 34</span>
+        </div>
+      </div>
+
+      <!-- I only -->
+      <div class="zone zone-i">
+        <span class="zone-label">Endast I</span>
+        <div class="chips">
+          <span class="chip" data-c="i" data-tip="Uppgiftsminimering — uppgifter ska vara adekvata, relevanta och begränsade till vad som är nödvändigt för ändamålet.">Art. 5(1)(c)</span>
+          <span class="chip" data-c="i" data-tip="Rätt till rättelse — den registrerade kan kräva att felaktiga uppgifter rättas.">Art. 16</span>
+        </div>
+      </div>
+
+      <!-- A only -->
+      <div class="zone zone-a">
+        <span class="zone-label">Endast A — drift &amp; rättighetsåtkomst</span>
+        <div class="chips">
+          <span class="chip" data-c="a" data-tip="Rätt till tillgång (registrerads åtkomst) — den registrerade ska kunna få en kopia av sina uppgifter. 'Tillgänglighet' avser här rättighet, inte systemdrift.">Art. 15</span>
+          <span class="chip" data-c="a" data-tip="Rätt till dataportabilitet (registrerads åtkomst) — uppgifter ska kunna lämnas ut i strukturerat, maskinläsbart format. Avser rättighet, inte systemdrift.">Art. 20</span>
+          <span class="chip" data-c="a" data-tip="Lagringsminimering — uppgifter får inte lagras längre än nödvändigt (påverkar även tillgänglighet över tid).">Art. 5(1)(e)</span>
+          <span class="chip" data-c="a" data-tip="Återställande av tillgänglighet och åtkomst till personuppgifter efter fysisk eller teknisk incident — primärt tillgänglighetsmål (resiliens).">Art. 32(1)(c)</span>
+        </div>
+      </div>
+
+      <!-- C ∩ I -->
+      <div class="zone zone-ci">
+        <span class="zone-label">C ∩ I</span>
+        <div class="chips">
+          <span class="chip" data-c="ci" data-tip="&quot;Integritet och konfidentialitet&quot; — principen i art. 5(1)(f) nämner båda målen uttryckligen tillsammans.">Art. 5(1)(f)</span>
+          <span class="chip" data-c="ci" data-tip="Inbyggt dataskydd och dataskydd som standard — både skydd mot obehörig åtkomst och korrekthet byggs in från start.">Art. 25</span>
+        </div>
+      </div>
+
+      <!-- C ∩ A -->
+      <div class="zone zone-ca">
+        <span class="zone-label">C ∩ A</span>
+        <div class="chips">
+          <span class="chip" data-c="ca" data-tip="Personuppgiftsbiträden — biträdet ska säkerställa sekretess hos personer med åtkomst (28.3.b) och bistå den ansvarige med åtgärder enligt art. 32 (28.3.c), inklusive tillgänglighet.">Art. 28</span>
+        </div>
+      </div>
+
+      <!-- I ∩ A -->
+      <div class="zone zone-ia">
+        <span class="zone-label">I ∩ A</span>
+        <div class="chips">
+          <span class="chip" data-c="ia" data-tip="Korrekthet — personuppgifter ska vara riktiga och vid behov uppdaterade. Spänner över riktighet och tillgänglighet till aktuella uppgifter.">Art. 5(1)(d)</span>
+        </div>
+      </div>
+
+      <!-- C ∩ I ∩ A (centre) -->
+      <div class="zone zone-cia">
+        <span class="zone-label">C ∩ I ∩ A — kärnan</span>
+        <div class="chips">
+          <span class="chip" data-c="cia" data-tip="Säkerhet i behandlingen — lämpliga tekniska och organisatoriska åtgärder utifrån risk: kryptering, pseudonymisering, tillgänglighet, återställning, löpande testning.">Art. 32</span>
+          <span class="chip" data-c="cia" data-tip="Skyddsmålen i art. 32.1(b) — förmåga att fortlöpande säkerställa konfidentialitet, integritet, tillgänglighet och motståndskraft. Spänner över hela CIA samt resiliens.">Art. 32(1)(b)</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOTTOM STRIP: Transfers, oversight, remedies — downstream of security -->
+    <div class="privacy-strip bottom">
+      <p class="strip-intro">— bestämmelser som styr <em>vart</em> uppgifter får flöda och <em>hur</em> efterlevnad upprätthålls —</p>
+
+      <div class="pr-cluster">
+        <span class="pr-label">Företrädare &amp; samarbete <span class="ch">Kap. IV avsnitt 1–2</span></span>
+        <div class="chips">
+          <span class="chip privacy" data-tip="Företrädare för ansvariga eller biträden som inte är etablerade i unionen — kontaktpunkt för registrerade och tillsynsmyndigheter.">Art. 27</span>
+          <span class="chip privacy" data-tip="Samarbete med tillsynsmyndigheten — ansvariga och biträden ska på begäran samarbeta vid utförandet av tillsynsuppgifter.">Art. 31</span>
+        </div>
+      </div>
+
+      <div class="pr-cluster">
+        <span class="pr-label">Efterlevnadsbevis &amp; certifiering <span class="ch">Kap. IV avsnitt 5</span></span>
+        <div class="chips">
+          <span class="chip privacy" data-tip="Uppförandekoder — branschspecifika regler som godkänns av tillsynsmyndighet; sätt att visa efterlevnad enligt art. 24, 28 och 32.3.">Art. 40</span>
+          <span class="chip privacy" data-tip="Övervakning av godkända uppförandekoder — ackrediterade organ kontrollerar att anslutna aktörer följer koden.">Art. 41</span>
+          <span class="chip privacy" data-tip="Certifieringsmekanismer, sigill och märkningar — frivilliga, branschöverskridande och referensgrundas i art. 32.3 som bevis för säkerhetsåtgärder.">Art. 42</span>
+          <span class="chip privacy" data-tip="Certifieringsorgan — ackrediteras av tillsynsmyndighet eller nationellt ackrediteringsorgan; utfärdar certifieringar enligt art. 42.">Art. 43</span>
+        </div>
+      </div>
+
+      <div class="pr-cluster">
+        <span class="pr-label">Internationell överföring <span class="ch">Kap. V</span></span>
+        <div class="chips">
+          <span class="chip privacy" data-tip="Allmän princip för överföring av personuppgifter till tredjeland eller internationella organisationer.">Art. 44</span>
+          <span class="chip privacy" data-tip="Överföring på grundval av beslut om adekvat skyddsnivå från Kommissionen.">Art. 45</span>
+          <span class="chip privacy" data-tip="Överföring med lämpliga skyddsåtgärder — SCC, BCR, godkända uppförandekoder, certifieringar.">Art. 46</span>
+          <span class="chip privacy" data-tip="Bindande företagsbestämmelser (BCR) — interna regler för koncerninterna överföringar.">Art. 47</span>
+          <span class="chip privacy" data-tip="Överföringar som inte är tillåtna enligt unionsrätten — t.ex. tredjelandsmyndigheters order utan traktatstöd.">Art. 48</span>
+          <span class="chip privacy" data-tip="Undantag i särskilda situationer — samtycke, avtal, viktigt allmänt intresse, rättsliga anspråk m.m.">Art. 49</span>
+          <span class="chip privacy" data-tip="Internationellt samarbete för skydd av personuppgifter.">Art. 50</span>
+        </div>
+      </div>
+
+      <div class="pr-cluster">
+        <span class="pr-label">Tillsyn &amp; samarbete <span class="ch">Kap. VI–VII</span></span>
+        <div class="chips">
+          <span class="chip privacy" data-tip="Tillsynsmyndigheter — etablering, oberoende, allmänna villkor för ledamöter, uppgifter och befogenheter (utom 58(1) som är under Reviderbarhet).">Art. 51–59</span>
+          <span class="chip privacy" data-tip="Samarbete mellan tillsynsmyndigheter och enhetlighetsmekanismen — one-stop-shop, ömsesidigt bistånd, gemensamma insatser.">Art. 60–67</span>
+          <span class="chip privacy" data-tip="Europeiska dataskyddsstyrelsen (EDPB) — sammansättning, oberoende, uppgifter, yttranden och bindande beslut.">Art. 68–76</span>
+        </div>
+      </div>
+
+      <div class="pr-cluster">
+        <span class="pr-label">Rättsmedel &amp; sanktioner <span class="ch">Kap. VIII</span></span>
+        <div class="chips">
+          <span class="chip privacy" data-tip="Rätt att lämna in klagomål till tillsynsmyndighet.">Art. 77</span>
+          <span class="chip privacy" data-tip="Rätt till effektivt rättsmedel mot tillsynsmyndighet.">Art. 78</span>
+          <span class="chip privacy" data-tip="Rätt till effektivt rättsmedel mot personuppgiftsansvarig eller personuppgiftsbiträde.">Art. 79</span>
+          <span class="chip privacy" data-tip="Företrädande av registrerade — ideella organisationer får företräda den registrerade.">Art. 80</span>
+          <span class="chip privacy" data-tip="Vilandeförklaring av förfaranden vid parallella processer.">Art. 81</span>
+          <span class="chip privacy" data-tip="Rätt till ersättning och skadeståndsansvar — materiell och immateriell skada.">Art. 82</span>
+          <span class="chip privacy" data-tip="Administrativa sanktionsavgifter — upp till 20 MEUR eller 4 % av global omsättning.">Art. 83</span>
+          <span class="chip privacy" data-tip="Andra sanktioner — medlemsstater fastställer ytterligare sanktioner för överträdelser.">Art. 84</span>
+        </div>
+      </div>
+
+      <div class="pr-cluster">
+        <span class="pr-label">Särskilda situationer <span class="ch">Kap. IX</span></span>
+        <div class="chips">
+          <span class="chip privacy" data-tip="Yttrande- och informationsfrihet — förenlighet mellan dataskydd och journalistiska/akademiska/konstnärliga ändamål.">Art. 85</span>
+          <span class="chip privacy" data-tip="Allmänhetens tillgång till allmänna handlingar — samspel med offentlighetsprincipen.">Art. 86</span>
+          <span class="chip privacy" data-tip="Nationella identifikationsnummer — medlemsstaterna får reglera villkor (t.ex. svenskt personnummer).">Art. 87</span>
+          <span class="chip privacy" data-tip="Behandling i anställningsförhållanden — medlemsstaterna får fastställa mer specifika regler (t.ex. svensk dataskyddslag).">Art. 88</span>
+          <span class="chip privacy" data-tip="Skyddsåtgärder för arkivering i allmänhetens intresse, vetenskaplig/historisk forskning och statistik.">Art. 89</span>
+          <span class="chip privacy" data-tip="Tystnadsplikt — medlemsstater får anta särskilda regler för yrkesmässig tystnadsplikt (t.ex. banksekretess).">Art. 90</span>
+          <span class="chip privacy" data-tip="Befintliga regler för kyrkor och religiösa samfund.">Art. 91</span>
+        </div>
+      </div>
+
+      <div class="pr-cluster">
+        <span class="pr-label">Delegerade akter &amp; slutbestämmelser <span class="ch">Kap. X–XI</span></span>
+        <div class="chips">
+          <span class="chip privacy" data-tip="Delegerade akter, genomförandeakter, kommittéförfarande, översyn, upphävande av direktiv 95/46/EG, relation till direktiv 2002/58/EG, ikraftträdande.">Art. 92–99</span>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- EXTENDED GOALS -->
+  <section class="extended">
+    <div class="section-head">
+      <h2>Utvidgade säkerhetsmål — artiklar i detalj</h2>
+      <span class="tag">ringen förstoras</span>
+      <span class="count">04 / kompletterar CIA</span>
+    </div>
+    <div class="ext-grid">
+
+      <div class="ext-card">
+        <span class="eng">Accountability</span>
+        <h3>Ansvarighet</h3>
+        <p class="desc">Spårbart ansvar — användare och den personuppgiftsansvarige kan hållas ansvariga för sina handlingar.</p>
+        <div class="chips">
+          <span class="chip" data-tip="Ansvarsskyldighet — den personuppgiftsansvarige ska kunna visa att principerna i art. 5(1) efterlevs.">Art. 5(2)</span>
+          <span class="chip" data-tip="Den personuppgiftsansvariges ansvar — lämpliga åtgärder ska genomföras och kunna visas.">Art. 24</span>
+          <span class="chip" data-tip="Gemensamt personuppgiftsansvar — ansvaret ska fördelas transparent mellan parterna.">Art. 26</span>
+          <span class="chip" data-tip="Register över behandling — ansvaret dokumenteras i ROPA.">Art. 30</span>
+          <span class="chip" data-tip="DPIA — konsekvensbedömning visar att riskerna har utretts.">Art. 35</span>
+          <span class="chip" data-tip="Dataskyddsombudets uppgifter — intern rådgivare och brygga mot IMY.">Art. 37–39</span>
+        </div>
+      </div>
+
+      <div class="ext-card">
+        <span class="eng">Auditability</span>
+        <h3>Reviderbarhet</h3>
+        <p class="desc">Händelser kan loggas, följas upp och granskas — internt såväl som av tillsynsmyndighet.</p>
+        <div class="chips">
+          <span class="chip" data-tip="Register över behandling — grunden för intern och extern granskning.">Art. 30</span>
+          <span class="chip" data-tip="Anmälan av personuppgiftsincident till tillsynsmyndigheten inom 72 timmar — kräver spårbar logg.">Art. 33</span>
+          <span class="chip" data-tip="DPIA — dokumenterade konsekvensbedömningar som kan granskas.">Art. 35</span>
+          <span class="chip" data-tip="Förhandssamråd med tillsynsmyndigheten — vid hög kvarstående risk.">Art. 36</span>
+          <span class="chip" data-tip="DPO:ns övervakning av efterlevnad — intern granskningsfunktion.">Art. 39(1)(b)</span>
+          <span class="chip" data-tip="Tillsynsmyndighetens undersökningsbefogenheter — access till handlingar och behandlingar.">Art. 58(1)</span>
+        </div>
+      </div>
+
+      <div class="ext-card">
+        <span class="eng">Authenticity / Trustworthiness</span>
+        <h3>Äkthet</h3>
+        <p class="desc">Identitet och informationskälla kan verifieras — väsentligt för t.ex. BankID, stark kundautentisering och rättigheter.</p>
+        <div class="chips">
+          <span class="chip" data-tip="Verifiering av den registrerades identitet innan rättigheter utövas — stark koppling till äkthet.">Art. 12(6)</span>
+          <span class="chip" data-tip="Information om källa till personuppgifter som inte samlats in från den registrerade.">Art. 14(2)(f)</span>
+          <span class="chip" data-tip="Tekniska åtgärder — t.ex. digitala signaturer, certifikat, BankID.">Art. 32</span>
+          <span class="chip" data-tip="Korrekthet i uppgifter — inklusive äkthet i källan.">Art. 5(1)(d)</span>
+        </div>
+      </div>
+
+      <div class="ext-card">
+        <span class="eng">Non-repudiation</span>
+        <h3>Oavvislighet</h3>
+        <p class="desc">En part ska inte kunna förneka en utförd handling eller transaktion i efterhand. Kräver normalt starkare bevisning än ett register — signerade händelser, säkra loggar eller transaktionsbevis.</p>
+        <div class="chips">
+          <span class="chip" data-tip="Bevis på samtycke — den personuppgiftsansvarige ska kunna visa att samtycke har lämnats.">Art. 7(1)</span>
+          <span class="chip" data-tip="Dokumentation av personuppgiftsincidenter — fakta, effekter och vidtagna åtgärder ska dokumenteras så att tillsynsmyndigheten kan kontrollera efterlevnaden.">Art. 33(5)</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- KEY / LEGEND -->
+  <section class="key">
+    <div class="key-item">
+      <span class="swatch c"></span>
+      <div class="txt">
+        <b>Konfidentialitet</b>
+        <span>Bara behöriga får ta del av informationen.</span>
+      </div>
+    </div>
+    <div class="key-item">
+      <span class="swatch i"></span>
+      <div class="txt">
+        <b>Riktighet</b>
+        <span>Information och system får inte ändras obehörigt.</span>
+      </div>
+    </div>
+    <div class="key-item">
+      <span class="swatch a"></span>
+      <div class="txt">
+        <b>Tillgänglighet</b>
+        <span>Information och system finns när de behövs.</span>
+      </div>
+    </div>
+    <div class="key-item">
+      <span class="swatch p"></span>
+      <div class="txt">
+        <b>Personlig integritet</b>
+        <span>GDPR:s övergripande mål — ramen runt allt övrigt.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTNOTE -->
+  <footer class="foot">
+    <div class="foot-privacy">
+      <strong>Integritet:</strong> Den här webbplatsen samlar inte in, sparar eller analyserar några personuppgifter om dig som besökare. Vi använder inga cookies, ingen analytics, ingen spårning, inga formulär, inga sessioner och inga accessloggar. Vi lagrar inte IP-adresser, user-agent, sidvisningar eller hänvisningsadresser. Teknisk kommunikation används endast momentant för att leverera sidan och sparas inte. <em>Vi vet inte vem du är, att du varit här eller vad du läst.</em> <a href="integritet.html">Läs hela integritetsnotisen →</a>
+    </div>
+    <div class="foot-license">
+      <span class="cc-badge">CC BY 4.0</span>
+      <span>
+        <span class="title">GDPR-artiklar &amp; informationssäkerhetsmål</span>
+        av <strong>Kim Hindart</strong> är licensierad under
+        <a href="https://creativecommons.org/licenses/by/4.0/deed.sv" target="_blank" rel="noopener noreferrer">Creative Commons Erkännande 4.0 Internationell</a>.
+        Fri att dela, kopiera och anpassa — även kommersiellt — så länge upphovsperson anges.
+      </span>
+    </div>
+    <div class="foot-meta">
+      <span>Källa: Förordning (EU) 2016/679 — GDPR · ISO/IEC 27000-familjen</span>
+      <span>© 2026 Kim Hindart</span>
+    </div>
+  </footer>
+
+</div>
+<script src="js/chips.js" defer></script>
+</body>
+</html>

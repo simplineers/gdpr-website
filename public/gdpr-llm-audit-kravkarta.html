@@ -522,6 +522,49 @@
     white-space: nowrap;
   }
   .foot-privacy a:hover { color: var(--ink); }
+
+  /* CC BY 4.0-licens — matchar licensfootern på övriga sidor */
+  .foot-license {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 18px;
+    background: rgba(186, 117, 23, 0.06);
+    border: 1px solid rgba(186, 117, 23, 0.28);
+    border-radius: 4px;
+    font-size: 12.5px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+  }
+  .foot-license .cc-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    padding: 5px 10px;
+    border: 1.5px solid var(--ink);
+    border-radius: 4px;
+    color: var(--ink);
+    background: var(--bg);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .foot-license .work-title {
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .foot-license strong { color: var(--ink); font-weight: 600; }
+  .foot-license a {
+    color: var(--r-risk);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    text-decoration-thickness: 1px;
+  }
+  .foot-license a:hover { color: var(--ink); }
+
   .foot-meta {
     display: flex;
     flex-wrap: wrap;
@@ -833,6 +876,15 @@
   <footer class="site-foot">
     <div class="foot-privacy">
       <strong>Integritet:</strong> Den här webbplatsen samlar inte in, sparar eller analyserar några personuppgifter om dig som besökare. Vi använder inga cookies, ingen analytics, ingen spårning, inga formulär, inga sessioner och inga accessloggar. Vi lagrar inte IP-adresser, user-agent, sidvisningar eller hänvisningsadresser. Teknisk kommunikation används endast momentant för att leverera sidan och sparas inte. <em>Vi vet inte vem du är, att du varit här eller vad du läst.</em> <a href="integritet.html">Läs hela integritetsnotisen →</a>
+    </div>
+    <div class="foot-license">
+      <span class="cc-badge">CC BY 4.0</span>
+      <span>
+        <span class="work-title">GDPR-funktionens audit-kravkarta för LLM</span>
+        av <strong>Kim Hindart</strong> är licensierad under
+        <a href="https://creativecommons.org/licenses/by/4.0/deed.sv" target="_blank" rel="noopener noreferrer">Creative Commons Erkännande 4.0 Internationell</a>.
+        Fri att dela, kopiera och anpassa — även kommersiellt — så länge upphovsperson anges.
+      </span>
     </div>
     <div class="foot-meta">
       <span>© 2026 Kim Hindart · Simplineers</span>

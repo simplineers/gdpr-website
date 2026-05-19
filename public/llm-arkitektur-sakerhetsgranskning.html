@@ -455,6 +455,19 @@
     letter-spacing: 0.08em;
   }
 
+  /* Klassen .visually-hidden gömmer text för seende men sparar den för skärmläsare (a11y) */
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
   @media (max-width: 600px) {
     body { padding: 16px 10px 60px; }
     .header { padding: 20px 18px; }
@@ -491,7 +504,6 @@
     <p><span class="key">Tvärgående:</span> Identitet, observability, hemlighetshantering, region-routing, DSR-pipeline och eval/red-team verkar över båda planen.</p>
   </div>
 
-  <!-- ============ ZONE 1: TRAINING PLANE ============ -->
   <section class="zone">
     <div class="zone-header">
       <span class="zone-id train">A · Träning</span>
@@ -503,7 +515,7 @@
       <details class="comp has-data">
         <summary>
           <div class="comp-num">A.01</div>
-          <div class="comp-name">Datainsamling</div>
+          <div class="comp-name">Datainsamling <span class="visually-hidden">(Behandlar personuppgifter)</span></div>
           <div class="comp-desc">Webbcrawling, licensierade korpusar, böcker, kod, syntetisk data.</div>
           <div class="comp-tags"><span class="tag data">PD</span><span class="tag">Källa</span><span class="tag">Lineage</span></div>
         </summary>
@@ -522,7 +534,7 @@
       <details class="comp has-data">
         <summary>
           <div class="comp-num">A.02</div>
-          <div class="comp-name">Bearbetnings&shy;pipeline</div>
+          <div class="comp-name">Bearbetnings&shy;pipeline <span class="visually-hidden">(Behandlar personuppgifter)</span></div>
           <div class="comp-desc">Deduplicering, kvalitetsfilter, PII-skrubbare, toxicitets&shy;filter, tokenisering.</div>
           <div class="comp-tags"><span class="tag data">PD</span><span class="tag">Pipeline</span><span class="tag warn">Filter-bypass</span></div>
         </summary>
@@ -540,7 +552,7 @@
       <details class="comp has-data">
         <summary>
           <div class="comp-num">A.03</div>
-          <div class="comp-name">Data lake / warehouse</div>
+          <div class="comp-name">Data lake / warehouse <span class="visually-hidden">(Behandlar personuppgifter)</span></div>
           <div class="comp-desc">Petabytestor lagring av råa och kuraterade dataset, ofta versionerade.</div>
           <div class="comp-tags"><span class="tag data">PD</span><span class="tag">Lagring</span><span class="tag">Retention</span></div>
         </summary>
@@ -558,7 +570,7 @@
       <details class="comp has-data">
         <summary>
           <div class="comp-num">A.04</div>
-          <div class="comp-name">RLHF-/preferensdata</div>
+          <div class="comp-name">RLHF-/preferensdata <span class="visually-hidden">(Behandlar personuppgifter)</span></div>
           <div class="comp-desc">Mänskligt märkta jämförelser och annoteringar för alignment.</div>
           <div class="comp-tags"><span class="tag data">PD</span><span class="tag">Anställd/leverantör</span></div>
         </summary>
@@ -612,7 +624,7 @@
       <details class="comp has-data">
         <summary>
           <div class="comp-num">A.07</div>
-          <div class="comp-name">Experimentspårning</div>
+          <div class="comp-name">Experimentspårning <span class="visually-hidden">(Behandlar personuppgifter)</span></div>
           <div class="comp-desc">Hyperparametrar, mätvärden, körnings&shy;historik (typ Weights &amp; Biases).</div>
           <div class="comp-tags"><span class="tag data">PD anställd</span><span class="tag">Metadata</span></div>
         </summary>
@@ -647,7 +659,6 @@
     </div>
   </section>
 
-  <!-- ============ ZONE 2: INFERENCE PLANE ============ -->
   <section class="zone">
     <div class="zone-header">
       <span class="zone-id infer">B · Inferens</span>
@@ -659,7 +670,7 @@
       <details class="comp has-data">
         <summary>
           <div class="comp-num">B.01</div>
-          <div class="comp-name">Edge / Nätverk</div>
+          <div class="comp-name">Edge / Nätverk <span class="visually-hidden">(Behandlar personuppgifter)</span></div>
           <div class="comp-desc">CDN, WAF, DDoS-skydd, TLS-terminering, geo-routing.</div>
           <div class="comp-tags"><span class="tag data">PD transient</span><span class="tag">AppSec</span><span class="tag">Residens</span></div>
         </summary>
@@ -677,7 +688,7 @@
       <details class="comp has-data">
         <summary>
           <div class="comp-num">B.02</div>
-          <div class="comp-name">API-gateway</div>
+          <div class="comp-name">API-gateway <span class="visually-hidden">(Behandlar personuppgifter)</span></div>
           <div class="comp-desc">Routing, auth, kvoter, request/response-loggning.</div>
           <div class="comp-tags"><span class="tag data">PD</span><span class="tag">Granskningslogg</span></div>
         </summary>
@@ -685,7 +696,7 @@
           <div class="audit-label">Granskningspunkter</div>
           <ul>
             <li>Vad loggas? (full prompt eller bara metadata?)</li>
-            <li>Logg-retention och åtkomst för incident vs produktanalys</li>
+            <li>Logg-retention and åtkomst för incident vs produktanalys</li>
             <li>API-nyckelrotation, scope-design</li>
             <li>Tenant-isolering på request-nivå</li>
             <li>Resurs-/kostnadsattacker: tokenbudget, rate limits, parallella requests, långa kontexter (OWASP LLM10:2025 Unbounded Consumption)</li>
@@ -696,7 +707,7 @@
       <details class="comp has-data">
         <summary>
           <div class="comp-num">B.03</div>
-          <div class="comp-name">Tokenizer</div>
+          <div class="comp-name">Tokenizer <span class="visually-hidden">(Behandlar personuppgifter)</span></div>
           <div class="comp-desc">Deterministisk omvandling text ↔ tokens innan modellanrop.</div>
           <div class="comp-tags"><span class="tag data">PD transient</span><span class="tag">Förbehandling</span></div>
         </summary>
@@ -713,7 +724,7 @@
       <details class="comp has-data">
         <summary>
           <div class="comp-num">B.04</div>
-          <div class="comp-name">Input-klassificerare</div>
+          <div class="comp-name">Input-klassificerare <span class="visually-hidden">(Behandlar personuppgifter)</span></div>
           <div class="comp-desc">Hjälpmodeller för jailbreak-, abuse-, CSAM- och PII-detektion <em>innan</em> huvudmodellen.</div>
           <div class="comp-tags"><span class="tag data">PD</span><span class="tag">Safety</span><span class="tag warn">Bypass-risk</span></div>
         </summary>
@@ -731,7 +742,7 @@
       <details class="comp has-data">
         <summary>
           <div class="comp-num">B.05</div>
-          <div class="comp-name">Inferens-runtime</div>
+          <div class="comp-name">Inferens-runtime <span class="visually-hidden">(Behandlar personuppgifter)</span></div>
           <div class="comp-desc">Själva modellservern: laddar vikter, kör forward-pass, hanterar batchning.</div>
           <div class="comp-tags"><span class="tag data">PD i RAM</span><span class="tag warn">Sidekanaler</span></div>
         </summary>
@@ -750,7 +761,7 @@
       <details class="comp has-data">
         <summary>
           <div class="comp-num">B.06</div>
-          <div class="comp-name">KV-cache</div>
+          <div class="comp-name">KV-cache <span class="visually-hidden">(Behandlar personuppgifter)</span></div>
           <div class="comp-desc">Mellanlagrad attention-state under en session — känslig representationsdata härledd från prompt och kontext.</div>
           <div class="comp-tags"><span class="tag data">PD i RAM</span><span class="tag warn">Cross-tenant</span></div>
         </summary>
@@ -768,7 +779,7 @@
       <details class="comp has-data">
         <summary>
           <div class="comp-num">B.07</div>
-          <div class="comp-name">Hjälpmodeller</div>
+          <div class="comp-name">Hjälpmodeller <span class="visually-hidden">(Behandlar personuppgifter)</span></div>
           <div class="comp-desc">Embedding, reranker, reward, klassificerare — egna modellkedjor med egen livscykel.</div>
           <div class="comp-tags"><span class="tag data">PD</span><span class="tag">Modellkedja</span></div>
         </summary>
@@ -785,7 +796,7 @@
       <details class="comp has-data">
         <summary>
           <div class="comp-num">B.08</div>
-          <div class="comp-name">Output-filter</div>
+          <div class="comp-name">Output-filter <span class="visually-hidden">(Behandlar personuppgifter)</span></div>
           <div class="comp-desc">Streaming-klassificerare som granskar genererad text och kan avbryta/redigera.</div>
           <div class="comp-tags"><span class="tag data">PD output</span><span class="tag">Safety</span><span class="tag">PII-redaktion</span></div>
         </summary>
@@ -802,7 +813,7 @@
       <details class="comp has-data">
         <summary>
           <div class="comp-num">B.09</div>
-          <div class="comp-name">Konversations-DB</div>
+          <div class="comp-name">Konversations-DB <span class="visually-hidden">(Behandlar personuppgifter)</span></div>
           <div class="comp-desc">Persistent lagring av användarens chattar, ofta med projekt&shy;struktur.</div>
           <div class="comp-tags"><span class="tag data">PD</span><span class="tag">DSR</span><span class="tag">Retention</span></div>
         </summary>
@@ -820,7 +831,7 @@
       <details class="comp has-data">
         <summary>
           <div class="comp-num">B.10</div>
-          <div class="comp-name">Minne / personalisering</div>
+          <div class="comp-name">Minne / personalisering <span class="visually-hidden">(Behandlar personuppgifter)</span></div>
           <div class="comp-desc">Strukturerad sammanfattning av användarprofil som injiceras i kommande prompter.</div>
           <div class="comp-tags"><span class="tag data">PD</span><span class="tag warn">Profilering</span></div>
         </summary>
@@ -838,7 +849,7 @@
       <details class="comp has-data">
         <summary>
           <div class="comp-num">B.11</div>
-          <div class="comp-name">Användaruppladdade filer</div>
+          <div class="comp-name">Användaruppladdade filer <span class="visually-hidden">(Behandlar personuppgifter)</span></div>
           <div class="comp-desc">Bilder, PDF:er, kod, dokument som användare bifogar till sessionen.</div>
           <div class="comp-tags"><span class="tag data">PD</span><span class="tag warn">Tredjepartsdata</span></div>
         </summary>
@@ -856,7 +867,7 @@
       <details class="comp has-data">
         <summary>
           <div class="comp-num">B.12</div>
-          <div class="comp-name">Vector store / RAG</div>
+          <div class="comp-name">Vector store / RAG <span class="visually-hidden">(Behandlar personuppgifter)</span></div>
           <div class="comp-desc">Embeddings av användarens dokument för semantisk sökning.</div>
           <div class="comp-tags"><span class="tag data">PD i embedding</span><span class="tag warn">Inversion</span></div>
         </summary>
@@ -875,7 +886,7 @@
       <details class="comp has-data">
         <summary>
           <div class="comp-num">B.13</div>
-          <div class="comp-name">Verktyg &amp; sandlådor</div>
+          <div class="comp-name">Verktyg &amp; sandlådor <span class="visually-hidden">(Behandlar personuppgifter)</span></div>
           <div class="comp-desc">Code interpreter, webbläsning, filsystem per session, MCP-konnektorer.</div>
           <div class="comp-tags"><span class="tag data">PD</span><span class="tag warn">Sandbox-escape</span><span class="tag warn">SSRF</span><span class="tag">OAuth</span></div>
         </summary>
@@ -894,7 +905,7 @@
       <details class="comp has-data">
         <summary>
           <div class="comp-num">B.14</div>
-          <div class="comp-name">Återkopplings-/feedback&shy;data</div>
+          <div class="comp-name">Återkopplings-/feedback&shy;data <span class="visually-hidden">(Behandlar personuppgifter)</span></div>
           <div class="comp-desc">Tummen upp/ner, flagga, redigeringar — kan fl&ouml;da tillbaka till A.04.</div>
           <div class="comp-tags"><span class="tag data">PD</span><span class="tag">Loop till träning</span></div>
         </summary>
@@ -911,7 +922,6 @@
     </div>
   </section>
 
-  <!-- ============ ZONE 3: CROSS-CUTTING ============ -->
   <section class="zone">
     <div class="zone-header">
       <span class="zone-id cross">C · Tvärgående</span>
@@ -923,7 +933,7 @@
       <details class="comp has-data">
         <summary>
           <div class="comp-num">C.01</div>
-          <div class="comp-name">Identity Provider (IdP)</div>
+          <div class="comp-name">Identity Provider (IdP) <span class="visually-hidden">(Behandlar personuppgifter)</span></div>
           <div class="comp-desc">SSO/OAuth, MFA, kontoregister, API-nycklar.</div>
           <div class="comp-tags"><span class="tag data">PD</span><span class="tag">IAM</span></div>
         </summary>
@@ -958,7 +968,7 @@
       <details class="comp has-data">
         <summary>
           <div class="comp-num">C.03</div>
-          <div class="comp-name">Observability</div>
+          <div class="comp-name">Observability <span class="visually-hidden">(Behandlar personuppgifter)</span></div>
           <div class="comp-desc">Loggar, metrics, distributed tracing, audit trail. Volym och retention bör riskklassas separat.</div>
           <div class="comp-tags"><span class="tag data">PD i loggar</span><span class="tag">SIEM</span></div>
         </summary>
@@ -976,7 +986,7 @@
       <details class="comp has-data">
         <summary>
           <div class="comp-num">C.04</div>
-          <div class="comp-name">DSR-pipeline</div>
+          <div class="comp-name">DSR-pipeline <span class="visually-hidden">(Behandlar personuppgifter)</span></div>
           <div class="comp-desc">Tekniskt flöde för export, radering, rättelse, dataportabilitet.</div>
           <div class="comp-tags"><span class="tag data">PD</span><span class="tag">Art. 15–22</span></div>
         </summary>
@@ -1011,7 +1021,7 @@
       <details class="comp has-data">
         <summary>
           <div class="comp-num">C.06</div>
-          <div class="comp-name">Policy &amp; governance</div>
+          <div class="comp-name">Policy &amp; governance <span class="visually-hidden">(Behandlar personuppgifter)</span></div>
           <div class="comp-desc">Styrdokument, modellkort, eval-rapporter, samtyckes&shy;hantering.</div>
           <div class="comp-tags"><span class="tag data">PD samtycke</span><span class="tag">GRC</span></div>
         </summary>
@@ -1045,7 +1055,7 @@
       <details class="comp has-data">
         <summary>
           <div class="comp-num">C.08</div>
-          <div class="comp-name">Incident- &amp; abuse-response</div>
+          <div class="comp-name">Incident- &amp; abuse-response <span class="visually-hidden">(Behandlar personuppgifter)</span></div>
           <div class="comp-desc">Detektion, eskalering, modellrollback, kund&shy;notifiering.</div>
           <div class="comp-tags"><span class="tag data">PD incident</span><span class="tag">IR</span><span class="tag">Art. 33</span></div>
         </summary>

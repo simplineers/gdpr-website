@@ -898,7 +898,7 @@ footer > * { position: relative; z-index: 1; }
   font-style: italic;
   font-weight: 380;
   max-width: 680px;
-  margin-bottom: 40px;
+  margin-bottom: 24px;
   padding: 24px 0;
   border-top: 1px solid rgba(239, 232, 218, 0.15);
   border-bottom: 1px solid rgba(239, 232, 218, 0.15);
@@ -937,6 +937,69 @@ footer > * { position: relative; z-index: 1; }
   line-height: 1;
   flex-shrink: 0;
   font-variation-settings: "SOFT" 100;
+}
+
+/* ---------- LICENSE (CC BY 4.0) ---------- */
+.footer-license {
+  max-width: 680px;
+  margin-bottom: 40px;
+  padding: 22px 24px;
+  border: 1px solid rgba(239, 232, 218, 0.18);
+  border-radius: 4px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px 18px;
+  font-family: 'Newsreader', serif;
+  font-size: 15px;
+  line-height: 1.55;
+  color: rgba(239, 232, 218, 0.72);
+  font-weight: 380;
+}
+.footer-license .cc-badge {
+  display: inline-flex;
+  align-items: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  border: 1.5px solid var(--accent-soft);
+  border-radius: 3px;
+  color: var(--accent-soft);
+  background: transparent;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.footer-license .work-title {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  color: var(--bg);
+  font-weight: 400;
+  font-variation-settings: "opsz" 14;
+}
+.footer-license strong {
+  color: var(--bg);
+  font-weight: 500;
+  font-style: normal;
+}
+.footer-license em {
+  font-style: italic;
+  color: var(--accent-soft);
+  font-weight: 380;
+}
+.footer-license a {
+  color: var(--accent-soft);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(194, 107, 67, 0.4);
+  padding-bottom: 1px;
+  white-space: nowrap;
+  transition: all 0.2s;
+}
+.footer-license a:hover {
+  color: var(--bg);
+  border-bottom-color: var(--bg);
 }
 
 /* ---------- TOOLS / VERKTYG ---------- */
@@ -1127,6 +1190,7 @@ footer > * { position: relative; z-index: 1; }
   .newsletter-inner { grid-template-columns: 1fr; gap: 36px; }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
   .footer-bottom { flex-direction: column; gap: 12px; }
+  .footer-license { padding: 18px 20px; }
 }
 @media (max-width: 540px) {
   nav ul { gap: 14px; }
@@ -1186,7 +1250,7 @@ footer > * { position: relative; z-index: 1; }
             </div>
             <div>
               <div class="stat-num">13</div>
-              <div class="stat-label">Person­upp­gifts­kategorier</div>
+              <div class="stat-label">Person&shy;upp&shy;gifts&shy;kategorier</div>
             </div>
           </div>
         </div>
@@ -1234,7 +1298,7 @@ footer > * { position: relative; z-index: 1; }
         <article class="topic">
           <div class="topic-num">§ 02</div>
           <h3>Personuppgiftstaxonomi &amp; ROPA</h3>
-          <p>Hur du klassificerar personuppgifter (PD1–PD13<sup class="ftn">*</sup>), kopplar dem till informationsobjekt och bygger en register­förteckning som faktiskt går att underhålla.</p>
+          <p>Hur du klassificerar personuppgifter (PD1–PD13<sup class="ftn">*</sup>), kopplar dem till informationsobjekt och bygger en register&shy;förteckning som faktiskt går att underhålla.</p>
           <p class="topic-foot"><sup class="ftn">*</sup> PD1–PD13 är Simplineers egen arbetstaxonomi för praktisk klassificering. Den ersätter inte GDPR:s rättsliga kategorier utan mappas mot bland annat artikel 9, 10 och 30.</p>
           <div class="topic-meta">
             <span>12 kapitel</span>
@@ -1255,7 +1319,7 @@ footer > * { position: relative; z-index: 1; }
         <article class="topic">
           <div class="topic-num">§ 04</div>
           <h3>Säkerhet &amp; kryptografi</h3>
-          <p>Artikel 25 och 32 i praktiken. Symmetrisk vs asymmetrisk kryptering, BankID, BYOK/HYOK, post-kvant­algoritmer och Schrems II.</p>
+          <p>Artikel 25 och 32 i praktiken. Symmetrisk vs asymmetrisk kryptering, BankID, BYOK/HYOK, post-kvant&shy;algoritmer och Schrems II.</p>
           <div class="topic-meta">
             <span>11 kapitel</span>
             <span class="topic-arrow">→</span>
@@ -1318,7 +1382,7 @@ footer > * { position: relative; z-index: 1; }
           </div>
           <div class="tool-body">
             <div class="tool-num">§ I.</div>
-            <h3>GDPR-artiklar i ljuset av <em>informations­säkerhetens mål</em></h3>
+            <h3>GDPR-artiklar i ljuset av <em>informations&shy;säkerhetens mål</em></h3>
             <p>Artikel 32.1(b) som klassiskt Venn-diagram — konfidentialitet, riktighet, tillgänglighet — och hur övriga GDPR-artiklar ramlar ut runt CIA-triadens utvidgade mål.</p>
             <div class="tool-meta">
               <div class="tool-tags">
@@ -1464,7 +1528,7 @@ footer > * { position: relative; z-index: 1; }
           <div class="principle-num">iii.</div>
           <div>
             <h4>Risk är språket emellan.</h4>
-            <p>Risk­utsagor är bron mellan jurister och ingenjörer. När de är välformulerade slutar diskussionerna handla om vem som har rätt.</p>
+            <p>Risk&shy;utsagor är bron mellan jurister och ingenjörer. När de är välformulerade slutar diskussionerna handla om vem som har rätt.</p>
           </div>
         </div>
 
@@ -1500,7 +1564,7 @@ footer > * { position: relative; z-index: 1; }
       <div class="footer-col">
         <h5>Verktyg</h5>
         <ul>
-          <li><a href="gdpr_infosak_venn.html">GDPR &amp; informations­säkerhet</a></li>
+          <li><a href="gdpr_infosak_venn.html">GDPR &amp; informations&shy;säkerhet</a></li>
           <li><a href="llm-arkitektur-sakerhetsgranskning.html">LLM-arkitektur</a></li>
           <li><a href="gdpr-llm-audit-kravkarta.html">Audit-kravkarta för LLM</a></li>
         </ul>
@@ -1516,6 +1580,13 @@ footer > * { position: relative; z-index: 1; }
       <span class="footnote-marker">†</span>
       <span>
         <strong>Integritet:</strong> Den här webbplatsen samlar inte in, sparar eller analyserar några personuppgifter om dig som besökare. Vi använder inga cookies, ingen analytics, ingen spårning, inga formulär, inga sessioner och inga accessloggar. Vi lagrar inte IP-adresser, user-agent, sidvisningar eller hänvisningsadresser. Teknisk kommunikation används endast momentant för att leverera sidan och sparas inte. <em>Vi vet inte vem du är, att du varit här eller vad du läst.</em> <a href="integritet.html">Läs hela integritetsnotisen →</a>
+      </span>
+    </div>
+
+    <div class="footer-license">
+      <span class="cc-badge">CC BY 4.0</span>
+      <span>
+        <span class="work-title">gdpr.simplineers.se</span> av <strong>Kim Hindart</strong> är licensierad under <a href="https://creativecommons.org/licenses/by/4.0/deed.sv" target="_blank" rel="noopener noreferrer">Creative Commons Erkännande 4.0 Internationell</a>. <em>Fri att dela, kopiera och anpassa — även kommersiellt — så länge upphovsperson anges.</em>
       </span>
     </div>
 

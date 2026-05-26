@@ -740,8 +740,58 @@
     font-style: italic;
     font-weight: 400;
   }
+
+  /* ===== CC BY 4.0-licens — matchar licensfootern på övriga sidor ===== */
+  .foot-license {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 20px;
+    background: rgba(184, 138, 53, 0.06);
+    border: 1px solid rgba(184, 138, 53, 0.3);
+    border-radius: 4px;
+    font-family: var(--sans);
+    font-size: 13px;
+    line-height: 1.55;
+    color: var(--ink-soft);
+    margin-top: 40px;
+    max-width: 920px;
+  }
+  .cc-badge {
+    display: inline-flex;
+    align-items: center;
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    padding: 5px 10px;
+    border: 1.5px solid var(--ink);
+    border-radius: 3px;
+    color: var(--ink);
+    background: var(--paper);
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .foot-license .work-title {
+    font-family: var(--serif);
+    font-style: italic;
+    color: var(--ink);
+    font-size: 14px;
+    font-weight: 500;
+  }
+  .foot-license strong { color: var(--ink); font-weight: 600; }
+  .foot-license em { font-style: italic; color: var(--ink); }
+  .foot-license a {
+    color: var(--meet-text);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    text-decoration-thickness: 1px;
+  }
+  .foot-license a:hover { color: var(--ink); }
+
   .footer-meta {
-    margin-top: 56px;
+    margin-top: 32px;
     padding-top: 24px;
     border-top: 1px dotted var(--rule-soft);
     font-family: var(--mono);
@@ -1445,8 +1495,19 @@
         <div class="val">Demonstrerbar ansvarsskyldighet</div>
       </div>
     </div>
+
+    <div class="foot-license">
+      <span class="cc-badge">CC BY 4.0</span>
+      <span>
+        <span class="work-title">Simplineers metod för god efterlevnad</span>
+        av <strong>Kim Hindart, Simplineers AB</strong> är licensierad under
+        <a href="https://creativecommons.org/licenses/by/4.0/deed.sv" target="_blank" rel="noopener noreferrer">Creative Commons Erkännande 4.0 Internationell</a>.
+        <em>Fri att dela, kopiera och anpassa — även kommersiellt — så länge upphovsperson anges.</em>
+      </span>
+    </div>
+
     <div class="footer-meta">
-      <span>© Simplineers AB — Metod för god efterlevnad</span>
+      <span>© 2026 Kim Hindart · Simplineers AB · Stockholm</span>
       <span>Version 1.7 · 2026</span>
     </div>
   </footer>

@@ -300,34 +300,90 @@ p em { font-style: italic; }
   margin: 0;
 }
 
-/* Footer */
+/* ---------- FOOTER (harmoniserad licensstruktur) ---------- */
 footer {
   border-top: 1px solid var(--hairline);
   margin-top: 80px;
   padding: 32px 0 40px;
 }
-.foot-inner {
+.foot-stack {
   max-width: 720px;
   margin: 0 auto;
   padding: 0 40px;
   display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.foot-license {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 20px;
+  background: rgba(168, 66, 28, 0.04);
+  border: 1px solid rgba(168, 66, 28, 0.2);
+  border-radius: 4px;
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  font-family: 'Newsreader', serif;
+  font-weight: 400;
+}
+.cc-badge {
+  display: inline-flex;
+  align-items: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  padding: 5px 10px;
+  border: 1.5px solid var(--ink);
+  border-radius: 3px;
+  color: var(--ink);
+  background: var(--bg);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.foot-license .work-title {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  color: var(--ink);
+  font-size: 14px;
+}
+.foot-license strong { color: var(--ink); font-weight: 500; }
+.foot-license em { font-style: italic; color: var(--ink); }
+.foot-license a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+}
+.foot-license a:hover { color: var(--ink); }
+.foot-meta {
+  display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
+  gap: 12px;
   font-family: 'JetBrains Mono', monospace;
   font-size: 11px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--muted);
-  flex-wrap: wrap;
-  gap: 16px;
 }
-.foot-inner a { color: var(--muted); text-decoration: none; border-bottom: 1px solid var(--hairline); padding-bottom: 1px; }
-.foot-inner a:hover { color: var(--ink); }
+.foot-meta a {
+  color: var(--muted);
+  text-decoration: none;
+  border-bottom: 1px solid var(--hairline);
+  padding-bottom: 1px;
+}
+.foot-meta a:hover { color: var(--ink); }
 
 @media (max-width: 720px) {
   main { padding: 48px 24px 40px; }
   .negation { grid-template-columns: 1fr; }
   .header-inner { padding: 16px 24px; }
-  .foot-inner { padding: 0 24px; flex-direction: column; }
+  .foot-stack { padding: 0 24px; }
+  .foot-meta { flex-direction: column; }
 }
 </style>
 </head>
@@ -408,9 +464,20 @@ footer {
 </main>
 
 <footer>
-  <div class="foot-inner">
-    <span>© 2026 Simplineers · Stockholm</span>
-    <span><a href="index.html">gdpr.simplineers.se</a></span>
+  <div class="foot-stack">
+    <div class="foot-license">
+      <span class="cc-badge">CC BY 4.0</span>
+      <span>
+        <span class="work-title">Integritet · gdpr.simplineers.se</span>
+        av <strong>Kim Hindart, Simplineers AB</strong> är licensierad under
+        <a href="https://creativecommons.org/licenses/by/4.0/deed.sv" target="_blank" rel="noopener noreferrer">Creative Commons Erkännande 4.0 Internationell</a>.
+        <em>Fri att dela, kopiera och anpassa — även kommersiellt — så länge upphovsperson anges.</em>
+      </span>
+    </div>
+    <div class="foot-meta">
+      <span>© 2026 Kim Hindart · Simplineers AB · Stockholm</span>
+      <span><a href="index.html">gdpr.simplineers.se</a></span>
+    </div>
   </div>
 </footer>
 

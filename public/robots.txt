@@ -1,0 +1,7 @@
+# gdpr.simplineers.se
+# Inga restriktioner — webbplatsen är publik och samlar inga uppgifter.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://gdpr.simplineers.se/sitemap.xml

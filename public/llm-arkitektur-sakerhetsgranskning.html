@@ -5,6 +5,26 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>LLM-arkitektur — granskningsperspektiv</title>
 <meta name="description" content="Storskalig LLM-arkitektur sedd ur ett IT-säkerhets- och granskningsperspektiv: expanderbara komponentkort med granskningspunkter över träningsplan, inferensplan och tvärgående funktioner.">
+<link rel="canonical" href="https://gdpr.simplineers.se/llm-arkitektur-sakerhetsgranskning.html">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<meta name="theme-color" content="#6268db">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gdpr.simplineers.se/llm-arkitektur-sakerhetsgranskning.html">
+<meta property="og:title" content="LLM-arkitektur — granskningsperspektiv">
+<meta property="og:description" content="Storskalig LLM-arkitektur sedd ur ett IT-säkerhets- och granskningsperspektiv: expanderbara komponentkort med granskningspunkter över träningsplan, inferensplan och tvärgående funktioner.">
+<meta property="og:image" content="https://gdpr.simplineers.se/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="gdpr.simplineers.se">
+<meta property="og:locale" content="sv_SE">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="LLM-arkitektur — granskningsperspektiv">
+<meta name="twitter:description" content="Storskalig LLM-arkitektur sedd ur ett IT-säkerhets- och granskningsperspektiv: expanderbara komponentkort med granskningspunkter över träningsplan, inferensplan och tvärgående funktioner.">
+<meta name="twitter:image" content="https://gdpr.simplineers.se/og-image.png">
+<link rel="preload" href="fonts/fraunces-latin-full-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <style>
 /* ── Self-hosted fonts (inga externa anrop, ingen Google Fonts) ──────────── */
 @font-face { font-family: 'Fraunces'; font-style: normal; font-display: swap; font-weight: 100 900; src: url('fonts/fraunces-latin-full-normal.woff2') format('woff2-variations'); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
@@ -484,9 +504,31 @@
     .zone-body { grid-template-columns: 1fr; padding: 16px; }
     .zone-header { padding: 14px 16px; }
   }
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 999;
+  padding: 12px 18px;
+  background: var(--ink, #161821);
+  color: var(--bg, #EFE8DA);
+  text-decoration: none;
+  font-family: 'JetBrains Mono', 'IBM Plex Mono', monospace;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+}
+.skip-link:focus {
+  left: 12px;
+  top: 12px;
+  outline: 2px solid var(--accent, #A8421C);
+  outline-offset: 3px;
+}
 </style>
 </head>
 <body>
+
+<a class="skip-link" href="#main">Hoppa till innehåll</a>
 <div class="container">
 
   <header class="header">
@@ -499,6 +541,8 @@
       <span><strong>Triangel = lagrar eller behandlar personuppgifter</strong></span>
     </div>
   </header>
+
+  <main id="main">
 
   <div class="legend">
     <div class="legend-item"><span class="legend-swatch sw-train"></span>Träningsplan (offline)</div>
@@ -1087,6 +1131,8 @@
     <p>Skissen täcker <strong>komponenter som lagrar eller behandlar data</strong> — inte själva modell&shy;vikterna i drift. Notera att <strong>personuppgifter förekommer på ovanligt många ställen</strong> i en LLM-tjänst: inte bara i konversations-DB:n (B.09), utan även i KV-cachen (B.06, RAM), embeddings (B.12, kan delvis inverteras), loggar och spårningsdata (C.03), feedbackloopar tillbaka till träning (B.14 → A.04), och hjälpmodellernas träningsdata. Granskning som bara tittar på <em>kärnmodellen</em> missar därför merparten av angreppsytan.</p>
     <p><strong>Terminologi:</strong> <em>PD</em> = personuppgifter; <em>PII</em> används här som teknisk detektionskategori för identifierande personuppgifter (t.ex. namn, personnummer, e-post) i pipelines och filter. I löpande text används <em>personuppgifter</em> som huvudbegrepp i linje med GDPR.</p>
   </div>
+
+  </main>
 
   <footer class="site-foot">
     <div class="foot-privacy">

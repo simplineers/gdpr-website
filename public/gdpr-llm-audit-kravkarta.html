@@ -5,6 +5,25 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>GDPR-funktionens audit-kravkarta för LLM</title>
 <meta name="description" content="Audit-kravkarta för LLM-applikationsarkitektur ur GDPR- och internrevisionsperspektiv: 24 moduler mappade mot risker, kontroller, loggningspunkter och relevanta artiklar.">
+<link rel="canonical" href="https://gdpr.simplineers.se/gdpr-llm-audit-kravkarta.html">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<meta name="theme-color" content="#6268db">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gdpr.simplineers.se/gdpr-llm-audit-kravkarta.html">
+<meta property="og:title" content="GDPR-funktionens audit-kravkarta för LLM">
+<meta property="og:description" content="Audit-kravkarta för LLM-applikationsarkitektur ur GDPR- och internrevisionsperspektiv: 24 moduler mappade mot risker, kontroller, loggningspunkter och relevanta artiklar.">
+<meta property="og:image" content="https://gdpr.simplineers.se/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="gdpr.simplineers.se">
+<meta property="og:locale" content="sv_SE">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="GDPR-funktionens audit-kravkarta för LLM">
+<meta name="twitter:description" content="Audit-kravkarta för LLM-applikationsarkitektur ur GDPR- och internrevisionsperspektiv: 24 moduler mappade mot risker, kontroller, loggningspunkter och relevanta artiklar.">
+<meta name="twitter:image" content="https://gdpr.simplineers.se/og-image.png">
+<link rel="preload" href="fonts/inter-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <style>
 /* ── Self-hosted fonts (inga externa anrop, ingen Google Fonts) ──────────── */
 @font-face { font-family: 'Inter'; font-style: normal; font-display: swap; font-weight: 400; src: url('fonts/inter-latin-400-normal.woff2') format('woff2'); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
@@ -226,6 +245,7 @@
   }
   .group-title {
     font-size: 11px;
+    font-weight: normal;
     color: var(--ink-soft);
     margin-bottom: 10px;
     font-style: italic;
@@ -412,6 +432,7 @@
   }
   .audit-title {
     font-size: 13px;
+    font-weight: normal;
     color: var(--ink-soft);
     margin-bottom: 18px;
     font-style: italic;
@@ -582,9 +603,31 @@
     border-bottom: 1px solid var(--rule);
   }
   .foot-meta a:hover { color: var(--ink); opacity: 1; }
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 999;
+  padding: 12px 18px;
+  background: var(--ink, #161821);
+  color: var(--bg, #EFE8DA);
+  text-decoration: none;
+  font-family: 'JetBrains Mono', 'IBM Plex Mono', monospace;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+}
+.skip-link:focus {
+  left: 12px;
+  top: 12px;
+  outline: 2px solid var(--accent, #A8421C);
+  outline-offset: 3px;
+}
 </style>
 </head>
 <body>
+
+<a class="skip-link" href="#main">Hoppa till innehåll</a>
 <div class="container">
 
   <header class="header">
@@ -597,45 +640,46 @@
     </div>
   </header>
 
+  <main id="main">
   <section class="categories">
     <div class="cat">
-      <div class="cat-title"><span class="dot risk"></span>Risk-läckage</div>
+      <h2 class="cat-title"><span class="dot risk"></span>Risk-läckage</h2>
       <div class="cat-def">Moduler där personuppgifter aktivt behandlas, lagras eller kan exfiltreras. De utgör angreppsytan — det är här en GDPR-överträdelse uppstår om något går fel.</div>
       <div class="cat-action"><strong>Granskningsåtgärd:</strong> kartlägg dataflödet, verifiera kryptering och åtkomstkontroll, granska retention och tenant-segmentering, testa motståndskraft mot exfiltrering.</div>
     </div>
     <div class="cat control">
-      <div class="cat-title"><span class="dot control"></span>Kontroll behövs</div>
+      <h2 class="cat-title"><span class="dot control"></span>Kontroll behövs</h2>
       <div class="cat-def">Moduler som själva ÄR kontroller — de implementerar säkerhetsåtgärder, policys eller guardrails som skyddar riskmodulerna.</div>
       <div class="cat-action"><strong>Granskningsåtgärd:</strong> verifiera designspecifikation, granska change governance och ägarskap, mät effektivitet via FP/FN-tester, red team eller stickprov.</div>
     </div>
     <div class="cat log">
-      <div class="cat-title"><span class="dot log"></span>Loggningspunkt</div>
+      <h2 class="cat-title"><span class="dot log"></span>Loggningspunkt</h2>
       <div class="cat-def">Moduler där personuppgifter fångas för observability, felsökning eller DSR. Egen integritetsutmaning — långa retentionstider, bred åtkomst och personuppgifter som lever vidare efter att källan rensats.</div>
       <div class="cat-action"><strong>Granskningsåtgärd:</strong> granska retentionsmatris och access-roller, verifiera PII-redaktion innan loggning, säkerställ att DSR-flödet faktiskt täcker även loggarna.</div>
     </div>
   </section>
 
   <section class="layers">
-    <div class="layers-title">Arkitekturlager — kartan täcker primärt lager 1, 2 och 4</div>
+    <h2 class="layers-title">Arkitekturlager — kartan täcker primärt lager 1, 2 och 4</h2>
     <div class="layers-grid">
       <div class="layer">
         <div class="layer-num">1</div>
-        <div class="layer-name">Applikation</div>
+        <h3 class="layer-name">Applikation</h3>
         <div class="layer-desc">Auth, systemprompt, prompt, RAG, långtidsminne, verktyg, konversationshistorik</div>
       </div>
       <div class="layer">
         <div class="layer-num">2</div>
-        <div class="layer-name">Serving / inferens</div>
+        <h3 class="layer-name">Serving / inferens</h3>
         <div class="layer-desc">Tokenisering, batching, prompt-cache, KV-cache, modellserver, sampling, streaming</div>
       </div>
       <div class="layer dim">
         <div class="layer-num">3</div>
-        <div class="layer-name">Modellintern</div>
+        <h3 class="layer-name">Modellintern</h3>
         <div class="layer-desc">Embeddings, positional encoding, transformerblock, self-attention, MLP, layer norm, logits — endast översiktligt här</div>
       </div>
       <div class="layer">
         <div class="layer-num">4</div>
-        <div class="layer-name">Governance / säkerhet</div>
+        <h3 class="layer-name">Governance / säkerhet</h3>
         <div class="layer-desc">Guardrails, PII-detekt, loggning, telemetri, DSR, retention, region routing, leverantörskontroller</div>
       </div>
     </div>
@@ -644,7 +688,7 @@
     </div>
   </section>
 
-  <div class="phase"><div class="phase-label">0 — Identitet &amp; access</div></div>
+  <div class="phase"><h2 class="phase-label">0 — Identitet &amp; access</h2></div>
   <div class="row center">
     <div class="mod" style="flex: 0 1 280px;">
       <span class="marker control">1</span>
@@ -654,9 +698,9 @@
   </div>
   <div class="arrow-down">↓</div>
 
-  <div class="phase"><div class="phase-label">1 — Inmatning</div></div>
+  <div class="phase"><h2 class="phase-label">1 — Inmatning</h2></div>
   <div class="group">
-    <div class="group-title">Kontextfönster — det modellen får se</div>
+    <h3 class="group-title">Kontextfönster — det modellen får se</h3>
     <div class="row">
       <div class="mod"><div class="mod-name">Prompt</div><div class="mod-desc">Frågan</div></div>
       <div class="mod"><div class="mod-name">Systemprompt</div><div class="mod-desc">Roll och regler</div></div>
@@ -690,7 +734,7 @@
     </div>
   </div>
 
-  <div class="phase"><div class="phase-label">2 — Resonemang</div></div>
+  <div class="phase"><h2 class="phase-label">2 — Resonemang</h2></div>
   <div class="arrow-down">↓</div>
   <div class="row center">
     <div class="mod cache" style="flex: 0 1 360px;">
@@ -714,7 +758,7 @@
     <div class="mod output"><span class="marker log">13</span><div class="mod-name">Output streaming</div><div class="mod-desc">Token för token</div></div>
   </div>
 
-  <div class="phase"><div class="phase-label">3 — Verktygsanrop</div></div>
+  <div class="phase"><h2 class="phase-label">3 — Verktygsanrop</h2></div>
   <div class="arrow-down">↓</div>
   <div class="row">
     <div class="mod weights"><div class="mod-name">Modellvikter</div><div class="mod-desc">Tool-call tokens</div></div>
@@ -724,7 +768,7 @@
   </div>
 
   <div class="phase">
-    <div class="phase-label">4 — Slutsvar med uppdaterad kontext</div>
+    <h2 class="phase-label">4 — Slutsvar med uppdaterad kontext</h2>
     <div class="phase-sub">Engine + output körs igen — samma audit-punkter som FAS 2 (9, 10, 11, 12, 8, 13)</div>
   </div>
   <div class="arrow-down">↓</div>
@@ -757,7 +801,7 @@
     </div>
   </div>
 
-  <div class="phase"><div class="phase-label">Tvärgående kontroller — täcker hela flödet ovan</div></div>
+  <div class="phase"><h2 class="phase-label">Tvärgående kontroller — täcker hela flödet ovan</h2></div>
   <div class="row">
     <div class="mod log"><span class="marker log">18</span><div class="mod-name">Loggning / observability</div><div class="mod-desc">Varje pil i flödet ovan = möjlig loggningspunkt. Bedöm <em>om</em>, <em>vad</em> och <em>hur länge</em> utifrån risk, ändamål, uppgiftsminimering och incidentbehov.</div></div>
     <div class="mod tele"><span class="marker">19</span><div class="mod-name">Telemetri till leverantör</div><div class="mod-desc">Abuse-detection, model improvement. Schrems II + Art. 44–49</div></div>
@@ -770,7 +814,7 @@
     <div class="mod tele"><span class="marker">22</span><div class="mod-name">Incident- och breach-anmälan</div><div class="mod-desc">Art. 33: 72-timmarsflöde till tillsyn. Art. 34: kommunikation till registrerade vid hög risk</div></div>
   </div>
 
-  <div class="phase"><div class="phase-label">Bakom kulisserna — formar varje token-val</div></div>
+  <div class="phase"><h2 class="phase-label">Bakom kulisserna — formar varje token-val</h2></div>
   <div class="row">
     <div class="mod train-sage"><span class="marker">23</span><div class="mod-name">Förträning</div><div class="mod-desc">Petabytes text</div></div>
     <div class="mod train-sage"><div class="mod-name">Finjustering</div><div class="mod-desc">Bra exempel</div></div>
@@ -779,7 +823,7 @@
   </div>
 
   <div class="audit-section">
-    <div class="audit-title">Audit-krav per modul (rad 1: risk + artiklar — rad 2: evidens)</div>
+    <h2 class="audit-title">Audit-krav per modul (rad 1: risk + artiklar — rad 2: evidens)</h2>
     <div class="audit-list">
       <div class="audit-item"><div class="audit-num control">1</div><div class="audit-text">
 <p class="audit-main"><strong>Auth / IdP</strong> — Kontroll — Art. 25, 32</p>
@@ -879,6 +923,8 @@
 </div></div>
     </div>
   </div>
+
+  </main>
 
   <footer class="site-foot">
     <div class="foot-privacy">

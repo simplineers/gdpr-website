@@ -5,6 +5,26 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Integritet · gdpr.simplineers.se</title>
 <meta name="description" content="Webbplatsen har inte infört någon egen besöksanalys, spårning, cookies eller formulär. Eventuella tekniska driftloggar hos hosting- eller nätverksleverantör används inte av oss för analys eller uppföljning.">
+<link rel="canonical" href="https://gdpr.simplineers.se/integritet.html">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<meta name="theme-color" content="#6268db">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://gdpr.simplineers.se/integritet.html">
+<meta property="og:title" content="Integritet · gdpr.simplineers.se">
+<meta property="og:description" content="Integritetsnotis för gdpr.simplineers.se: webbplatsen samlar inte in, sparar eller analyserar några personuppgifter om besökare. Inga cookies, ingen analytics, ingen spårning.">
+<meta property="og:image" content="https://gdpr.simplineers.se/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:site_name" content="gdpr.simplineers.se">
+<meta property="og:locale" content="sv_SE">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Integritet · gdpr.simplineers.se">
+<meta name="twitter:description" content="Integritetsnotis för gdpr.simplineers.se: webbplatsen samlar inte in, sparar eller analyserar några personuppgifter om besökare. Inga cookies, ingen analytics, ingen spårning.">
+<meta name="twitter:image" content="https://gdpr.simplineers.se/og-image.png">
+<link rel="preload" href="fonts/fraunces-latin-full-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/newsreader-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <style>
 /* ── Self-hosted fonts (inga externa anrop, ingen Google Fonts) ──────────── */
 @font-face { font-family: 'Fraunces'; font-style: normal; font-display: swap; font-weight: 100 900; src: url('fonts/fraunces-latin-full-normal.woff2') format('woff2-variations'); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
@@ -411,10 +431,32 @@ footer {
   .foot-meta { flex-direction: column; }
   .hosting-note { padding: 20px 22px; }
 }
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 999;
+  padding: 12px 18px;
+  background: var(--ink, #161821);
+  color: var(--bg, #EFE8DA);
+  text-decoration: none;
+  font-family: 'JetBrains Mono', 'IBM Plex Mono', monospace;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+}
+.skip-link:focus {
+  left: 12px;
+  top: 12px;
+  outline: 2px solid var(--accent, #A8421C);
+  outline-offset: 3px;
+}
 </style>
 </head>
 <body>
 
+
+<a class="skip-link" href="#main">Hoppa till innehåll</a>
 <header>
   <div class="header-inner">
     <a href="index.html" class="logo"><em>gdpr</em>.simplineers.se</a>
@@ -422,7 +464,7 @@ footer {
   </div>
 </header>
 
-<main>
+<main id="main">
   <div class="eyebrow">Integritetsnotis</div>
   <h1>Vi samlar <em>inga</em> personuppgifter om dig.</h1>
   <p class="lede">

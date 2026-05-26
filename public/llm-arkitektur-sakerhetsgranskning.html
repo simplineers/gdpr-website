@@ -374,6 +374,55 @@
   }
   .footnote p + p { margin-top: 10px; }
 
+  /* ===== Begreppsnyckel ===== */
+  .gloss-block {
+    margin-top: 48px;
+    padding-top: 32px;
+    border-top: 1px solid var(--rule-soft);
+  }
+  .gloss-h {
+    font-family: 'Fraunces', Georgia, serif;
+    font-variation-settings: "opsz" 36, "SOFT" 30;
+    font-weight: 500;
+    font-size: 22px;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin-bottom: 10px;
+  }
+  .gloss-intro {
+    font-size: 13.5px;
+    color: var(--ink-soft);
+    margin-bottom: 20px;
+    max-width: 760px;
+  }
+  .llm-glossary {
+    columns: 2;
+    column-gap: 48px;
+    max-width: 1100px;
+  }
+  .llm-glossary-item {
+    break-inside: avoid;
+    padding: 12px 0;
+    border-bottom: 1px dotted var(--rule-soft);
+  }
+  .llm-glossary-item dt {
+    font-family: 'Fraunces', Georgia, serif;
+    font-weight: 500;
+    font-size: 15px;
+    color: var(--ink);
+    letter-spacing: -0.005em;
+    margin-bottom: 4px;
+  }
+  .llm-glossary-item dd {
+    font-size: 13px;
+    color: var(--ink-soft);
+    line-height: 1.55;
+  }
+  .llm-glossary-item dd em { font-style: italic; }
+  @media (max-width: 720px) {
+    .llm-glossary { columns: 1; }
+  }
+
   /* CC BY 4.0 LICENSE */
   .foot-privacy {
     margin-top: 24px;
@@ -793,7 +842,7 @@
           <div class="audit-label">Granskningspunkter</div>
           <ul>
             <li>Vad loggas? (full prompt eller bara metadata?)</li>
-            <li>Logg-retention and åtkomst för incident vs produktanalys</li>
+            <li>Loggretention och åtkomst för incident vs produktanalys</li>
             <li>API-nyckelrotation, scope-design</li>
             <li>Tenant-isolering på request-nivå</li>
             <li>Resurs-/kostnadsattacker: tokenbudget, rate limits, parallella requests, långa kontexter (OWASP LLM10:2025 Unbounded Consumption)</li>
@@ -971,7 +1020,7 @@
         <div class="audit">
           <div class="audit-label">Granskningspunkter</div>
           <ul>
-            <li>Embeddings &asymp; personuppgifter (kan delvis inverteras)</li>
+            <li>Embeddings kan utgöra personuppgifter när de härrör från personuppgifter eller kan kopplas tillbaka till en identifierad eller identifierbar person — särskilt om de kan sökas, jämföras, länkas till konto/tenant eller delvis inverteras</li>
             <li>Tenant-segmentering på vektor-nivå</li>
             <li>Behörighetsmedveten retrieval: dokumentets ACL måste följa med hela vägen till embedding, index och sökresultat</li>
             <li>Indirekt prompt injection från hämtade dokument — RAG-källor behandlas som otillförlitligt innehåll</li>
@@ -1175,11 +1224,74 @@
     <p><strong>Terminologi:</strong> <em>PD</em> = personuppgifter; <em>PII</em> används här som teknisk detektionskategori för identifierande personuppgifter (t.ex. namn, personnummer, e-post) i pipelines och filter. I löpande text används <em>personuppgifter</em> som huvudbegrepp i linje med GDPR.</p>
   </div>
 
+  <section class="gloss-block" aria-labelledby="gloss-title-llm">
+    <h2 id="gloss-title-llm" class="gloss-h">Begreppsnyckel</h2>
+    <p class="gloss-intro">Korta förklaringar av tekniska termer som används på den här sidan och i audit-kravkartan. Termerna är riktade till granskare som behöver förstå arkitekturen utan att vara LLM-specialister.</p>
+    <dl class="llm-glossary">
+      <div class="llm-glossary-item">
+        <dt>Tenant</dt>
+        <dd>Logisk kund- eller organisations&shy;avgränsning i en flerkund&shy;sad tjänst. <em>Tenant-isolering</em> innebär att data, prompter, embeddings, cache och loggar från en kund inte kan nås av en annan — ofta en kritisk kontroll vid molnbaserade LLM-tjänster.</dd>
+      </div>
+      <div class="llm-glossary-item">
+        <dt>RAG</dt>
+        <dd>Retrieval-Augmented Generation. Arkitekturmönster där modellen vid varje fråga hämtar relevanta dokument eller dataposter från en kunskapsbas (typiskt en vektor-store) och fogar dem till prompten. Risk: hämtade dokument kan innehålla personuppgifter och kan användas för indirekt prompt injection.</dd>
+      </div>
+      <div class="llm-glossary-item">
+        <dt>Embeddings</dt>
+        <dd>Numerisk vektorrepresentation av text eller andra data, framtagen av en modell. Används för semantisk sökning, klustring och RAG. Kan utgöra personuppgifter när de härrör från personuppgifter eller kan kopplas tillbaka till en identifierbar person — särskilt om de kan sökas, jämföras, länkas till konto eller delvis inverteras.</dd>
+      </div>
+      <div class="llm-glossary-item">
+        <dt>KV-cache</dt>
+        <dd>Key-Value-cache. Mellanlagring av modellens interna tillstånd (attention-nycklar och -värden) under generering, för att inte räkna om samma kontext flera gånger. Innehåller derivat av prompten — alltså potentiellt personuppgifter — i RAM, oftast kortlivat men ibland delat över requests.</dd>
+      </div>
+      <div class="llm-glossary-item">
+        <dt>Prompt-cache</dt>
+        <dd>Cache av tidigare prompter eller delprompter för att snabba upp svar och sänka kostnad. Risk vid återanvändning mellan användare, tenants eller sessioner — kan läcka kontext eller personuppgifter om isolering brister.</dd>
+      </div>
+      <div class="llm-glossary-item">
+        <dt>Guardrail</dt>
+        <dd>Policyimplementerande kontroll runt modellen — typiskt en kombination av klassificerare, regler och hjälpmodeller som filtrerar input och output för att förhindra exfiltrering, skadligt innehåll eller policyöverträdelser. Granskas mot designspecifikation och effektivitet (FP/FN).</dd>
+      </div>
+      <div class="llm-glossary-item">
+        <dt>Prompt injection</dt>
+        <dd>Angrepp där instruktioner smyger sig in i modellens kontext — antingen direkt (i användarens prompt) eller indirekt (i hämtade dokument, webbsidor eller verktygssvar). Kan användas för att kringgå guardrails, exfiltrera data eller utlösa oavsiktliga verktygsanrop. OWASP LLM01:2025.</dd>
+      </div>
+      <div class="llm-glossary-item">
+        <dt>DSR</dt>
+        <dd>Data Subject Request — den registrerades begäran enligt GDPR kapitel III (åtkomst, rättelse, radering, dataportabilitet, invändning m.m.). I LLM-sammanhang kräver DSR-flödet täckning även av embeddings, cache, loggar, träningsdata och feedback&shy;loopar — inte bara den synliga konversations&shy;databasen.</dd>
+      </div>
+      <div class="llm-glossary-item">
+        <dt>Tool / tool router</dt>
+        <dd>Funktionsanrop som modellen kan utföra (web&shy;sökning, kodkörning, filsystem, MCP-konnektorer). Tool router väljer och kör verktyget. Granskningspunkter: behörighet, sandbox-isolering, SSRF-skydd, OAuth-scope och loggning av vilka verktyg som körts mot vilken data.</dd>
+      </div>
+      <div class="llm-glossary-item">
+        <dt>RLHF / DPO</dt>
+        <dd>Reinforcement Learning from Human Feedback respektive Direct Preference Optimization — träningstekniker som finjusterar modellbeteende utifrån mänskliga preferenser. Annotatordata och feedback-signaler kan innehålla personuppgifter och kräver egen ROPA- och retentions&shy;hantering. <em>DPO</em> här är inte detsamma som <em>DPO</em> = dataskyddsombud i löpande text.</dd>
+      </div>
+      <div class="llm-glossary-item">
+        <dt>Lineage</dt>
+        <dd>Spårbarhet bakåt från ett dataobjekt eller en modell till dess ursprung — vilka källor, vilken förbehandling, vilka transformationer. Krävs för att kunna svara på radering, rättelse och frågor om laglig grund i hela kedjan.</dd>
+      </div>
+      <div class="llm-glossary-item">
+        <dt>Observability</dt>
+        <dd>Samlad insyn i tjänstens drift via loggar, mätetal och spårning. För LLM-tjänster en egen integritetsutmaning eftersom prompter och svar ofta hamnar i observability-stacken med längre retention och bredare åtkomst än applikationen själv.</dd>
+      </div>
+      <div class="llm-glossary-item">
+        <dt>Checkpoint</dt>
+        <dd>Sparad version av modellvikterna under eller efter träning. Granskningspunkter: signering, integritet, rollback&shy;förmåga vid incident, åtkomstkontroll.</dd>
+      </div>
+      <div class="llm-glossary-item">
+        <dt>OWASP LLM Top 10</dt>
+        <dd>Branschvedertagen lista över de tio vanligaste säkerhets&shy;riskerna i LLM-applikationer (version 2025). Refereras på flera ställen i kartan — bl.a. LLM01 prompt injection, LLM02 sensitive information disclosure och LLM10 unbounded consumption.</dd>
+      </div>
+    </dl>
+  </section>
+
   </main>
 
   <footer class="site-foot">
     <div class="foot-privacy">
-      <strong>Integritet:</strong> Den här webbplatsen samlar inte in, sparar eller analyserar några personuppgifter om dig som besökare. Vi använder inga cookies, ingen analytics, ingen spårning, inga formulär, inga sessioner och inga accessloggar. Vi lagrar inte IP-adresser, user-agent, sidvisningar eller hänvisningsadresser. Teknisk kommunikation används endast momentant för att leverera sidan och sparas inte. <em>Vi vet inte vem du är, att du varit här eller vad du läst.</em> <a href="integritet.html">Läs hela integritetsnotisen →</a>
+      <strong>Integritet:</strong> Webbplatsen har inte infört någon egen besöksanalys, spårning, cookies eller formulär. Vi använder inga analytics, inga pixlar, inga sessioner och inga inloggningar. Om tekniska driftloggar förekommer hos hosting- eller nätverksleverantör används de inte av oss för analys, profilering eller uppföljning av besökare. <em>Vi har ingen identifierbar bild av dig som besökare.</em> <a href="integritet.html">Läs hela integritetsnotisen →</a>
     </div>
 
     <div class="foot-license">

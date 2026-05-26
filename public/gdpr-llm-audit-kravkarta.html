@@ -87,6 +87,30 @@
     margin-bottom: 18px;
     font-style: italic;
   }
+  .scope-note {
+    text-align: left;
+    max-width: 980px;
+    margin: 0 auto 18px;
+    padding: 12px 16px;
+    font-size: 12.5px;
+    line-height: 1.55;
+    color: var(--ink);
+    background: var(--bg-soft);
+    border-left: 3px solid var(--r-control);
+    border-radius: 4px;
+  }
+  .scope-note strong { font-weight: 700; }
+  .scope-note em { font-style: italic; }
+  .scope-note-xref {
+    display: block;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px dotted rgba(22, 24, 33, 0.18);
+    font-size: 12px;
+    color: var(--ink-soft);
+  }
+  .scope-note-xref a { color: var(--r-control); text-decoration: underline; }
+  .scope-note-xref a:hover { color: var(--ink); }
   .legend {
     display: flex;
     justify-content: center;
@@ -675,7 +699,11 @@
 
   <header class="header">
     <h1>GDPR-funktionens audit-kravkarta för LLM-applikationsarkitektur</h1>
-    <p>Karta över applikationslager, RAG, minne, inferens/serving, verktyg, loggning och leverantörsled — ur GDPR-, säkerhets- och internrevisionsperspektiv. Modellens interna Transformer-komponenter behandlas endast översiktligt. Anpassas per use-case.</p>
+    <p>Karta över applikationslager, RAG, minne, inferens/serving, verktyg, loggning och leverantörsled — ur GDPR-, säkerhets- och internrevisionsperspektiv. Modellens interna Transformer-komponenter behandlas endast översiktligt.</p>
+    <div class="scope-note" role="note" aria-label="Avgränsning och tillämplighet">
+      <strong>Avgränsning:</strong> Kartan är ett <em>granskningsunderlag</em>, inte en universell kravlista. Vilka krav som faktiskt gäller beror på användningsfallet — bland annat personuppgiftskategorier (inkl. art. 9 och art. 10), om tjänsten används som personuppgiftsbiträde eller personuppgiftsansvarig, om RAG, långtidsminne, transkript&shy;loggning eller verktyg är aktiverade, om data används för träning eller finjustering, om gränsöverskridande överföringar förekommer, samt om beslut eller rekommendationer kan få rättslig eller annan motsvarande betydande effekt på den registrerade.
+      <span class="scope-note-xref">Termer som <em>tenant</em>, <em>RAG</em>, <em>KV-cache</em>, <em>embeddings</em>, <em>guardrail</em>, <em>DSR</em> och <em>prompt injection</em> förklaras i <a href="llm-arkitektur-sakerhetsgranskning.html#main">begreppsnyckeln på LLM-arkitektursidan</a>.</span>
+    </div>
     <div class="legend">
       <div class="legend-item"><span class="dot risk"></span>Risk-läckage</div>
       <div class="legend-item"><span class="dot control"></span>Kontroll behövs</div>
@@ -971,7 +999,7 @@
 
   <footer class="site-foot">
     <div class="foot-privacy">
-      <strong>Integritet:</strong> Den här webbplatsen samlar inte in, sparar eller analyserar några personuppgifter om dig som besökare. Vi använder inga cookies, ingen analytics, ingen spårning, inga formulär, inga sessioner och inga accessloggar. Vi lagrar inte IP-adresser, user-agent, sidvisningar eller hänvisningsadresser. Teknisk kommunikation används endast momentant för att leverera sidan och sparas inte. <em>Vi vet inte vem du är, att du varit här eller vad du läst.</em> <a href="integritet.html">Läs hela integritetsnotisen →</a>
+      <strong>Integritet:</strong> Webbplatsen har inte infört någon egen besöksanalys, spårning, cookies eller formulär. Vi använder inga analytics, inga pixlar, inga sessioner och inga inloggningar. Om tekniska driftloggar förekommer hos hosting- eller nätverksleverantör används de inte av oss för analys, profilering eller uppföljning av besökare. <em>Vi har ingen identifierbar bild av dig som besökare.</em> <a href="integritet.html">Läs hela integritetsnotisen →</a>
     </div>
     <div class="foot-license">
       <span class="cc-badge">CC BY 4.0</span>

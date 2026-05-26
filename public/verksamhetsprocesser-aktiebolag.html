@@ -384,6 +384,54 @@ section.no-rule {
   font-weight: 400;
 }
 
+/* ═══════════════════════ SÅ ANVÄNDER DU KATALOGEN ═══════════════════════ */
+.usage-note {
+  margin-top: 40px;
+  padding: 28px 32px;
+  background: var(--bg-soft);
+  border-left: 3px solid var(--accent);
+  border-radius: 4px;
+  max-width: 880px;
+}
+.usage-title {
+  font-family: 'Fraunces', serif;
+  font-variation-settings: "opsz" 24, "SOFT" 30;
+  font-weight: 500;
+  font-size: 20px;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin-bottom: 16px;
+}
+.usage-steps {
+  list-style: none;
+  counter-reset: step;
+  padding: 0;
+  margin: 0;
+}
+.usage-steps li {
+  position: relative;
+  padding: 0 0 14px 36px;
+  font-family: 'Newsreader', serif;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  counter-increment: step;
+}
+.usage-steps li::before {
+  content: counter(step, decimal-leading-zero);
+  position: absolute;
+  left: 0;
+  top: 2px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  color: var(--accent);
+  font-weight: 600;
+}
+.usage-steps li:last-child { padding-bottom: 0; }
+.usage-steps strong { color: var(--ink); font-weight: 600; }
+.usage-steps em { font-style: italic; }
+
 /* ═══════════════════════ ÖVERSIKT ═══════════════════════ */
 .toc {
   border-top: 1px solid var(--hairline-strong);
@@ -1045,6 +1093,16 @@ body.filter-active .cat:not(.has-match) { display: none; }
     <p class="sec-lede" style="margin-top: 32px; max-width: 760px;">
       Processer som typiskt innebär behandling av personuppgifter — och därmed är relevanta för registret över behandlingar enligt artikel 30 — märks med en liten taggsymbol <span class="pd-tag" aria-hidden="true">PD</span> efter processnamnet. <em>PD-markerade rader är inte en fullständig lista över alla processer där personuppgifter kan förekomma, utan markerar processer som typiskt bör beaktas särskilt vid ROPA-kartläggning.</em>
     </p>
+
+    <aside class="usage-note" aria-label="Så använder du katalogen">
+      <h3 class="usage-title">Så använder du katalogen</h3>
+      <ol class="usage-steps">
+        <li><strong>Börja med klass 01 och 02</strong> för en grundläggande processkarta. Det är processer som normalt finns i nästan alla aktiva aktiebolag respektive är typiska i aktivt rörelsedrivande bolag.</li>
+        <li><strong>Lägg därefter till klass 03</strong> när villkor är uppfyllda — exempelvis anställda, momsregistrering, kundavtal, behandling av personuppgifter eller viss teknik.</li>
+        <li><strong>Använd klass 04 och 05</strong> för att täcka in bransch, storlek, riskprofil och mognadsnivå. Klass 05 är frivilliga men ofta värdefulla processer som ofta etableras när verksamheten växer.</li>
+        <li><strong>Prioritera PD-markerade processer</strong> vid ROPA- och DPIA-screening. De är typiska kandidater för registrering enligt artikel 30 och för bedömning av behov av konsekvensbedömning enligt artikel 35.</li>
+      </ol>
+    </aside>
   </section>
 
   <!-- § 02 ÖVERSIKT -->

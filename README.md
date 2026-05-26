@@ -24,6 +24,8 @@ resten av organisationens GRC-arbete.
 - **`llm-arkitektur-sakerhetsgranskning.html`** — storskalig LLM-arkitektur sedd
   ur ett IT-säkerhets- och granskningsperspektiv; expanderbara komponentkort med
   granskningspunkter över träningsplan, inferensplan och tvärgående funktioner.
+  Avslutas med en begreppsnyckel för tekniska termer (tenant, RAG, embeddings,
+  KV-cache, guardrail, prompt injection, DSR m.fl.).
 - **`gdpr-llm-audit-kravkarta.html`** — GDPR-funktionens audit-kravkarta för
   LLM-applikationsarkitektur; 24 moduler mappade mot risker, kontroller,
   loggningspunkter och artiklar.
@@ -94,9 +96,11 @@ Cloudflare Pages / Netlify för svarshuvuden och långlivad, oföränderlig cach
 
 ## Integritet
 
-Webbplatsen samlar inte in något om besökare: inga cookies, ingen analytics, inga
-spårningspixlar, inga formulär, inga sessioner och inga accessloggar. Se
-`integritet.html` för hela notisen.
+Webbplatsen har inte infört någon egen besöksanalys, spårning, cookies eller formulär.
+Inga analytics, inga pixlar, inga sessioner och inga inloggningar. Om tekniska
+driftloggar förekommer hos hosting- eller nätverksleverantör används de inte av oss
+för analys, profilering eller uppföljning av besökare. Se `integritet.html` för hela
+notisen.
 
 ## Licens
 

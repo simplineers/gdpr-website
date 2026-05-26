@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Integritet · gdpr.simplineers.se</title>
-<meta name="description" content="Den här webbplatsen samlar inte in personuppgifter om besökare. Integritetsmodell: noll insamling, noll spårning, noll lagring.">
+<meta name="description" content="Webbplatsen har inte infört någon egen besöksanalys, spårning, cookies eller formulär. Eventuella tekniska driftloggar hos hosting- eller nätverksleverantör används inte av oss för analys eller uppföljning.">
 <style>
 /* ── Self-hosted fonts (inga externa anrop, ingen Google Fonts) ──────────── */
 @font-face { font-family: 'Fraunces'; font-style: normal; font-display: swap; font-weight: 100 900; src: url('fonts/fraunces-latin-full-normal.woff2') format('woff2-variations'); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
@@ -274,6 +274,31 @@ p em { font-style: italic; }
   font-variation-settings: "opsz" 72, "SOFT" 80;
 }
 
+/* Hosting-note — softer aside block within page flow */
+.hosting-note {
+  background: rgba(91, 64, 101, 0.04);
+  border-left: 3px solid var(--accent-soft);
+  padding: 22px 28px;
+  margin: 36px 0;
+  border-radius: 0 4px 4px 0;
+}
+.hosting-note p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+.hosting-note p:last-child { margin-bottom: 0; }
+.hosting-note .label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent-soft);
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
 /* Short version callout */
 .short-summary {
   margin-top: 72px;
@@ -384,6 +409,7 @@ footer {
   .header-inner { padding: 16px 24px; }
   .foot-stack { padding: 0 24px; }
   .foot-meta { flex-direction: column; }
+  .hosting-note { padding: 20px 22px; }
 }
 </style>
 </head>
@@ -398,7 +424,7 @@ footer {
 
 <main>
   <div class="eyebrow">Integritetsnotis</div>
-  <h1>Vi har <em>inga</em> personuppgifter om dig.</h1>
+  <h1>Vi samlar <em>inga</em> personuppgifter om dig.</h1>
   <p class="lede">
     Den här webbplatsen är byggd efter en enkel princip: det starkaste integritetsskyddet är att inte samla in något från början.
   </p>
@@ -407,7 +433,7 @@ footer {
     <p>När du besöker <strong>gdpr.simplineers.se</strong> skapar vi inget konto, ingen session, ingen profil, ingen identifierare och inget besöksregister. Vi försöker inte känna igen dig. Vi försöker inte följa dig. Vi försöker inte mäta dig.</p>
   </div>
 
-  <h2>Vad vi inte använder</h2>
+  <h2>Vad webbplatsen inte använder</h2>
 
   <ul class="negation">
     <li>Inga cookies</li>
@@ -419,47 +445,55 @@ footer {
     <li>Inga sessioner</li>
     <li>Inga fingerprinting-tekniker</li>
     <li>Inga tredjepartsskript för spårning</li>
-    <li>Inga accessloggar</li>
-    <li>Ingen lagring av IP-adresser</li>
-    <li>Ingen lagring av user-agent</li>
-    <li>Ingen lagring av sidvisningar</li>
-    <li>Ingen lagring av hänvisningsadresser</li>
+    <li>Ingen egen besöksanalys</li>
+    <li>Inga egna accessloggar för analys</li>
     <li>Ingen profilering</li>
     <li>Ingen statistik på individnivå</li>
+    <li>Ingen återkoppling om vad du läst</li>
   </ul>
 
-  <p>Webbplatsen är medvetet utformad för att inte ha några personuppgifter om dig som besökare.</p>
+  <p>Webbplatsen är medvetet utformad för att inte ha någon operativ insamling eller behandling av personuppgifter om dig som besökare. Vi har inte aktiverat någon egen statistik, spårning eller logginsamling ovanpå hosting-nivån.</p>
 
-  <p>Den tekniska kommunikation som krävs för att en webbsida ska kunna levereras används endast i själva leveransögonblicket. Den omvandlas inte till loggar, analysdata, profiler, register eller historik. När sidan har levererats finns inga besöksuppgifter kvar hos oss.</p>
+  <h2>Hosting och driftloggar</h2>
+
+  <p>För att en webbsida ska kunna levereras till din webbläsare passerar tekniska uppgifter — som din IP-adress, din webbläsares identifierare och vilken fil som efterfrågas — normalt hosting- och nätverksleverantörens infrastruktur. Det är hur webben fungerar och något varje webbplats är beroende av.</p>
+
+  <div class="hosting-note">
+    <span class="label">Vad gäller hos hostingleverantör</span>
+    <p>Sådana leverantörer kan ha tekniska driftloggar för felsökning, säkerhet och leverans av tjänsten. Vi som operatör av webbplatsen har inte tillgång till dessa loggar för analysändamål, och vi använder dem inte för att profilera, följa eller mäta dig som besökare.</p>
+    <p>Det finns alltså ingen identifierbar bild av dig hos oss — men på leverantörsnivå kan tekniska uppgifter förekomma momentant eller under en kortare retention enligt deras egna villkor.</p>
+  </div>
 
   <h2>Det betyder i praktiken</h2>
 
   <ul class="triplet">
     <li>Vi vet inte <em>vem</em> du är.</li>
-    <li>Vi vet inte <em>att</em> du har varit här.</li>
-    <li>Vi vet inte <em>vilka sidor</em> du har läst.</li>
+    <li>Vi följer inte <em>vad</em> du läser.</li>
+    <li>Vi mäter inte <em>din närvaro</em>.</li>
   </ul>
 
-  <p>Vi har inget att sälja, dela, analysera, samköra, lämna ut eller radera.</p>
+  <p>Vi har inget att sälja, dela, analysera, samköra eller lämna ut.</p>
 
   <div class="principle">
     <span class="label">Princip</span>
-    <p>Det här är inte en cookie-banner i miniatyr. Det är själva integritetsmodellen för webbplatsen: noll insamling, noll spårning, noll lagring.</p>
+    <p>Det här är inte en cookie-banner i miniatyr. Det är själva integritetsmodellen för webbplatsen: ingen egen insamling, ingen spårning, inga register hos oss.</p>
   </div>
 
   <h2>Rättigheter och register</h2>
 
-  <p>Eftersom vi inte samlar in eller sparar några besöksuppgifter finns det <strong>inget personuppgiftsregister för webbplatsbesök</strong>. Det finns därför inga lagrade besöksdata att begära utdrag ur, rätta, flytta eller radera.</p>
+  <p>Eftersom vi inte själva samlar in eller registrerar några besöksuppgifter finns det <strong>inget personuppgiftsregister för webbplatsbesök hos oss</strong>. Det finns därför inga lagrade besöksdata att begära utdrag ur, rätta, flytta eller radera från Simplineers.</p>
 
-  <p><em>Det är avsiktligt.</em> Vi har valt bort datainsamling i stället för att försöka motivera den.</p>
+  <p>Om du vill veta hur driftloggar hanteras hos vår hostingleverantör hänvisar vi till leverantörens egen integritetsinformation. Vi har ingen avtalsmässig användning av sådana loggar för analys, profilering eller marknadsföring.</p>
+
+  <p><em>Det är avsiktligt.</em> Vi har valt bort egen datainsamling i stället för att försöka motivera den.</p>
 
   <h2>Kort sagt</h2>
 
-  <p>Du kan läsa här utan att bli registrerad. Du kan lära dig här utan att bli analyserad. Du kan lämna sidan utan att lämna spår hos oss.</p>
+  <p>Du kan läsa här utan att vi registrerar det. Du kan lära dig här utan att vi analyserar dig. Du kan lämna sidan utan att lämna spår hos oss.</p>
 
   <div class="short-summary">
     <span class="label">Sammanfattning</span>
-    <p>Den här webbplatsen samlar inte in, sparar eller analyserar några personuppgifter om dig som besökare. Vi använder inga cookies, ingen analytics, ingen spårning, inga formulär, inga sessioner och inga accessloggar. Vi lagrar inte IP-adresser, user-agent, sidvisningar eller hänvisningsadresser. Teknisk kommunikation används endast momentant för att leverera sidan och sparas inte. Vi vet inte vem du är, att du varit här eller vad du läst.</p>
+    <p>Webbplatsen har inte infört någon egen besöksanalys, spårning, cookies eller formulär. Vi använder inga analytics, inga pixlar, inga sessioner och inga inloggningar. Om tekniska driftloggar förekommer hos hosting- eller nätverksleverantör används de inte av oss för analys, profilering eller uppföljning av besökare. Vi har ingen identifierbar bild av dig som besökare.</p>
   </div>
 </main>
 

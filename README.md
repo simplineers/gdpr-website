@@ -39,20 +39,20 @@ resten av organisationens GRC-arbete.
 - Statisk HTML/CSS — inget byggsteg, inget ramverk, ingen bundler.
 - Egenhostade webbtypsnitt (Fraunces, Newsreader, JetBrains Mono, Inter, IBM Plex
   Sans/Mono) under `public/fonts/` — inga Google Fonts, inga externa anrop.
-- Små JS-hjälpare i vanilla JS under `public/js/`: `audit-tooltip.js` (tooltips
-  för markörer i audit-kravkartan) och `chips.js` (tangentbords- och
-  skärmläsarstöd för artikelchips i Venn-diagrammet).
-  `metod_god_efterlevnad.html` och `verksamhetsprocesser-aktiebolag.html` har
-  egna inline-skript för scroll-animation (IntersectionObserver, respekterar
-  `prefers-reduced-motion`) respektive klassificeringsfilter med `aria-live`.
+- Små JS-hjälpare i vanilla JS under `public/js/`:
+  - `audit-tooltip.js` — tooltips för markörer i audit-kravkartan
+  - `chips.js` — tangentbords- och skärmläsarstöd för artikelchips i Venn-diagrammet
+  - `scroll-animations.js` — reveal-animation vid scroll (IntersectionObserver,
+    respekterar `prefers-reduced-motion`) på metodsidan
+  - `process-filter.js` — klassificeringsfilter med `aria-live` på processkatalogen
 - Säkerhetshuvuden i `public/_headers`: strikt CSP, HSTS,
   `X-Frame-Options: DENY`, `Referrer-Policy: no-referrer` och en
   `Permissions-Policy` som väljer bort topics/FLoC.
 
 > **Notis om sökvägar för skript:** HTML-sidorna som använder externa skript
 > laddar från `js/…` (t.ex. `<script src="js/audit-tooltip.js">`), och `_headers`
-> har en `/js/*`-regel. Säkerställ att `audit-tooltip.js` och `chips.js` faktiskt
-> ligger i `public/js/` så att sökvägarna stämmer.
+> har en `/js/*`-regel. Säkerställ att samtliga skript faktiskt ligger i
+> `public/js/` så att sökvägarna stämmer.
 
 ## Filstruktur
 
@@ -69,7 +69,7 @@ resten av organisationens GRC-arbete.
     ├── gdpr-llm-audit-kravkarta.html
     ├── llm-arkitektur-sakerhetsgranskning.html
     ├── verksamhetsprocesser-aktiebolag.html
-    ├── js/                                   # audit-tooltip.js, chips.js
+    ├── js/                                   # audit-tooltip.js, chips.js, scroll-animations.js, process-filter.js
     └── fonts/                                # egenhostade .woff2-filer
 ```
 

@@ -6,6 +6,27 @@
 <meta name="description" content="Simplineers metod för god efterlevnad — en sammanhållen metod för dataskydd, informationssäkerhet, affärskontinuitet och regelefterlevnad där IT möter juridik. Utvecklad av Simplineers AB." />
 <title>Simplineers metod för god efterlevnad — där IT möter juridik</title>
 <style>
+/* ── Self-hosted fonts (inga externa anrop, ingen Google Fonts) ──────────── */
+/* Fraunces – variable (opsz, wght, SOFT, WONK), latin + latin-ext, normal + italic */
+@font-face { font-family: 'Fraunces'; font-style: normal; font-display: swap; font-weight: 100 900; src: url('fonts/fraunces-latin-full-normal.woff2') format('woff2-variations'); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family: 'Fraunces'; font-style: normal; font-display: swap; font-weight: 100 900; src: url('fonts/fraunces-latin-ext-full-normal.woff2') format('woff2-variations'); unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+@font-face { font-family: 'Fraunces'; font-style: italic; font-display: swap; font-weight: 100 900; src: url('fonts/fraunces-latin-full-italic.woff2') format('woff2-variations'); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family: 'Fraunces'; font-style: italic; font-display: swap; font-weight: 100 900; src: url('fonts/fraunces-latin-ext-full-italic.woff2') format('woff2-variations'); unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+/* Inter – 400/500/600/700, latin + latin-ext */
+@font-face { font-family: 'Inter'; font-style: normal; font-display: swap; font-weight: 400; src: url('fonts/inter-latin-400-normal.woff2') format('woff2'); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family: 'Inter'; font-style: normal; font-display: swap; font-weight: 400; src: url('fonts/inter-latin-ext-400-normal.woff2') format('woff2'); unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+@font-face { font-family: 'Inter'; font-style: normal; font-display: swap; font-weight: 500; src: url('fonts/inter-latin-500-normal.woff2') format('woff2'); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family: 'Inter'; font-style: normal; font-display: swap; font-weight: 500; src: url('fonts/inter-latin-ext-500-normal.woff2') format('woff2'); unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+@font-face { font-family: 'Inter'; font-style: normal; font-display: swap; font-weight: 600; src: url('fonts/inter-latin-600-normal.woff2') format('woff2'); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family: 'Inter'; font-style: normal; font-display: swap; font-weight: 600; src: url('fonts/inter-latin-ext-600-normal.woff2') format('woff2'); unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+@font-face { font-family: 'Inter'; font-style: normal; font-display: swap; font-weight: 700; src: url('fonts/inter-latin-700-normal.woff2') format('woff2'); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family: 'Inter'; font-style: normal; font-display: swap; font-weight: 700; src: url('fonts/inter-latin-ext-700-normal.woff2') format('woff2'); unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+/* JetBrains Mono – 400/500, latin + latin-ext */
+@font-face { font-family: 'JetBrains Mono'; font-style: normal; font-display: swap; font-weight: 400; src: url('fonts/jetbrains-mono-latin-400-normal.woff2') format('woff2'); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family: 'JetBrains Mono'; font-style: normal; font-display: swap; font-weight: 400; src: url('fonts/jetbrains-mono-latin-ext-400-normal.woff2') format('woff2'); unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+@font-face { font-family: 'JetBrains Mono'; font-style: normal; font-display: swap; font-weight: 500; src: url('fonts/jetbrains-mono-latin-500-normal.woff2') format('woff2'); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family: 'JetBrains Mono'; font-style: normal; font-display: swap; font-weight: 500; src: url('fonts/jetbrains-mono-latin-ext-500-normal.woff2') format('woff2'); unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+
   :root {
     --paper: #f1ebdf;
     --paper-2: #ece4d3;
@@ -23,9 +44,9 @@
     --meet-text: #805411;
     --highlight: #e9dcb8;
 
-    --serif: "Iowan Old Style", "Hoefler Text", "Palatino Linotype", Palatino, "URW Palladio L", P052, "Source Serif Pro", Georgia, serif;
-    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", "Inter", Roboto, Arial, sans-serif;
-    --mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, "Liberation Mono", monospace;
+    --serif: 'Fraunces', "Iowan Old Style", "Hoefler Text", "Palatino Linotype", Palatino, Georgia, serif;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Roboto, Arial, sans-serif;
+    --mono: 'JetBrains Mono', ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -1254,13 +1275,13 @@
         <path d="M 840 60 Q 560 60 440 105" stroke="url(#lawGrad)" stroke-width="1" fill="none" opacity="0.6"/>
         <path d="M 840 80 Q 540 80 440 110" stroke="url(#lawGrad)" stroke-width="0.8" fill="none" opacity="0.4"/>
         <path d="M 440 100 Q 440 160 440 195" stroke="#a17224" stroke-width="1.5" fill="none"/>
-        <text x="40" y="28" font-family="ui-monospace, monospace" font-size="10" letter-spacing="2" fill="#1d3c6b">IT &amp; INFORMATION</text>
-        <text x="840" y="28" font-family="ui-monospace, monospace" font-size="10" letter-spacing="2" fill="#7a3a23" text-anchor="end">JURIDIK &amp; REGELEFTERLEVNAD</text>
+        <text x="40" y="28" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="10" letter-spacing="2" fill="#1d3c6b">IT &amp; INFORMATION</text>
+        <text x="840" y="28" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="10" letter-spacing="2" fill="#7a3a23" text-anchor="end">JURIDIK &amp; REGELEFTERLEVNAD</text>
         <circle cx="440" cy="100" r="8" fill="#a17224"/>
         <circle cx="440" cy="100" r="16" fill="none" stroke="#b88a35" stroke-width="1" opacity="0.4"/>
         <circle cx="440" cy="100" r="26" fill="none" stroke="#b88a35" stroke-width="0.5" opacity="0.2"/>
-        <text x="440" y="145" font-family="Georgia, serif" font-style="italic" font-size="18" fill="#131a23" text-anchor="middle">Efterlevnad</text>
-        <text x="440" y="170" font-family="ui-monospace, monospace" font-size="10" letter-spacing="2" fill="#5f6775" text-anchor="middle">DEMONSTRERBAR &amp; LEVANDE</text>
+        <text x="440" y="145" font-family="'Fraunces', Georgia, serif" font-style="italic" font-size="18" fill="#131a23" text-anchor="middle">Efterlevnad</text>
+        <text x="440" y="170" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="10" letter-spacing="2" fill="#5f6775" text-anchor="middle">DEMONSTRERBAR &amp; LEVANDE</text>
       </svg>
     </div>
   </section>

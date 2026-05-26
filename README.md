@@ -1,24 +1,37 @@
 # gdpr.simplineers.se
 
-Källkod för **[gdpr.simplineers.se](https://gdpr.simplineers.se)** — en svenskspråkig
-utbildningsplats om GDPR och dataskydd, skriven för dig som arbetar i gränslandet
-mellan juridik och IT.
+Källkod för **[gdpr.simplineers.se](https://gdpr.simplineers.se)** — Simplineers AB:s
+publika sida med metod, verktyg och visualiseringar i gränslandet mellan dataskydd,
+informationssäkerhet, affärskontinuitet och regelefterlevnad.
 
-Premissen: dataskydd är varken ett rent juridiskt eller ett rent tekniskt problem.
-Platsen behandlar det som något som börjar i lagens *syfte*, översätts till kontroller,
-mäts som risk och förvaltas i samma system som resten av organisationens GRC-arbete.
+Premissen: god efterlevnad är varken ett rent juridiskt eller ett rent tekniskt
+problem. Sidan behandlar det som något som börjar i lagens *syfte*, översätts till
+processer och kontroller, mäts som risk och förvaltas i samma evidensstruktur som
+resten av organisationens GRC-arbete.
 
 ## Sidor
 
-- **`index.html`** — startsida: lärvägar, verktyg och metod.
-- **`gdpr_infosak_venn.html`** — GDPR-artiklar placerade mot CIA-triaden (Art. 32.1(b))
-  som ett interaktivt Venn-diagram, med övriga artiklar i en dataskyddsram runt om.
-- **`llm-arkitektur-sakerhetsgranskning.html`** — storskalig LLM-arkitektur sedd ur ett
-  IT-säkerhets- och granskningsperspektiv; expanderbara komponentkort med
-  granskningspunkter.
+- **`index.html`** — startsida för Simplineers AB: vad vi gör, ingång till metod,
+  verktyg och manifest.
+- **`metod_god_efterlevnad.html`** — *Simplineers metod för god efterlevnad*:
+  sju faser som binder samman styrning, process, information, risk och kontroll.
+  Fyra riskperspektiv (dataskydd, informationssäkerhet, leverantör, kontinuitet)
+  och referensbibliotek över relevanta regelverk (GDPR, DORA, NIS2/CSL, AI Act,
+  ISO 27001/27701/22301/42001 m.fl.).
+- **`gdpr_infosak_venn.html`** — GDPR-artiklar placerade mot CIA-triaden
+  (Art. 32.1(b)) som ett interaktivt Venn-diagram, med övriga artiklar i en
+  dataskyddsram runt om.
+- **`llm-arkitektur-sakerhetsgranskning.html`** — storskalig LLM-arkitektur sedd
+  ur ett IT-säkerhets- och granskningsperspektiv; expanderbara komponentkort med
+  granskningspunkter över träningsplan, inferensplan och tvärgående funktioner.
 - **`gdpr-llm-audit-kravkarta.html`** — GDPR-funktionens audit-kravkarta för
   LLM-applikationsarkitektur; 24 moduler mappade mot risker, kontroller,
   loggningspunkter och artiklar.
+- **`verksamhetsprocesser-aktiebolag.html`** — referenskatalog över 158
+  verksamhetsprocesser i svenska aktiebolag, fördelade på 13 områden och
+  klassificerade som *allmänna*, *typiska*, *villkorade*, *bransch-/storleksberoende*
+  eller *mognadsberoende*. ROPA-relevanta processer märks separat. Ankare för
+  processkartläggning, ROPA-arbete och internkontroll.
 - **`integritet.html`** — integritetsnotis.
 
 ## Teknik
@@ -26,16 +39,23 @@ mäts som risk och förvaltas i samma system som resten av organisationens GRC-a
 - Statisk HTML/CSS — inget byggsteg, inget ramverk, ingen bundler.
 - Egenhostade webbtypsnitt (Fraunces, Newsreader, JetBrains Mono, Inter, IBM Plex
   Sans/Mono) under `public/fonts/` — inga Google Fonts, inga externa anrop.
-- Små JS-hjälpare i vanilla JS: `audit-tooltip.js` (tooltips för markörer) och
-  `chips.js` (tangentbords- och skärmläsarstöd för artikelchips).
-- Säkerhetshuvuden i `public/_headers`: strikt CSP, HSTS, `X-Frame-Options: DENY`,
-  `Referrer-Policy: no-referrer` och en `Permissions-Policy` som väljer bort
-  topics/FLoC.
+  Undantag: `metod_god_efterlevnad.html` använder systemtypsnitt (Iowan Old Style,
+  Hoefler Text, Palatino, Source Serif Pro m.fl.) och laddar inga webbtypsnitt
+  alls.
+- Små JS-hjälpare i vanilla JS under `public/js/`: `audit-tooltip.js` (tooltips
+  för markörer i audit-kravkartan) och `chips.js` (tangentbords- och
+  skärmläsarstöd för artikelchips i Venn-diagrammet).
+  `metod_god_efterlevnad.html` och `verksamhetsprocesser-aktiebolag.html` har
+  egna inline-skript för scroll-animation (IntersectionObserver, respekterar
+  `prefers-reduced-motion`) respektive klassificeringsfilter med `aria-live`.
+- Säkerhetshuvuden i `public/_headers`: strikt CSP, HSTS,
+  `X-Frame-Options: DENY`, `Referrer-Policy: no-referrer` och en
+  `Permissions-Policy` som väljer bort topics/FLoC.
 
-> **Notis om sökvägar för skript:** HTML-sidorna laddar skript från `js/…`
-> (t.ex. `<script src="js/audit-tooltip.js">`), och `_headers` har en `/js/*`-regel.
-> Säkerställ att `audit-tooltip.js` och `chips.js` faktiskt ligger i `public/js/`
-> så att sökvägarna stämmer.
+> **Notis om sökvägar för skript:** HTML-sidorna som använder externa skript
+> laddar från `js/…` (t.ex. `<script src="js/audit-tooltip.js">`), och `_headers`
+> har en `/js/*`-regel. Säkerställ att `audit-tooltip.js` och `chips.js` faktiskt
+> ligger i `public/js/` så att sökvägarna stämmer.
 
 ## Filstruktur
 
@@ -43,15 +63,17 @@ mäts som risk och förvaltas i samma system som resten av organisationens GRC-a
 .
 ├── LICENSE
 ├── README.md
-└── public/                  # publiceringskatalog
-    ├── _headers              # säkerhets- och cache-huvuden (Cloudflare Pages / Netlify)
+└── public/                                   # publiceringskatalog
+    ├── _headers                              # säkerhets- och cache-huvuden (Cloudflare Pages / Netlify)
     ├── index.html
     ├── integritet.html
+    ├── metod_god_efterlevnad.html
     ├── gdpr_infosak_venn.html
     ├── gdpr-llm-audit-kravkarta.html
     ├── llm-arkitektur-sakerhetsgranskning.html
-    ├── js/                   # audit-tooltip.js, chips.js
-    └── fonts/                # egenhostade .woff2-filer
+    ├── verksamhetsprocesser-aktiebolag.html
+    ├── js/                                   # audit-tooltip.js, chips.js
+    └── fonts/                                # egenhostade .woff2-filer
 ```
 
 ## Lokal utveckling

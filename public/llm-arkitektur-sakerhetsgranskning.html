@@ -4,6 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>LLM-arkitektur — granskningsperspektiv</title>
+<meta name="description" content="Storskalig LLM-arkitektur sedd ur ett IT-säkerhets- och granskningsperspektiv: expanderbara komponentkort med granskningspunkter över träningsplan, inferensplan och tvärgående funktioner.">
 <style>
 /* ── Self-hosted fonts (inga externa anrop, ingen Google Fonts) ──────────── */
 @font-face { font-family: 'Fraunces'; font-style: normal; font-display: swap; font-weight: 100 900; src: url('fonts/fraunces-latin-full-normal.woff2') format('woff2-variations'); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
@@ -246,6 +247,7 @@
     pointer-events: none;
   }
   .comp-num {
+    display: block;
     font-family: 'JetBrains Mono', monospace;
     font-size: 10px;
     color: var(--ink-soft);
@@ -253,6 +255,7 @@
     margin-bottom: 6px;
   }
   .comp-name {
+    display: block;
     font-family: 'Fraunces', serif;
     font-size: 17px;
     font-weight: 600;
@@ -261,6 +264,7 @@
     letter-spacing: -0.01em;
   }
   .comp-desc {
+    display: block;
     font-size: 13px;
     color: var(--ink-soft);
     margin-bottom: 10px;
@@ -427,6 +431,12 @@
     color: var(--ink-soft);
     opacity: 0.7;
   }
+  .foot-meta a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+  }
+  .foot-meta a:hover { color: var(--ink); opacity: 1; }
 
   /* DATA-FLOW SUMMARY */
   .summary {
@@ -514,10 +524,10 @@
 
       <details class="comp has-data">
         <summary>
-          <div class="comp-num">A.01</div>
-          <div class="comp-name">Datainsamling <span class="visually-hidden">(Behandlar personuppgifter)</span></div>
-          <div class="comp-desc">Webbcrawling, licensierade korpusar, böcker, kod, syntetisk data.</div>
-          <div class="comp-tags"><span class="tag data">PD</span><span class="tag">Källa</span><span class="tag">Lineage</span></div>
+          <span class="comp-num">A.01</span>
+          <span class="comp-name">Datainsamling <span class="visually-hidden">(Behandlar personuppgifter)</span></span>
+          <span class="comp-desc">Webbcrawling, licensierade korpusar, böcker, kod, syntetisk data.</span>
+          <span class="comp-tags"><span class="tag data">PD</span><span class="tag">Källa</span><span class="tag">Lineage</span></span>
         </summary>
         <div class="audit">
           <div class="audit-label">Granskningspunkter</div>
@@ -533,10 +543,10 @@
 
       <details class="comp has-data">
         <summary>
-          <div class="comp-num">A.02</div>
-          <div class="comp-name">Bearbetnings&shy;pipeline <span class="visually-hidden">(Behandlar personuppgifter)</span></div>
-          <div class="comp-desc">Deduplicering, kvalitetsfilter, PII-skrubbare, toxicitets&shy;filter, tokenisering.</div>
-          <div class="comp-tags"><span class="tag data">PD</span><span class="tag">Pipeline</span><span class="tag warn">Filter-bypass</span></div>
+          <span class="comp-num">A.02</span>
+          <span class="comp-name">Bearbetnings&shy;pipeline <span class="visually-hidden">(Behandlar personuppgifter)</span></span>
+          <span class="comp-desc">Deduplicering, kvalitetsfilter, PII-skrubbare, toxicitets&shy;filter, tokenisering.</span>
+          <span class="comp-tags"><span class="tag data">PD</span><span class="tag">Pipeline</span><span class="tag warn">Filter-bypass</span></span>
         </summary>
         <div class="audit">
           <div class="audit-label">Granskningspunkter</div>
@@ -551,10 +561,10 @@
 
       <details class="comp has-data">
         <summary>
-          <div class="comp-num">A.03</div>
-          <div class="comp-name">Data lake / warehouse <span class="visually-hidden">(Behandlar personuppgifter)</span></div>
-          <div class="comp-desc">Petabytestor lagring av råa och kuraterade dataset, ofta versionerade.</div>
-          <div class="comp-tags"><span class="tag data">PD</span><span class="tag">Lagring</span><span class="tag">Retention</span></div>
+          <span class="comp-num">A.03</span>
+          <span class="comp-name">Data lake / warehouse <span class="visually-hidden">(Behandlar personuppgifter)</span></span>
+          <span class="comp-desc">Petabytestor lagring av råa och kuraterade dataset, ofta versionerade.</span>
+          <span class="comp-tags"><span class="tag data">PD</span><span class="tag">Lagring</span><span class="tag">Retention</span></span>
         </summary>
         <div class="audit">
           <div class="audit-label">Granskningspunkter</div>
@@ -569,10 +579,10 @@
 
       <details class="comp has-data">
         <summary>
-          <div class="comp-num">A.04</div>
-          <div class="comp-name">RLHF-/preferensdata <span class="visually-hidden">(Behandlar personuppgifter)</span></div>
-          <div class="comp-desc">Mänskligt märkta jämförelser och annoteringar för alignment.</div>
-          <div class="comp-tags"><span class="tag data">PD</span><span class="tag">Anställd/leverantör</span></div>
+          <span class="comp-num">A.04</span>
+          <span class="comp-name">RLHF-/preferensdata <span class="visually-hidden">(Behandlar personuppgifter)</span></span>
+          <span class="comp-desc">Mänskligt märkta jämförelser och annoteringar för alignment.</span>
+          <span class="comp-tags"><span class="tag data">PD</span><span class="tag">Anställd/leverantör</span></span>
         </summary>
         <div class="audit">
           <div class="audit-label">Granskningspunkter</div>
@@ -587,10 +597,10 @@
 
       <details class="comp">
         <summary>
-          <div class="comp-num">A.05</div>
-          <div class="comp-name">Tränings&shy;kluster</div>
-          <div class="comp-desc">GPU/TPU-kluster, distribuerad orkestrering, jobb-schedulers.</div>
-          <div class="comp-tags"><span class="tag">Compute</span><span class="tag">Supply chain</span></div>
+          <span class="comp-num">A.05</span>
+          <span class="comp-name">Tränings&shy;kluster</span>
+          <span class="comp-desc">GPU/TPU-kluster, distribuerad orkestrering, jobb-schedulers.</span>
+          <span class="comp-tags"><span class="tag">Compute</span><span class="tag">Supply chain</span></span>
         </summary>
         <div class="audit">
           <div class="audit-label">Granskningspunkter</div>
@@ -605,10 +615,10 @@
 
       <details class="comp">
         <summary>
-          <div class="comp-num">A.06</div>
-          <div class="comp-name">Checkpoint-lagring</div>
-          <div class="comp-desc">Mellanliggande viktversioner under träning, ofta TB stora per checkpoint.</div>
-          <div class="comp-tags"><span class="tag">Artefakt</span><span class="tag warn">Exfiltration</span></div>
+          <span class="comp-num">A.06</span>
+          <span class="comp-name">Checkpoint-lagring</span>
+          <span class="comp-desc">Mellanliggande viktversioner under träning, ofta TB stora per checkpoint.</span>
+          <span class="comp-tags"><span class="tag">Artefakt</span><span class="tag warn">Exfiltration</span></span>
         </summary>
         <div class="audit">
           <div class="audit-label">Granskningspunkter</div>
@@ -623,10 +633,10 @@
 
       <details class="comp has-data">
         <summary>
-          <div class="comp-num">A.07</div>
-          <div class="comp-name">Experimentspårning <span class="visually-hidden">(Behandlar personuppgifter)</span></div>
-          <div class="comp-desc">Hyperparametrar, mätvärden, körnings&shy;historik (typ Weights &amp; Biases).</div>
-          <div class="comp-tags"><span class="tag data">PD anställd</span><span class="tag">Metadata</span></div>
+          <span class="comp-num">A.07</span>
+          <span class="comp-name">Experimentspårning <span class="visually-hidden">(Behandlar personuppgifter)</span></span>
+          <span class="comp-desc">Hyperparametrar, mätvärden, körnings&shy;historik (typ Weights &amp; Biases).</span>
+          <span class="comp-tags"><span class="tag data">PD anställd</span><span class="tag">Metadata</span></span>
         </summary>
         <div class="audit">
           <div class="audit-label">Granskningspunkter</div>
@@ -640,10 +650,10 @@
 
       <details class="comp">
         <summary>
-          <div class="comp-num">A.08</div>
-          <div class="comp-name">Modellregister</div>
-          <div class="comp-desc">Slutgiltiga vikter, tokenizers, adapters/LoRA, modellkort.</div>
-          <div class="comp-tags"><span class="tag">Artefakt</span><span class="tag warn">Kronjuvel</span></div>
+          <span class="comp-num">A.08</span>
+          <span class="comp-name">Modellregister</span>
+          <span class="comp-desc">Slutgiltiga vikter, tokenizers, adapters/LoRA, modellkort.</span>
+          <span class="comp-tags"><span class="tag">Artefakt</span><span class="tag warn">Kronjuvel</span></span>
         </summary>
         <div class="audit">
           <div class="audit-label">Granskningspunkter</div>
@@ -669,10 +679,10 @@
 
       <details class="comp has-data">
         <summary>
-          <div class="comp-num">B.01</div>
-          <div class="comp-name">Edge / Nätverk <span class="visually-hidden">(Behandlar personuppgifter)</span></div>
-          <div class="comp-desc">CDN, WAF, DDoS-skydd, TLS-terminering, geo-routing.</div>
-          <div class="comp-tags"><span class="tag data">PD transient</span><span class="tag">AppSec</span><span class="tag">Residens</span></div>
+          <span class="comp-num">B.01</span>
+          <span class="comp-name">Edge / Nätverk <span class="visually-hidden">(Behandlar personuppgifter)</span></span>
+          <span class="comp-desc">CDN, WAF, DDoS-skydd, TLS-terminering, geo-routing.</span>
+          <span class="comp-tags"><span class="tag data">PD transient</span><span class="tag">AppSec</span><span class="tag">Residens</span></span>
         </summary>
         <div class="audit">
           <div class="audit-label">Granskningspunkter</div>
@@ -687,10 +697,10 @@
 
       <details class="comp has-data">
         <summary>
-          <div class="comp-num">B.02</div>
-          <div class="comp-name">API-gateway <span class="visually-hidden">(Behandlar personuppgifter)</span></div>
-          <div class="comp-desc">Routing, auth, kvoter, request/response-loggning.</div>
-          <div class="comp-tags"><span class="tag data">PD</span><span class="tag">Granskningslogg</span></div>
+          <span class="comp-num">B.02</span>
+          <span class="comp-name">API-gateway <span class="visually-hidden">(Behandlar personuppgifter)</span></span>
+          <span class="comp-desc">Routing, auth, kvoter, request/response-loggning.</span>
+          <span class="comp-tags"><span class="tag data">PD</span><span class="tag">Granskningslogg</span></span>
         </summary>
         <div class="audit">
           <div class="audit-label">Granskningspunkter</div>
@@ -706,10 +716,10 @@
 
       <details class="comp has-data">
         <summary>
-          <div class="comp-num">B.03</div>
-          <div class="comp-name">Tokenizer <span class="visually-hidden">(Behandlar personuppgifter)</span></div>
-          <div class="comp-desc">Deterministisk omvandling text ↔ tokens innan modellanrop.</div>
-          <div class="comp-tags"><span class="tag data">PD transient</span><span class="tag">Förbehandling</span></div>
+          <span class="comp-num">B.03</span>
+          <span class="comp-name">Tokenizer <span class="visually-hidden">(Behandlar personuppgifter)</span></span>
+          <span class="comp-desc">Deterministisk omvandling text ↔ tokens innan modellanrop.</span>
+          <span class="comp-tags"><span class="tag data">PD transient</span><span class="tag">Förbehandling</span></span>
         </summary>
         <div class="audit">
           <div class="audit-label">Granskningspunkter</div>
@@ -723,10 +733,10 @@
 
       <details class="comp has-data">
         <summary>
-          <div class="comp-num">B.04</div>
-          <div class="comp-name">Input-klassificerare <span class="visually-hidden">(Behandlar personuppgifter)</span></div>
-          <div class="comp-desc">Hjälpmodeller för jailbreak-, abuse-, CSAM- och PII-detektion <em>innan</em> huvudmodellen.</div>
-          <div class="comp-tags"><span class="tag data">PD</span><span class="tag">Safety</span><span class="tag warn">Bypass-risk</span></div>
+          <span class="comp-num">B.04</span>
+          <span class="comp-name">Input-klassificerare <span class="visually-hidden">(Behandlar personuppgifter)</span></span>
+          <span class="comp-desc">Hjälpmodeller för jailbreak-, abuse-, CSAM- och PII-detektion <em>innan</em> huvudmodellen.</span>
+          <span class="comp-tags"><span class="tag data">PD</span><span class="tag">Safety</span><span class="tag warn">Bypass-risk</span></span>
         </summary>
         <div class="audit">
           <div class="audit-label">Granskningspunkter</div>
@@ -741,10 +751,10 @@
 
       <details class="comp has-data">
         <summary>
-          <div class="comp-num">B.05</div>
-          <div class="comp-name">Inferens-runtime <span class="visually-hidden">(Behandlar personuppgifter)</span></div>
-          <div class="comp-desc">Själva modellservern: laddar vikter, kör forward-pass, hanterar batchning.</div>
-          <div class="comp-tags"><span class="tag data">PD i RAM</span><span class="tag warn">Sidekanaler</span></div>
+          <span class="comp-num">B.05</span>
+          <span class="comp-name">Inferens-runtime <span class="visually-hidden">(Behandlar personuppgifter)</span></span>
+          <span class="comp-desc">Själva modellservern: laddar vikter, kör forward-pass, hanterar batchning.</span>
+          <span class="comp-tags"><span class="tag data">PD i RAM</span><span class="tag warn">Sidekanaler</span></span>
         </summary>
         <div class="audit">
           <div class="audit-label">Granskningspunkter</div>
@@ -760,10 +770,10 @@
 
       <details class="comp has-data">
         <summary>
-          <div class="comp-num">B.06</div>
-          <div class="comp-name">KV-cache <span class="visually-hidden">(Behandlar personuppgifter)</span></div>
-          <div class="comp-desc">Mellanlagrad attention-state under en session — känslig representationsdata härledd från prompt och kontext.</div>
-          <div class="comp-tags"><span class="tag data">PD i RAM</span><span class="tag warn">Cross-tenant</span></div>
+          <span class="comp-num">B.06</span>
+          <span class="comp-name">KV-cache <span class="visually-hidden">(Behandlar personuppgifter)</span></span>
+          <span class="comp-desc">Mellanlagrad attention-state under en session — känslig representationsdata härledd från prompt och kontext.</span>
+          <span class="comp-tags"><span class="tag data">PD i RAM</span><span class="tag warn">Cross-tenant</span></span>
         </summary>
         <div class="audit">
           <div class="audit-label">Granskningspunkter</div>
@@ -778,10 +788,10 @@
 
       <details class="comp has-data">
         <summary>
-          <div class="comp-num">B.07</div>
-          <div class="comp-name">Hjälpmodeller <span class="visually-hidden">(Behandlar personuppgifter)</span></div>
-          <div class="comp-desc">Embedding, reranker, reward, klassificerare — egna modellkedjor med egen livscykel.</div>
-          <div class="comp-tags"><span class="tag data">PD</span><span class="tag">Modellkedja</span></div>
+          <span class="comp-num">B.07</span>
+          <span class="comp-name">Hjälpmodeller <span class="visually-hidden">(Behandlar personuppgifter)</span></span>
+          <span class="comp-desc">Embedding, reranker, reward, klassificerare — egna modellkedjor med egen livscykel.</span>
+          <span class="comp-tags"><span class="tag data">PD</span><span class="tag">Modellkedja</span></span>
         </summary>
         <div class="audit">
           <div class="audit-label">Granskningspunkter</div>
@@ -795,10 +805,10 @@
 
       <details class="comp has-data">
         <summary>
-          <div class="comp-num">B.08</div>
-          <div class="comp-name">Output-filter <span class="visually-hidden">(Behandlar personuppgifter)</span></div>
-          <div class="comp-desc">Streaming-klassificerare som granskar genererad text och kan avbryta/redigera.</div>
-          <div class="comp-tags"><span class="tag data">PD output</span><span class="tag">Safety</span><span class="tag">PII-redaktion</span></div>
+          <span class="comp-num">B.08</span>
+          <span class="comp-name">Output-filter <span class="visually-hidden">(Behandlar personuppgifter)</span></span>
+          <span class="comp-desc">Streaming-klassificerare som granskar genererad text och kan avbryta/redigera.</span>
+          <span class="comp-tags"><span class="tag data">PD output</span><span class="tag">Safety</span><span class="tag">PII-redaktion</span></span>
         </summary>
         <div class="audit">
           <div class="audit-label">Granskningspunkter</div>
@@ -812,10 +822,10 @@
 
       <details class="comp has-data">
         <summary>
-          <div class="comp-num">B.09</div>
-          <div class="comp-name">Konversations-DB <span class="visually-hidden">(Behandlar personuppgifter)</span></div>
-          <div class="comp-desc">Persistent lagring av användarens chattar, ofta med projekt&shy;struktur.</div>
-          <div class="comp-tags"><span class="tag data">PD</span><span class="tag">DSR</span><span class="tag">Retention</span></div>
+          <span class="comp-num">B.09</span>
+          <span class="comp-name">Konversations-DB <span class="visually-hidden">(Behandlar personuppgifter)</span></span>
+          <span class="comp-desc">Persistent lagring av användarens chattar, ofta med projekt&shy;struktur.</span>
+          <span class="comp-tags"><span class="tag data">PD</span><span class="tag">DSR</span><span class="tag">Retention</span></span>
         </summary>
         <div class="audit">
           <div class="audit-label">Granskningspunkter</div>
@@ -830,10 +840,10 @@
 
       <details class="comp has-data">
         <summary>
-          <div class="comp-num">B.10</div>
-          <div class="comp-name">Minne / personalisering <span class="visually-hidden">(Behandlar personuppgifter)</span></div>
-          <div class="comp-desc">Strukturerad sammanfattning av användarprofil som injiceras i kommande prompter.</div>
-          <div class="comp-tags"><span class="tag data">PD</span><span class="tag warn">Profilering</span></div>
+          <span class="comp-num">B.10</span>
+          <span class="comp-name">Minne / personalisering <span class="visually-hidden">(Behandlar personuppgifter)</span></span>
+          <span class="comp-desc">Strukturerad sammanfattning av användarprofil som injiceras i kommande prompter.</span>
+          <span class="comp-tags"><span class="tag data">PD</span><span class="tag warn">Profilering</span></span>
         </summary>
         <div class="audit">
           <div class="audit-label">Granskningspunkter</div>
@@ -848,10 +858,10 @@
 
       <details class="comp has-data">
         <summary>
-          <div class="comp-num">B.11</div>
-          <div class="comp-name">Användaruppladdade filer <span class="visually-hidden">(Behandlar personuppgifter)</span></div>
-          <div class="comp-desc">Bilder, PDF:er, kod, dokument som användare bifogar till sessionen.</div>
-          <div class="comp-tags"><span class="tag data">PD</span><span class="tag warn">Tredjepartsdata</span></div>
+          <span class="comp-num">B.11</span>
+          <span class="comp-name">Användaruppladdade filer <span class="visually-hidden">(Behandlar personuppgifter)</span></span>
+          <span class="comp-desc">Bilder, PDF:er, kod, dokument som användare bifogar till sessionen.</span>
+          <span class="comp-tags"><span class="tag data">PD</span><span class="tag warn">Tredjepartsdata</span></span>
         </summary>
         <div class="audit">
           <div class="audit-label">Granskningspunkter</div>
@@ -866,10 +876,10 @@
 
       <details class="comp has-data">
         <summary>
-          <div class="comp-num">B.12</div>
-          <div class="comp-name">Vector store / RAG <span class="visually-hidden">(Behandlar personuppgifter)</span></div>
-          <div class="comp-desc">Embeddings av användarens dokument för semantisk sökning.</div>
-          <div class="comp-tags"><span class="tag data">PD i embedding</span><span class="tag warn">Inversion</span></div>
+          <span class="comp-num">B.12</span>
+          <span class="comp-name">Vector store / RAG <span class="visually-hidden">(Behandlar personuppgifter)</span></span>
+          <span class="comp-desc">Embeddings av användarens dokument för semantisk sökning.</span>
+          <span class="comp-tags"><span class="tag data">PD i embedding</span><span class="tag warn">Inversion</span></span>
         </summary>
         <div class="audit">
           <div class="audit-label">Granskningspunkter</div>
@@ -885,10 +895,10 @@
 
       <details class="comp has-data">
         <summary>
-          <div class="comp-num">B.13</div>
-          <div class="comp-name">Verktyg &amp; sandlådor <span class="visually-hidden">(Behandlar personuppgifter)</span></div>
-          <div class="comp-desc">Code interpreter, webbläsning, filsystem per session, MCP-konnektorer.</div>
-          <div class="comp-tags"><span class="tag data">PD</span><span class="tag warn">Sandbox-escape</span><span class="tag warn">SSRF</span><span class="tag">OAuth</span></div>
+          <span class="comp-num">B.13</span>
+          <span class="comp-name">Verktyg &amp; sandlådor <span class="visually-hidden">(Behandlar personuppgifter)</span></span>
+          <span class="comp-desc">Code interpreter, webbläsning, filsystem per session, MCP-konnektorer.</span>
+          <span class="comp-tags"><span class="tag data">PD</span><span class="tag warn">Sandbox-escape</span><span class="tag warn">SSRF</span><span class="tag">OAuth</span></span>
         </summary>
         <div class="audit">
           <div class="audit-label">Granskningspunkter</div>
@@ -904,10 +914,10 @@
 
       <details class="comp has-data">
         <summary>
-          <div class="comp-num">B.14</div>
-          <div class="comp-name">Återkopplings-/feedback&shy;data <span class="visually-hidden">(Behandlar personuppgifter)</span></div>
-          <div class="comp-desc">Tummen upp/ner, flagga, redigeringar — kan fl&ouml;da tillbaka till A.04.</div>
-          <div class="comp-tags"><span class="tag data">PD</span><span class="tag">Loop till träning</span></div>
+          <span class="comp-num">B.14</span>
+          <span class="comp-name">Återkopplings-/feedback&shy;data <span class="visually-hidden">(Behandlar personuppgifter)</span></span>
+          <span class="comp-desc">Tummen upp/ner, flagga, redigeringar — kan fl&ouml;da tillbaka till A.04.</span>
+          <span class="comp-tags"><span class="tag data">PD</span><span class="tag">Loop till träning</span></span>
         </summary>
         <div class="audit">
           <div class="audit-label">Granskningspunkter</div>
@@ -932,10 +942,10 @@
 
       <details class="comp has-data">
         <summary>
-          <div class="comp-num">C.01</div>
-          <div class="comp-name">Identity Provider (IdP) <span class="visually-hidden">(Behandlar personuppgifter)</span></div>
-          <div class="comp-desc">SSO/OAuth, MFA, kontoregister, API-nycklar.</div>
-          <div class="comp-tags"><span class="tag data">PD</span><span class="tag">IAM</span></div>
+          <span class="comp-num">C.01</span>
+          <span class="comp-name">Identity Provider (IdP) <span class="visually-hidden">(Behandlar personuppgifter)</span></span>
+          <span class="comp-desc">SSO/OAuth, MFA, kontoregister, API-nycklar.</span>
+          <span class="comp-tags"><span class="tag data">PD</span><span class="tag">IAM</span></span>
         </summary>
         <div class="audit">
           <div class="audit-label">Granskningspunkter</div>
@@ -950,10 +960,10 @@
 
       <details class="comp">
         <summary>
-          <div class="comp-num">C.02</div>
-          <div class="comp-name">Hemligheter / KMS</div>
-          <div class="comp-desc">Centraliserad nyckel- och hemlighetshantering, HSM-backad.</div>
-          <div class="comp-tags"><span class="tag">Krypto</span><span class="tag">BYOK</span></div>
+          <span class="comp-num">C.02</span>
+          <span class="comp-name">Hemligheter / KMS</span>
+          <span class="comp-desc">Centraliserad nyckel- och hemlighetshantering, HSM-backad.</span>
+          <span class="comp-tags"><span class="tag">Krypto</span><span class="tag">BYOK</span></span>
         </summary>
         <div class="audit">
           <div class="audit-label">Granskningspunkter</div>
@@ -967,10 +977,10 @@
 
       <details class="comp has-data">
         <summary>
-          <div class="comp-num">C.03</div>
-          <div class="comp-name">Observability <span class="visually-hidden">(Behandlar personuppgifter)</span></div>
-          <div class="comp-desc">Loggar, metrics, distributed tracing, audit trail. Volym och retention bör riskklassas separat.</div>
-          <div class="comp-tags"><span class="tag data">PD i loggar</span><span class="tag">SIEM</span></div>
+          <span class="comp-num">C.03</span>
+          <span class="comp-name">Observability <span class="visually-hidden">(Behandlar personuppgifter)</span></span>
+          <span class="comp-desc">Loggar, metrics, distributed tracing, audit trail. Volym och retention bör riskklassas separat.</span>
+          <span class="comp-tags"><span class="tag data">PD i loggar</span><span class="tag">SIEM</span></span>
         </summary>
         <div class="audit">
           <div class="audit-label">Granskningspunkter</div>
@@ -985,10 +995,10 @@
 
       <details class="comp has-data">
         <summary>
-          <div class="comp-num">C.04</div>
-          <div class="comp-name">DSR-pipeline <span class="visually-hidden">(Behandlar personuppgifter)</span></div>
-          <div class="comp-desc">Tekniskt flöde för export, radering, rättelse, dataportabilitet.</div>
-          <div class="comp-tags"><span class="tag data">PD</span><span class="tag">Art. 15–22</span></div>
+          <span class="comp-num">C.04</span>
+          <span class="comp-name">DSR-pipeline <span class="visually-hidden">(Behandlar personuppgifter)</span></span>
+          <span class="comp-desc">Tekniskt flöde för export, radering, rättelse, dataportabilitet.</span>
+          <span class="comp-tags"><span class="tag data">PD</span><span class="tag">Art. 15–22</span></span>
         </summary>
         <div class="audit">
           <div class="audit-label">Granskningspunkter</div>
@@ -1003,10 +1013,10 @@
 
       <details class="comp">
         <summary>
-          <div class="comp-num">C.05</div>
-          <div class="comp-name">Region-routing</div>
-          <div class="comp-desc">Mekanism som tvingar trafik och lagring till valt geografiskt område.</div>
-          <div class="comp-tags"><span class="tag">Residens</span><span class="tag">Schrems II</span></div>
+          <span class="comp-num">C.05</span>
+          <span class="comp-name">Region-routing</span>
+          <span class="comp-desc">Mekanism som tvingar trafik och lagring till valt geografiskt område.</span>
+          <span class="comp-tags"><span class="tag">Residens</span><span class="tag">Schrems II</span></span>
         </summary>
         <div class="audit">
           <div class="audit-label">Granskningspunkter</div>
@@ -1020,10 +1030,10 @@
 
       <details class="comp has-data">
         <summary>
-          <div class="comp-num">C.06</div>
-          <div class="comp-name">Policy &amp; governance <span class="visually-hidden">(Behandlar personuppgifter)</span></div>
-          <div class="comp-desc">Styrdokument, modellkort, eval-rapporter, samtyckes&shy;hantering.</div>
-          <div class="comp-tags"><span class="tag data">PD samtycke</span><span class="tag">GRC</span></div>
+          <span class="comp-num">C.06</span>
+          <span class="comp-name">Policy &amp; governance <span class="visually-hidden">(Behandlar personuppgifter)</span></span>
+          <span class="comp-desc">Styrdokument, modellkort, eval-rapporter, samtyckes&shy;hantering.</span>
+          <span class="comp-tags"><span class="tag data">PD samtycke</span><span class="tag">GRC</span></span>
         </summary>
         <div class="audit">
           <div class="audit-label">Granskningspunkter</div>
@@ -1037,10 +1047,10 @@
 
       <details class="comp">
         <summary>
-          <div class="comp-num">C.07</div>
-          <div class="comp-name">Eval &amp; red-team</div>
-          <div class="comp-desc">Testdataset, automatiska benchmarks, mänsklig red-teaming, jailbreak-bibliotek.</div>
-          <div class="comp-tags"><span class="tag">Continuous testing</span></div>
+          <span class="comp-num">C.07</span>
+          <span class="comp-name">Eval &amp; red-team</span>
+          <span class="comp-desc">Testdataset, automatiska benchmarks, mänsklig red-teaming, jailbreak-bibliotek.</span>
+          <span class="comp-tags"><span class="tag">Continuous testing</span></span>
         </summary>
         <div class="audit">
           <div class="audit-label">Granskningspunkter</div>
@@ -1054,10 +1064,10 @@
 
       <details class="comp has-data">
         <summary>
-          <div class="comp-num">C.08</div>
-          <div class="comp-name">Incident- &amp; abuse-response <span class="visually-hidden">(Behandlar personuppgifter)</span></div>
-          <div class="comp-desc">Detektion, eskalering, modellrollback, kund&shy;notifiering.</div>
-          <div class="comp-tags"><span class="tag data">PD incident</span><span class="tag">IR</span><span class="tag">Art. 33</span></div>
+          <span class="comp-num">C.08</span>
+          <span class="comp-name">Incident- &amp; abuse-response <span class="visually-hidden">(Behandlar personuppgifter)</span></span>
+          <span class="comp-desc">Detektion, eskalering, modellrollback, kund&shy;notifiering.</span>
+          <span class="comp-tags"><span class="tag data">PD incident</span><span class="tag">IR</span><span class="tag">Art. 33</span></span>
         </summary>
         <div class="audit">
           <div class="audit-label">Granskningspunkter</div>
@@ -1078,23 +1088,26 @@
     <p><strong>Terminologi:</strong> <em>PD</em> = personuppgifter; <em>PII</em> används här som teknisk detektionskategori för identifierande personuppgifter (t.ex. namn, personnummer, e-post) i pipelines och filter. I löpande text används <em>personuppgifter</em> som huvudbegrepp i linje med GDPR.</p>
   </div>
 
-  <div class="foot-privacy">
-    <strong>Integritet:</strong> Den här webbplatsen samlar inte in, sparar eller analyserar några personuppgifter om dig som besökare. Vi använder inga cookies, ingen analytics, ingen spårning, inga formulär, inga sessioner och inga accessloggar. Vi lagrar inte IP-adresser, user-agent, sidvisningar eller hänvisningsadresser. Teknisk kommunikation används endast momentant för att leverera sidan och sparas inte. <em>Vi vet inte vem du är, att du varit här eller vad du läst.</em> <a href="integritet.html">Läs hela integritetsnotisen →</a>
-  </div>
+  <footer class="site-foot">
+    <div class="foot-privacy">
+      <strong>Integritet:</strong> Den här webbplatsen samlar inte in, sparar eller analyserar några personuppgifter om dig som besökare. Vi använder inga cookies, ingen analytics, ingen spårning, inga formulär, inga sessioner och inga accessloggar. Vi lagrar inte IP-adresser, user-agent, sidvisningar eller hänvisningsadresser. Teknisk kommunikation används endast momentant för att leverera sidan och sparas inte. <em>Vi vet inte vem du är, att du varit här eller vad du läst.</em> <a href="integritet.html">Läs hela integritetsnotisen →</a>
+    </div>
 
-  <div class="foot-license">
-    <span class="cc-badge">CC BY 4.0</span>
-    <span>
-      <span class="work-title">LLM-arkitektur — granskningsperspektiv</span>
-      av <strong>Kim Hindart, Simplineers AB</strong> är licensierad under
-      <a href="https://creativecommons.org/licenses/by/4.0/deed.sv" target="_blank" rel="noopener noreferrer">Creative Commons Erkännande 4.0 Internationell</a>.
-      Fri att dela, kopiera och anpassa — även kommersiellt — så länge upphovsperson anges.
-    </span>
-  </div>
-  <div class="foot-meta">
-    <span>Källor/inspiration: OWASP Top 10 for LLM Applications 2025 · ISO/IEC 42001:2023</span>
-    <span>© 2026 Kim Hindart · Simplineers AB · Stockholm</span>
-  </div>
+    <div class="foot-license">
+      <span class="cc-badge">CC BY 4.0</span>
+      <span>
+        <span class="work-title">LLM-arkitektur — granskningsperspektiv</span>
+        av <strong>Kim Hindart, Simplineers AB</strong> är licensierad under
+        <a href="https://creativecommons.org/licenses/by/4.0/deed.sv" target="_blank" rel="noopener noreferrer">Creative Commons Erkännande 4.0 Internationell</a>.
+        Fri att dela, kopiera och anpassa — även kommersiellt — så länge upphovsperson anges.
+      </span>
+    </div>
+    <div class="foot-meta">
+      <span>Källor/inspiration: OWASP Top 10 for LLM Applications 2025 · ISO/IEC 42001:2023</span>
+      <span>© 2026 Kim Hindart · Simplineers AB · Stockholm</span>
+      <span><a href="index.html">gdpr.simplineers.se</a></span>
+    </div>
+  </footer>
 
 </div>
 </body>

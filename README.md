@@ -39,9 +39,6 @@ resten av organisationens GRC-arbete.
 - Statisk HTML/CSS — inget byggsteg, inget ramverk, ingen bundler.
 - Egenhostade webbtypsnitt (Fraunces, Newsreader, JetBrains Mono, Inter, IBM Plex
   Sans/Mono) under `public/fonts/` — inga Google Fonts, inga externa anrop.
-  Undantag: `metod_god_efterlevnad.html` använder systemtypsnitt (Iowan Old Style,
-  Hoefler Text, Palatino, Source Serif Pro m.fl.) och laddar inga webbtypsnitt
-  alls.
 - Små JS-hjälpare i vanilla JS under `public/js/`: `audit-tooltip.js` (tooltips
   för markörer i audit-kravkartan) och `chips.js` (tangentbords- och
   skärmläsarstöd för artikelchips i Venn-diagrammet).

@@ -648,6 +648,45 @@
     color: var(--ink);
     letter-spacing: -0.005em;
   }
+  .reg-acr-link {
+    text-decoration: none;
+    border-bottom: 1px dotted var(--rule);
+    padding-bottom: 1px;
+    transition: color 0.15s ease, border-color 0.15s ease;
+  }
+  .reg-acr-link::after {
+    content: "↗";
+    display: inline-block;
+    margin-left: 3px;
+    font-family: var(--mono);
+    font-size: 9px;
+    vertical-align: super;
+    color: var(--ink-mute);
+    transition: color 0.15s ease;
+    /* Decorative — aria-label on the link already says "öppnas i ny flik" */
+  }
+  .reg-acr-link:hover,
+  .reg-acr-link:focus-visible {
+    color: var(--law);
+    border-bottom-color: var(--law);
+  }
+  .reg-acr-link:hover::after,
+  .reg-acr-link:focus-visible::after {
+    color: var(--law);
+  }
+  .reg-acr-link:focus-visible {
+    outline: 2px solid var(--law);
+    outline-offset: 3px;
+  }
+  .reg-link-hint {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--ink-mute);
+    padding: 1px 3px;
+    border: 1px solid var(--rule-soft);
+    background: var(--paper-2);
+    border-radius: 2px;
+  }
   .reg-name {
     font-size: 13.5px;
     color: var(--ink-soft);
@@ -1406,7 +1445,7 @@
     </p>
 
     <p class="scope-note">
-      <strong>Senast faktagranskat:</strong> 2026-05-26. Tillämplighet, ikraftträdande och övergångsregler ska alltid verifieras per organisation, sektor, roll, tjänst, system, geografisk närvaro och behandlingstyp.
+      <strong>Senast faktagranskat:</strong> 2026-05-26. Tillämplighet, ikraftträdande och övergångsregler ska alltid verifieras per organisation, sektor, roll, tjänst, system, geografisk närvaro och behandlingstyp. Akronymer markerade med <span class="reg-link-hint">↗</span> är klickbara länkar till primärkälla (EUR-Lex, Riksdagen, Finansinspektionen, EBA respektive ISO) och öppnas i ny flik.
     </p>
 
     <div class="reg-grid">
@@ -1414,21 +1453,21 @@
       <div class="reg-cat">
         <h3 class="reg-cat-title"><span class="reg-cat-num">A</span>EU-rättsakter</h3>
         <ul class="reg-list">
-          <li><span class="reg-acr">GDPR</span><span class="reg-name">Allmänna dataskyddsförordningen <span class="reg-ref">(EU) 2016/679</span></span></li>
-          <li><span class="reg-acr">DORA</span><span class="reg-name">Digital Operational Resilience Act <span class="reg-ref">(EU) 2022/2554</span></span></li>
-          <li><span class="reg-acr">NIS2</span><span class="reg-name">Direktivet om nät- och informationssäkerhet <span class="reg-ref">(EU) 2022/2555</span></span></li>
-          <li><span class="reg-acr">AI Act</span><span class="reg-name">Förordning om artificiell intelligens <span class="reg-ref">(EU) 2024/1689 — fasvis tillämplig med olika datum för förbud, GPAI, transparens och högriskregler</span></span></li>
-          <li><span class="reg-acr">CRA</span><span class="reg-name">Cyber Resilience Act <span class="reg-ref">(EU) 2024/2847</span></span></li>
-          <li><span class="reg-acr">CER</span><span class="reg-name">Kritiska entiteters motståndskraft <span class="reg-ref">Direktiv (EU) 2022/2557</span></span></li>
-          <li><span class="reg-acr">Data Act</span><span class="reg-name">Tillgång till och användning av data <span class="reg-ref">(EU) 2023/2854</span></span></li>
-          <li><span class="reg-acr">DGA</span><span class="reg-name">Data Governance Act <span class="reg-ref">(EU) 2022/868</span></span></li>
-          <li><span class="reg-acr">ePrivacy</span><span class="reg-name">Direktivet om integritet och elektronisk kommunikation <span class="reg-ref">2002/58/EG</span></span></li>
-          <li><span class="reg-acr">AMLR</span><span class="reg-name">Penningtvättsförordningen <span class="reg-ref">(EU) 2024/1624</span></span></li>
-          <li><span class="reg-acr">AMLD6</span><span class="reg-name">Penningtvättsdirektivet <span class="reg-ref">(EU) 2024/1640</span></span></li>
-          <li><span class="reg-acr">PSD2</span><span class="reg-name">Betaltjänstdirektivet <span class="reg-ref">(EU) 2015/2366</span></span></li>
+          <li><a class="reg-acr reg-acr-link" href="https://eur-lex.europa.eu/eli/reg/2016/679/oj" target="_blank" rel="noopener noreferrer" title="Primärkälla på EUR-Lex" aria-label="GDPR — Primärkälla på EUR-Lex (öppnas i ny flik)">GDPR</a><span class="reg-name">Allmänna dataskyddsförordningen <span class="reg-ref">(EU) 2016/679</span></span></li>
+          <li><a class="reg-acr reg-acr-link" href="https://eur-lex.europa.eu/eli/reg/2022/2554/oj" target="_blank" rel="noopener noreferrer" title="Primärkälla på EUR-Lex" aria-label="DORA — Primärkälla på EUR-Lex (öppnas i ny flik)">DORA</a><span class="reg-name">Digital Operational Resilience Act <span class="reg-ref">(EU) 2022/2554</span></span></li>
+          <li><a class="reg-acr reg-acr-link" href="https://eur-lex.europa.eu/eli/dir/2022/2555/oj" target="_blank" rel="noopener noreferrer" title="Primärkälla på EUR-Lex" aria-label="NIS2 — Primärkälla på EUR-Lex (öppnas i ny flik)">NIS2</a><span class="reg-name">Direktivet om nät- och informationssäkerhet <span class="reg-ref">(EU) 2022/2555</span></span></li>
+          <li><a class="reg-acr reg-acr-link" href="https://eur-lex.europa.eu/eli/reg/2024/1689/oj" target="_blank" rel="noopener noreferrer" title="Primärkälla på EUR-Lex" aria-label="AI Act — Primärkälla på EUR-Lex (öppnas i ny flik)">AI Act</a><span class="reg-name">Förordning om artificiell intelligens <span class="reg-ref">(EU) 2024/1689 — fasvis tillämplig med olika datum för förbud, GPAI, transparens och högriskregler</span></span></li>
+          <li><a class="reg-acr reg-acr-link" href="https://eur-lex.europa.eu/eli/reg/2024/2847/oj" target="_blank" rel="noopener noreferrer" title="Primärkälla på EUR-Lex" aria-label="CRA — Primärkälla på EUR-Lex (öppnas i ny flik)">CRA</a><span class="reg-name">Cyber Resilience Act <span class="reg-ref">(EU) 2024/2847</span></span></li>
+          <li><a class="reg-acr reg-acr-link" href="https://eur-lex.europa.eu/eli/dir/2022/2557/oj" target="_blank" rel="noopener noreferrer" title="Primärkälla på EUR-Lex" aria-label="CER — Primärkälla på EUR-Lex (öppnas i ny flik)">CER</a><span class="reg-name">Kritiska entiteters motståndskraft <span class="reg-ref">Direktiv (EU) 2022/2557</span></span></li>
+          <li><a class="reg-acr reg-acr-link" href="https://eur-lex.europa.eu/eli/reg/2023/2854/oj" target="_blank" rel="noopener noreferrer" title="Primärkälla på EUR-Lex" aria-label="Data Act — Primärkälla på EUR-Lex (öppnas i ny flik)">Data Act</a><span class="reg-name">Tillgång till och användning av data <span class="reg-ref">(EU) 2023/2854</span></span></li>
+          <li><a class="reg-acr reg-acr-link" href="https://eur-lex.europa.eu/eli/reg/2022/868/oj" target="_blank" rel="noopener noreferrer" title="Primärkälla på EUR-Lex" aria-label="DGA — Primärkälla på EUR-Lex (öppnas i ny flik)">DGA</a><span class="reg-name">Data Governance Act <span class="reg-ref">(EU) 2022/868</span></span></li>
+          <li><a class="reg-acr reg-acr-link" href="https://eur-lex.europa.eu/eli/dir/2002/58/oj" target="_blank" rel="noopener noreferrer" title="Primärkälla på EUR-Lex" aria-label="ePrivacy — Primärkälla på EUR-Lex (öppnas i ny flik)">ePrivacy</a><span class="reg-name">Direktivet om integritet och elektronisk kommunikation <span class="reg-ref">2002/58/EG</span></span></li>
+          <li><a class="reg-acr reg-acr-link" href="https://eur-lex.europa.eu/eli/reg/2024/1624/oj" target="_blank" rel="noopener noreferrer" title="Primärkälla på EUR-Lex" aria-label="AMLR — Primärkälla på EUR-Lex (öppnas i ny flik)">AMLR</a><span class="reg-name">Penningtvättsförordningen <span class="reg-ref">(EU) 2024/1624</span></span></li>
+          <li><a class="reg-acr reg-acr-link" href="https://eur-lex.europa.eu/eli/dir/2024/1640/oj" target="_blank" rel="noopener noreferrer" title="Primärkälla på EUR-Lex" aria-label="AMLD6 — Primärkälla på EUR-Lex (öppnas i ny flik)">AMLD6</a><span class="reg-name">Penningtvättsdirektivet <span class="reg-ref">(EU) 2024/1640</span></span></li>
+          <li><a class="reg-acr reg-acr-link" href="https://eur-lex.europa.eu/eli/dir/2015/2366/oj" target="_blank" rel="noopener noreferrer" title="Primärkälla på EUR-Lex" aria-label="PSD2 — Primärkälla på EUR-Lex (öppnas i ny flik)">PSD2</a><span class="reg-name">Betaltjänstdirektivet <span class="reg-ref">(EU) 2015/2366</span></span></li>
           <li><span class="reg-acr">PSD3 / PSR</span><span class="reg-name">Reviderat betaltjänstpaket <span class="reg-status upcoming">Under införande</span></span></li>
-          <li><span class="reg-acr">MiFID II</span><span class="reg-name">Marknader för finansiella instrument <span class="reg-ref">Direktiv 2014/65/EU</span></span></li>
-          <li><span class="reg-acr">WBD</span><span class="reg-name">Visselblåsardirektivet <span class="reg-ref">(EU) 2019/1937</span></span></li>
+          <li><a class="reg-acr reg-acr-link" href="https://eur-lex.europa.eu/eli/dir/2014/65/oj" target="_blank" rel="noopener noreferrer" title="Primärkälla på EUR-Lex" aria-label="MiFID II — Primärkälla på EUR-Lex (öppnas i ny flik)">MiFID II</a><span class="reg-name">Marknader för finansiella instrument <span class="reg-ref">Direktiv 2014/65/EU</span></span></li>
+          <li><a class="reg-acr reg-acr-link" href="https://eur-lex.europa.eu/eli/dir/2019/1937/oj" target="_blank" rel="noopener noreferrer" title="Primärkälla på EUR-Lex" aria-label="WBD — Primärkälla på EUR-Lex (öppnas i ny flik)">WBD</a><span class="reg-name">Visselblåsardirektivet <span class="reg-ref">(EU) 2019/1937</span></span></li>
         </ul>
       </div>
 
@@ -1436,17 +1475,17 @@
         <h3 class="reg-cat-title"><span class="reg-cat-num">B</span>Svensk rätt, föreskrifter &amp; tillsynsvägledning</h3>
         <ul class="reg-list">
           <li><span class="reg-acr">DSL</span><span class="reg-name">Dataskyddslagen <span class="reg-ref">(2018:218)</span></span></li>
-          <li><span class="reg-acr">CSL</span><span class="reg-name">Cybersäkerhetslagen <span class="reg-ref">(2025:1506) — genomför NIS2, i kraft 15 januari 2026; myndighetsföreskrifter preciserar krav och tillsyn under 2026</span></span></li>
+          <li><a class="reg-acr reg-acr-link" href="https://www.riksdagen.se/sv/dokument-och-lagar/dokument/svensk-forfattningssamling/cybersakerhetslag-20251506_sfs-2025-1506/" target="_blank" rel="noopener noreferrer" title="Primärkälla på Riksdagen" aria-label="CSL — Primärkälla på Riksdagen (öppnas i ny flik)">CSL</a><span class="reg-name">Cybersäkerhetslagen <span class="reg-ref">(2025:1506) — genomför NIS2, i kraft 15 januari 2026; myndighetsföreskrifter preciserar krav och tillsyn under 2026</span></span></li>
           <li><span class="reg-acr">PTL</span><span class="reg-name">Penningtvättslagen <span class="reg-ref">(2017:630)</span></span></li>
           <li><span class="reg-acr">LBF</span><span class="reg-name">Lag om bank- och finansieringsrörelse <span class="reg-ref">— banksekretess kap. 1, 10 §</span></span></li>
           <li><span class="reg-acr">SkL</span><span class="reg-name">Säkerhetsskyddslagen <span class="reg-ref">(2018:585)</span></span></li>
           <li><span class="reg-acr">LEK</span><span class="reg-name">Lag om elektronisk kommunikation <span class="reg-ref">(2022:482)</span></span></li>
           <li><span class="reg-acr">VBL</span><span class="reg-name">Visselblåsarlagen <span class="reg-ref">(2021:890)</span></span></li>
-          <li><span class="reg-acr">FFFS 2014:1</span><span class="reg-name">Styrning, riskhantering och kontroll i kreditinstitut <span class="reg-ref">— ändrad bl.a. genom FFFS 2024:28 med anledning av DORA</span></span></li>
-          <li><span class="reg-acr">FFFS 2024:21</span><span class="reg-name">Insättningssystem — ersätter FFFS 2014:5; IT- och informationssäkerhetskrav hanteras nu huvudsakligen via DORA</span></li>
-          <li class="historic"><span class="reg-acr">FFFS 2014:5</span><span class="reg-name">Informationssäkerhet, it-verksamhet och insättningssystem <span class="reg-status">Upphävd 17 jan 2025</span></span></li>
-          <li><span class="reg-acr">EBA GL</span><span class="reg-name">ICT and security risk management <span class="reg-ref">— begränsat/justerat till följd av DORA; tillämplighet verifieras per aktör och tjänst</span></span></li>
-          <li><span class="reg-acr">EBA OL / TPR</span><span class="reg-name">Outsourcing och tredjepartsrisk <span class="reg-ref">— tillämpning verifieras mot DORA och aktuell EBA-vägledning per aktör, tjänst och ICT-/non-ICT-scope</span></span></li>
+          <li><a class="reg-acr reg-acr-link" href="https://www.fi.se/sv/vara-register/sok-fffs/" target="_blank" rel="noopener noreferrer" title="Källa: FI:s föreskriftsregister (sök på FFFS-nummer)" aria-label="FFFS 2014:1 — Källa: FI:s föreskriftsregister (sök på FFFS-nummer) (öppnas i ny flik)">FFFS 2014:1</a><span class="reg-name">Styrning, riskhantering och kontroll i kreditinstitut <span class="reg-ref">— ändrad bl.a. genom FFFS 2024:28 med anledning av DORA</span></span></li>
+          <li><a class="reg-acr reg-acr-link" href="https://www.fi.se/sv/vara-register/sok-fffs/" target="_blank" rel="noopener noreferrer" title="Källa: FI:s föreskriftsregister (sök på FFFS-nummer)" aria-label="FFFS 2024:21 — Källa: FI:s föreskriftsregister (sök på FFFS-nummer) (öppnas i ny flik)">FFFS 2024:21</a><span class="reg-name">Insättningssystem — ersätter FFFS 2014:5; IT- och informationssäkerhetskrav hanteras nu huvudsakligen via DORA</span></li>
+          <li class="historic"><a class="reg-acr reg-acr-link" href="https://www.fi.se/sv/vara-register/sok-fffs/" target="_blank" rel="noopener noreferrer" title="Källa: FI:s föreskriftsregister (sök på FFFS-nummer)" aria-label="FFFS 2014:5 — Källa: FI:s föreskriftsregister (sök på FFFS-nummer) (öppnas i ny flik)">FFFS 2014:5</a><span class="reg-name">Informationssäkerhet, it-verksamhet och insättningssystem <span class="reg-status">Upphävd 17 jan 2025</span></span></li>
+          <li><a class="reg-acr reg-acr-link" href="https://www.eba.europa.eu/regulation-and-policy" target="_blank" rel="noopener noreferrer" title="Källa: EBA — sök riktlinjer" aria-label="EBA GL — Källa: EBA — sök riktlinjer (öppnas i ny flik)">EBA GL</a><span class="reg-name">ICT and security risk management <span class="reg-ref">— begränsat/justerat till följd av DORA; tillämplighet verifieras per aktör och tjänst</span></span></li>
+          <li><a class="reg-acr reg-acr-link" href="https://www.eba.europa.eu/regulation-and-policy" target="_blank" rel="noopener noreferrer" title="Källa: EBA — sök riktlinjer" aria-label="EBA OL / TPR — Källa: EBA — sök riktlinjer (öppnas i ny flik)">EBA OL / TPR</a><span class="reg-name">Outsourcing och tredjepartsrisk <span class="reg-ref">— tillämpning verifieras mot DORA och aktuell EBA-vägledning per aktör, tjänst och ICT-/non-ICT-scope</span></span></li>
         </ul>
       </div>
 
@@ -1455,7 +1494,7 @@
         <ul class="reg-list">
           <li><span class="reg-acr">27001</span><span class="reg-name">Ledningssystem för informationssäkerhet <span class="reg-ref">(ISMS)</span></span></li>
           <li><span class="reg-acr">27017</span><span class="reg-name">Molnsäkerhet — vägledning för molnrelaterade säkerhetskontroller baserad på 27002</span></li>
-          <li><span class="reg-acr">27701:2025</span><span class="reg-name">Integritetsledningssystem <span class="reg-ref">(PIMS) — fristående standard sedan okt 2025</span></span></li>
+          <li><a class="reg-acr reg-acr-link" href="https://www.iso.org/standard/27701" target="_blank" rel="noopener noreferrer" title="Primärkälla på ISO" aria-label="27701:2025 — Primärkälla på ISO (öppnas i ny flik)">27701:2025</a><span class="reg-name">Integritetsledningssystem <span class="reg-ref">(PIMS) — fristående standard sedan okt 2025</span></span></li>
           <li><span class="reg-acr">22301</span><span class="reg-name">Verksamhetskontinuitet <span class="reg-ref">(BCMS)</span></span></li>
           <li><span class="reg-acr">37301</span><span class="reg-name">Ledningssystem för regelefterlevnad <span class="reg-ref">(CMS)</span></span></li>
           <li><span class="reg-acr">42001</span><span class="reg-name">Ledningssystem för AI <span class="reg-ref">(AIMS)</span></span></li>

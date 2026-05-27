@@ -47,9 +47,12 @@ resten av organisationens GRC-arbete.
   - `scroll-animations.js` — reveal-animation vid scroll (IntersectionObserver,
     respekterar `prefers-reduced-motion`) på metodsidan
   - `process-filter.js` — klassificeringsfilter med `aria-live` på processkatalogen
-- Säkerhetshuvuden i `public/_headers`: strikt CSP, HSTS,
-  `X-Frame-Options: DENY`, `Referrer-Policy: no-referrer` och en
-  `Permissions-Policy` som väljer bort topics/FLoC.
+- Säkerhetshuvuden i `public/_headers`: stram CSP för skript och resurser
+  (`default-src 'self'`, `script-src 'self'`, `object-src 'none'`,
+  `frame-ancestors 'none'`), HSTS, `X-Frame-Options: DENY`,
+  `Referrer-Policy: no-referrer` och en `Permissions-Policy` som väljer bort
+  topics/FLoC. Inline-CSS tillåts medvetet eftersom sidorna är statiska och
+  självbärande utan extern stylesheet-pipeline.
 
 > **Notis om sökvägar för skript:** HTML-sidorna som använder externa skript
 > laddar från `js/…` (t.ex. `<script src="js/audit-tooltip.js">`), och `_headers`
@@ -109,6 +112,12 @@ Hela projektet — kod och innehåll — är licensierat under
 
 Fri att dela, kopiera och anpassa — även kommersiellt — så länge upphovsperson anges.
 Se `LICENSE` för fullständiga villkor. Upphovsangivelse: *Kim Hindart, Simplineers*.
+
+> CC BY 4.0 är vald för enhetlighet eftersom kod, innehåll och visualiseringar är
+> tätt sammanvävda på sidan. För återanvändning av enbart kodfragment (HTML/CSS/JS
+> under `public/js/` och inline-snuttar) gäller samma villkor — upphovsangivelse
+> räcker. Om en framtida uppdelning till MIT/Apache-2.0 för kod och CC BY 4.0 för
+> innehåll skulle bli aktuellt görs den explicit och dokumenteras här.
 
 ## Upphovsperson
 

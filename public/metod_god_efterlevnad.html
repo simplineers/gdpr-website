@@ -1025,6 +1025,12 @@
 .see-also__t{display:block;font-weight:600;font-size:.96rem;margin-bottom:.18rem}
 .see-also__d{display:block;font-size:.8rem;opacity:.6}
 @media(max-width:520px){.see-also__grid{grid-template-columns:1fr}}
+
+  /* ── Diagram (tillagt) ─────────────────────────────────────────── */
+  .method-figure{margin:44px auto 8px;max-width:760px;}
+  .method-figure.wide{max-width:940px;}
+  .method-figure svg{width:100%;height:auto;display:block;}
+  .method-figure figcaption{font-family:var(--mono);font-size:10.5px;line-height:1.55;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);text-align:center;margin:16px auto 0;max-width:660px;}
 </style>
 </head>
 <body class="no-js">
@@ -1133,6 +1139,22 @@
         <p class="desc">Det som gör efterlevnad demonstrerbar — och levande över tid.</p>
       </div>
     </div>
+
+    <figure class="method-figure" aria-labelledby="dep-figtitle">
+      <svg viewBox="0 0 720 470" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="dep-figtitle dep-figdesc">
+        <title id="dep-figtitle">Beroendekedjans sju nivåer med återkoppling</title>
+        <desc id="dep-figdesc">Kedjan löper från verksamhetsmål överst, via tjänster, information, leverantörer, risker och kontroller, till evidens och förbättring nederst. Varje nivå vilar på den föregående, och lärandet på nivå sju återkopplar till målen på nivå ett.</desc>
+        <defs>
+          <marker id="m-dep-loop" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7.5" markerHeight="7.5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#7a3a23"/></marker>
+        </defs>
+        <line x1="176" y1="43" x2="176" y2="379" stroke="#ddd2bc" stroke-width="1.4"/>
+        <path d="M171 69 L176 74 L181 69" fill="none" stroke="#5f6775" stroke-width="1.4"/><path d="M171 125 L176 130 L181 125" fill="none" stroke="#5f6775" stroke-width="1.4"/><path d="M171 181 L176 186 L181 181" fill="none" stroke="#5f6775" stroke-width="1.4"/><path d="M171 237 L176 242 L181 237" fill="none" stroke="#5f6775" stroke-width="1.4"/><path d="M171 293 L176 298 L181 293" fill="none" stroke="#5f6775" stroke-width="1.4"/><path d="M171 349 L176 354 L181 349" fill="none" stroke="#5f6775" stroke-width="1.4"/>
+        <g><rect x="150" y="20" width="420" height="46" rx="8" fill="#f1ebdf" stroke="#cdc2ad"/><circle cx="176" cy="43" r="13" fill="#f6efdd" stroke="#805411"/><text x="176" y="47" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="11" fill="#805411" text-anchor="middle">1</text><text x="202" y="48" font-family="'Fraunces', Georgia, serif" font-size="15" fill="#131a23">Verksamhetsmål</text></g><g><rect x="150" y="76" width="420" height="46" rx="8" fill="#f1ebdf" stroke="#cdc2ad"/><circle cx="176" cy="99" r="13" fill="#f6efdd" stroke="#805411"/><text x="176" y="103" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="11" fill="#805411" text-anchor="middle">2</text><text x="202" y="104" font-family="'Fraunces', Georgia, serif" font-size="15" fill="#131a23">Kritiska tjänster &amp; processer</text></g><g><rect x="150" y="132" width="420" height="46" rx="8" fill="#f1ebdf" stroke="#cdc2ad"/><circle cx="176" cy="155" r="13" fill="#f6efdd" stroke="#805411"/><text x="176" y="159" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="11" fill="#805411" text-anchor="middle">3</text><text x="202" y="160" font-family="'Fraunces', Georgia, serif" font-size="15" fill="#131a23">Behandlingar, tillgångar &amp; system</text></g><g><rect x="150" y="188" width="420" height="46" rx="8" fill="#f1ebdf" stroke="#cdc2ad"/><circle cx="176" cy="211" r="13" fill="#f6efdd" stroke="#805411"/><text x="176" y="215" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="11" fill="#805411" text-anchor="middle">4</text><text x="202" y="216" font-family="'Fraunces', Georgia, serif" font-size="15" fill="#131a23">Leverantörer, flöden &amp; beroenden</text></g><g><rect x="150" y="244" width="420" height="46" rx="8" fill="#f1ebdf" stroke="#cdc2ad"/><circle cx="176" cy="267" r="13" fill="#f6efdd" stroke="#805411"/><text x="176" y="271" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="11" fill="#805411" text-anchor="middle">5</text><text x="202" y="272" font-family="'Fraunces', Georgia, serif" font-size="15" fill="#131a23">Risker (fyra perspektiv)</text></g><g><rect x="150" y="300" width="420" height="46" rx="8" fill="#f1ebdf" stroke="#cdc2ad"/><circle cx="176" cy="323" r="13" fill="#f6efdd" stroke="#805411"/><text x="176" y="327" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="11" fill="#805411" text-anchor="middle">6</text><text x="202" y="328" font-family="'Fraunces', Georgia, serif" font-size="15" fill="#131a23">Kontroller, åtgärder &amp; ansvar</text></g><g><rect x="150" y="356" width="420" height="46" rx="8" fill="#f1ebdf" stroke="#cdc2ad"/><circle cx="176" cy="379" r="13" fill="#f6efdd" stroke="#805411"/><text x="176" y="383" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="11" fill="#805411" text-anchor="middle">7</text><text x="202" y="384" font-family="'Fraunces', Georgia, serif" font-size="15" fill="#131a23">Evidens, uppföljning &amp; förbättring</text></g>
+        <path d="M 570 379 C 660 379 660 43 570 43" fill="none" stroke="#7a3a23" stroke-width="2" marker-end="url(#m-dep-loop)"/>
+        <text x="686" y="211" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="9" letter-spacing="2" fill="#7a3a23" text-anchor="middle" transform="rotate(-90 686 211)">LÄRANDE ÅTERKOPPLAR</text>
+      </svg>
+      <figcaption>Beroendekedjan — varje nivå vilar på den föregående, och lärandet (nivå 7) återkopplar till målen (nivå 1).</figcaption>
+    </figure>
   </section>
 
   <!-- PHASES -->
@@ -1141,6 +1163,22 @@
       <div class="section-tag"><span class="num">II.</span>Sju faser</div>
       <h2 id="phases-title">Metoden i <em>sju sammanlänkade steg</em>.</h2>
     </div>
+
+    <figure class="method-figure wide" aria-labelledby="fas-figtitle">
+      <svg viewBox="0 0 1000 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="fas-figtitle fas-figdesc">
+        <title id="fas-figtitle">De sju faserna som en levande cykel</title>
+        <desc id="fas-figdesc">Faserna ett till sju följer på varandra från styrning till evidens och uppföljning, och uppföljningen återkopplar till styrningen så att efterlevnaden hålls levande över tid.</desc>
+        <defs>
+          <marker id="m-fas-a" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#5f6775"/></marker>
+          <marker id="m-fas-loop" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="7.5" markerHeight="7.5" orient="auto"><path d="M0 0 L10 5 L0 10 z" fill="#a17224"/></marker>
+        </defs>
+        <g><rect x="16" y="24" width="122" height="92" rx="9" fill="#f1ebdf" stroke="#cdc2ad"/><text x="77" y="50" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="13" letter-spacing="1" fill="#a17224" text-anchor="middle">01</text><text x="77" y="80" font-family="'Fraunces', Georgia, serif" font-size="14.5" fill="#131a23" text-anchor="middle">Styrning</text></g><g><rect x="156" y="24" width="122" height="92" rx="9" fill="#f1ebdf" stroke="#cdc2ad"/><text x="217" y="50" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="13" letter-spacing="1" fill="#a17224" text-anchor="middle">02</text><text x="217" y="80" font-family="'Fraunces', Georgia, serif" font-size="14.5" fill="#131a23" text-anchor="middle">Processer</text></g><g><rect x="296" y="24" width="122" height="92" rx="9" fill="#f1ebdf" stroke="#cdc2ad"/><text x="357" y="50" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="13" letter-spacing="1" fill="#a17224" text-anchor="middle">03</text><text x="357" y="74" font-family="'Fraunces', Georgia, serif" font-size="14.5" fill="#131a23" text-anchor="middle">Information</text><text x="357" y="92" font-family="'Fraunces', Georgia, serif" font-size="14.5" fill="#131a23" text-anchor="middle">&amp; data</text></g><g><rect x="436" y="24" width="122" height="92" rx="9" fill="#f1ebdf" stroke="#cdc2ad"/><text x="497" y="50" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="13" letter-spacing="1" fill="#a17224" text-anchor="middle">04</text><text x="497" y="74" font-family="'Fraunces', Georgia, serif" font-size="14.5" fill="#131a23" text-anchor="middle">ROPA &amp;</text><text x="497" y="92" font-family="'Fraunces', Georgia, serif" font-size="14.5" fill="#131a23" text-anchor="middle">dataskydd</text></g><g><rect x="576" y="24" width="122" height="92" rx="9" fill="#f1ebdf" stroke="#cdc2ad"/><text x="637" y="50" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="13" letter-spacing="1" fill="#a17224" text-anchor="middle">05</text><text x="637" y="74" font-family="'Fraunces', Georgia, serif" font-size="14.5" fill="#131a23" text-anchor="middle">Risk &amp;</text><text x="637" y="92" font-family="'Fraunces', Georgia, serif" font-size="14.5" fill="#131a23" text-anchor="middle">konsekvens</text></g><g><rect x="716" y="24" width="122" height="92" rx="9" fill="#f1ebdf" stroke="#cdc2ad"/><text x="777" y="50" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="13" letter-spacing="1" fill="#a17224" text-anchor="middle">06</text><text x="777" y="80" font-family="'Fraunces', Georgia, serif" font-size="14.5" fill="#131a23" text-anchor="middle">Kontroller</text></g><g><rect x="856" y="24" width="122" height="92" rx="9" fill="#f1ebdf" stroke="#cdc2ad"/><text x="917" y="50" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="13" letter-spacing="1" fill="#a17224" text-anchor="middle">07</text><text x="917" y="74" font-family="'Fraunces', Georgia, serif" font-size="14.5" fill="#131a23" text-anchor="middle">Evidens &amp;</text><text x="917" y="92" font-family="'Fraunces', Georgia, serif" font-size="14.5" fill="#131a23" text-anchor="middle">uppföljning</text></g>
+        <line x1="141" y1="70" x2="153" y2="70" stroke="#5f6775" stroke-width="1.4" marker-end="url(#m-fas-a)"/><line x1="281" y1="70" x2="293" y2="70" stroke="#5f6775" stroke-width="1.4" marker-end="url(#m-fas-a)"/><line x1="421" y1="70" x2="433" y2="70" stroke="#5f6775" stroke-width="1.4" marker-end="url(#m-fas-a)"/><line x1="561" y1="70" x2="573" y2="70" stroke="#5f6775" stroke-width="1.4" marker-end="url(#m-fas-a)"/><line x1="701" y1="70" x2="713" y2="70" stroke="#5f6775" stroke-width="1.4" marker-end="url(#m-fas-a)"/><line x1="841" y1="70" x2="853" y2="70" stroke="#5f6775" stroke-width="1.4" marker-end="url(#m-fas-a)"/>
+        <path d="M 917 116 C 917 210 77 210 77 116" fill="none" stroke="#a17224" stroke-width="2" marker-end="url(#m-fas-loop)"/>
+        <text x="497" y="200" font-family="'JetBrains Mono', ui-monospace, monospace" font-size="11" letter-spacing="2" fill="#805411" text-anchor="middle">07 → 01 · ÅTERVÄNDER TILL STYRNINGEN</text>
+      </svg>
+      <figcaption>De sju metodfaserna som en återkommande cykel — uppföljningen (07) återkopplar till styrningen (01).</figcaption>
+    </figure>
 
     <div class="phases">
 

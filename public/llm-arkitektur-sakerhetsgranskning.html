@@ -621,6 +621,7 @@
 .see-also__t{display:block;font-weight:600;font-size:.96rem;margin-bottom:.18rem}
 .see-also__d{display:block;font-size:.8rem;opacity:.6}
 @media(max-width:520px){.see-also__grid{grid-template-columns:1fr}}
+  .zone-id.threat{ background: var(--accent); }
 </style>
 </head>
 <body>
@@ -1230,6 +1231,71 @@
     </div>
   </section>
 
+  <section class="zone">
+    <div class="zone-header">
+      <span class="zone-id threat">D · Hotbild</span>
+      <h2 class="zone-title">Angreppsvägar som löper genom hela kedjan</h2>
+      <span class="zone-flow">Förgiftning · Försörjningskedja · Proveniens</span>
+    </div>
+    <div class="zone-body">
+
+      <details class="comp">
+        <summary>
+          <span class="comp-num">D.01</span>
+          <span class="comp-name">Dataförgiftning</span>
+          <span class="comp-desc">Manipulerad tränings-, finjusterings- eller RAG-/feedbackdata som planterar bias, bakdörrar eller felaktigt beteende.</span>
+          <span class="comp-tags"><span class="tag warn">Riktighet</span><span class="tag">OWASP LLM04:2025</span></span>
+        </summary>
+        <div class="audit">
+          <div class="audit-label">Granskningspunkter</div>
+          <ul>
+            <li>Härkomst och kvalitetskontroll av tränings- och finjusteringsdata; signering eller hashning av dataset (jfr A.04)</li>
+            <li>RAG-källor och användarfeedback som förgiftningsväg — feedbackloopar tillbaka till träning (B.14 → A.04) ska granskas, inte bara den direkta prompten</li>
+            <li>Avgränsning och validering av databidrag; spårbarhet för vem som bidragit med vad</li>
+            <li>Eval- och red-team-svit som fångar bakdörrar och triggers före release (jfr C.07)</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="comp">
+        <summary>
+          <span class="comp-num">D.02</span>
+          <span class="comp-name">Modellförgiftning &amp; bakdörrar</span>
+          <span class="comp-desc">Komprometterade modellvikter — förtränade modeller, finjusteringar eller adaptrar (t.ex. LoRA) med inbyggda bakdörrar eller dolt beteende.</span>
+          <span class="comp-tags"><span class="tag warn">Riktighet</span><span class="tag">OWASP LLM04:2025</span></span>
+        </summary>
+        <div class="audit">
+          <div class="audit-label">Granskningspunkter</div>
+          <ul>
+            <li>Proveniens för förtränade vikter och adaptrar — betrodd källa, signerade checkpoints, verifierade hashar</li>
+            <li>Deserialisering av modellfiler som körkodsrisk (osäkra format som pickle) — föredra säkra format (t.ex. safetensors)</li>
+            <li>Behörighet och granskning vid byte av modellversion i drift; modellrollback som dokumenterat scenario (jfr C.08)</li>
+            <li>Modellkort och eval före produktionssättning av ny eller utbytt modell (jfr C.06/C.07)</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="comp">
+        <summary>
+          <span class="comp-num">D.03</span>
+          <span class="comp-name">Försörjningskedja (programvara, modeller, data)</span>
+          <span class="comp-desc">Tredjepartsbibliotek, basmodeller, dataset, modellhubbar och hjälpmodeller — varje länk är en angreppsyta.</span>
+          <span class="comp-tags"><span class="tag warn">Tillgänglighet</span><span class="tag">OWASP LLM03:2025</span></span>
+        </summary>
+        <div class="audit">
+          <div class="audit-label">Granskningspunkter</div>
+          <ul>
+            <li>SBOM för programvaruberoenden och en motsvarande förteckning över modeller, dataset och adaptrar (MBOM/&rdquo;AI-BOM&rdquo;)</li>
+            <li>Sårbarhetshantering och versionslåsning för bibliotek; granskning av paket från publika register</li>
+            <li>Licens- och proveniensvillkor för basmodeller, dataset och hjälpmodeller — och vad de innebär för dataskydd och vidareanvändning</li>
+            <li>Leverantörs- och biträdesbedömning för externa modell- eller inferens-API:er (jfr metodens leverantörssteg och DORA-relaterad ICT-risk där tillämpligt)</li>
+          </ul>
+        </div>
+      </details>
+
+    </div>
+  </section>
+
   <div class="footnote">
     <div class="footnote-title">Granskningsanmärkning</div>
     <p>Skissen täcker <strong>komponenter som lagrar eller behandlar data</strong> — inte själva modell&shy;vikterna i drift. Notera att <strong>personuppgifter förekommer på ovanligt många ställen</strong> i en LLM-tjänst: inte bara i konversations-DB:n (B.09), utan även i KV-cachen (B.06, RAM), embeddings (B.12, kan delvis inverteras), loggar och spårningsdata (C.03), feedbackloopar tillbaka till träning (B.14 → A.04), och hjälpmodellernas träningsdata. Granskning som bara tittar på <em>kärnmodellen</em> missar därför merparten av angreppsytan.</p>
@@ -1293,6 +1359,10 @@
         <dd>Sparad version av modellvikterna under eller efter träning. Granskningspunkter: signering, integritet, rollback&shy;förmåga vid incident, åtkomstkontroll.</dd>
       </div>
       <div class="llm-glossary-item">
+        <dt>Dataförgiftning &amp; modellförgiftning</dt>
+        <dd>Angrepp där tränings-, finjusterings- eller RAG-data manipuleras (dataförgiftning), eller där själva modellvikterna komprometteras via bakdörrar i förtränade modeller, finjusteringar eller adaptrar (modellförgiftning). Kan plantera dolt beteende eller bias som kringgår kontroller. OWASP LLM04:2025 — Data and Model Poisoning.</dd>
+        <dt>Försörjningskedja (AI)</dt>
+        <dd>Kedjan av tredjepartskomponenter en LLM-tjänst vilar på: programvarubibliotek, basmodeller, dataset, adaptrar, modellhubbar och hjälpmodeller. Varje länk kan bära sårbarheter eller komprometterat innehåll. Hanteras med proveniens, signering, sårbarhetshantering och förteckningar (SBOM samt en AI-/modell-BOM). OWASP LLM03:2025 — Supply Chain.</dd>
         <dt>OWASP LLM Top 10</dt>
         <dd>Branschvedertagen lista över de tio vanligaste säkerhets&shy;riskerna i LLM-applikationer (version 2025). Refereras på flera ställen i kartan — bl.a. LLM01 prompt injection, LLM02 sensitive information disclosure och LLM10 unbounded consumption.</dd>
       </div>

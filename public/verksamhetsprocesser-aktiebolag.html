@@ -9,7 +9,8 @@
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-<meta name="theme-color" content="#6268db">
+<meta name="theme-color" content="#f1ebdf" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1b1e28" media="(prefers-color-scheme: dark)">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://gdpr.simplineers.se/verksamhetsprocesser-aktiebolag.html">
 <meta property="og:title" content="Verksamhetsprocesser i aktiebolag — gdpr.simplineers.se">
@@ -1004,6 +1005,17 @@ body.filter-active .cat:not(.has-match) { display: none; }
   outline: 2px solid var(--accent, #A8421C);
   outline-offset: 3px;
 }
+
+/* ── Relaterat / korslänkning (tillagt – paletteneutralt via currentColor) ── */
+.see-also{max-width:880px;margin:5rem auto 0;padding:2.4rem 1.5rem 0;border-top:1px solid color-mix(in srgb,currentColor 16%,transparent)}
+.see-also__label{font-family:'JetBrains Mono','IBM Plex Mono',ui-monospace,monospace;font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;opacity:.55;margin:0 0 1.1rem}
+.see-also__grid{list-style:none;margin:0;padding:0;display:grid;gap:.7rem;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.see-also__grid a{display:block;color:inherit;text-decoration:none;padding:.85rem 1rem;border:1px solid color-mix(in srgb,currentColor 14%,transparent);border-radius:9px;line-height:1.4;transition:border-color .15s ease,background-color .15s ease}
+.see-also__grid a:hover{border-color:color-mix(in srgb,currentColor 38%,transparent);background-color:color-mix(in srgb,currentColor 4%,transparent)}
+.see-also__grid a:focus-visible{outline:2px solid currentColor;outline-offset:2px}
+.see-also__t{display:block;font-weight:600;font-size:.96rem;margin-bottom:.18rem}
+.see-also__d{display:block;font-size:.8rem;opacity:.6}
+@media(max-width:520px){.see-also__grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -1624,6 +1636,16 @@ body.filter-active .cat:not(.has-match) { display: none; }
   </section>
 
   <!-- FOOTER -->
+<nav class="see-also" aria-label="Relaterade sidor">
+  <p class="see-also__label">Relaterat</p>
+  <ul class="see-also__grid">
+    <li><a href="metod_god_efterlevnad.html"><span class="see-also__t">Metod för god efterlevnad</span><span class="see-also__d">Sju faser från lagens syfte till kontroll och evidens.</span></a></li>
+    <li><a href="gdpr_infosak_venn.html"><span class="see-also__t">GDPR &amp; informationssäkerhet</span><span class="see-also__d">GDPR-artiklar mot CIA-triaden i ett Venn-diagram.</span></a></li>
+    <li><a href="llm-arkitektur-sakerhetsgranskning.html"><span class="see-also__t">LLM-arkitektur — granskning</span><span class="see-also__d">Storskalig LLM-arkitektur ur säkerhets- och granskningsperspektiv.</span></a></li>
+    <li><a href="gdpr-llm-audit-kravkarta.html"><span class="see-also__t">Audit-kravkarta för LLM</span><span class="see-also__d">24 moduler mappade mot risker, kontroller och artiklar.</span></a></li>
+  </ul>
+</nav>
+
   <footer class="site-foot">
     <div class="foot-privacy">
       <strong>Integritet:</strong> Webbplatsen har inte infört någon egen besöksanalys, spårning, cookies eller formulär. Vi använder inga analytics, inga pixlar, inga sessioner och inga inloggningar. Om tekniska driftloggar förekommer hos hosting- eller nätverksleverantör används de inte av oss för analys, profilering eller uppföljning av besökare. <em>Vi har ingen identifierbar bild av dig som besökare.</em> <a href="integritet.html">Läs hela integritetsnotisen →</a>

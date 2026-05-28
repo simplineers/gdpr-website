@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sidan finns inte (404) · gdpr.simplineers.se</title>
+<meta name="description" content="Sidan kunde inte hittas. Länken kan vara gammal, felstavad eller så har sidan flyttat — här är vägarna vidare till metod, verktyg och start.">
+<meta name="robots" content="noindex, follow">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<meta name="theme-color" content="#f1ebdf" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1b1e28" media="(prefers-color-scheme: dark)">
+<link rel="preload" href="fonts/fraunces-latin-full-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/newsreader-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+/* ── Self-hosted fonts (inga externa anrop, ingen Google Fonts) ──────────── */
+@font-face { font-family: 'Fraunces'; font-style: normal; font-display: swap; font-weight: 100 900; src: url('fonts/fraunces-latin-full-normal.woff2') format('woff2-variations'); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family: 'Fraunces'; font-style: normal; font-display: swap; font-weight: 100 900; src: url('fonts/fraunces-latin-ext-full-normal.woff2') format('woff2-variations'); unicode-range: U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF; }
+@font-face { font-family: 'Fraunces'; font-style: italic; font-display: swap; font-weight: 100 900; src: url('fonts/fraunces-latin-full-italic.woff2') format('woff2-variations'); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family: 'Newsreader'; font-style: normal; font-display: swap; font-weight: 200 800; src: url('fonts/newsreader-latin-wght-normal.woff2') format('woff2-variations'); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family: 'Newsreader'; font-style: italic; font-display: swap; font-weight: 200 800; src: url('fonts/newsreader-latin-wght-italic.woff2') format('woff2-variations'); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family: 'JetBrains Mono'; font-style: normal; font-display: swap; font-weight: 400; src: url('fonts/jetbrains-mono-latin-400-normal.woff2') format('woff2'); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+@font-face { font-family: 'JetBrains Mono'; font-style: normal; font-display: swap; font-weight: 500; src: url('fonts/jetbrains-mono-latin-500-normal.woff2') format('woff2'); unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD; }
+
+:root {
+  --bg: #EFE8DA;
+  --bg-soft: #E5DCC9;
+  --bg-deep: #1B1E28;
+  --ink: #161821;
+  --ink-soft: #2A2E38;
+  --muted: #6B6357;
+  --accent: #A8421C;
+  --accent-soft: #C26B43;
+  --sage: #5C6855;
+  --hairline: rgba(22,24,33,0.15);
+  --hairline-strong: rgba(22,24,33,0.4);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'Newsreader', Georgia, serif;
+  font-size: 19px;
+  line-height: 1.65;
+  font-weight: 380;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  position: relative;
+  overflow-x: hidden;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 100;
+  opacity: 0.5;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.08 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+
+/* ---------- HEADER ---------- */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(239, 232, 218, 0.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--hairline);
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 40px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.logo {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  letter-spacing: 0.03em;
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 500;
+}
+.logo-symbol {
+  width: 22px;
+  height: 22px;
+  display: inline-block;
+  vertical-align: -6px;
+  margin-right: 4px;
+}
+.back-link {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  border: 1px solid var(--hairline);
+  padding: 8px 14px;
+  border-radius: 3px;
+  transition: all 0.2s;
+}
+.back-link:hover { color: var(--ink); border-color: var(--hairline-strong); }
+
+/* ---------- PAGE ---------- */
+main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 96px 40px 60px;
+  flex: 1 0 auto;
+}
+
+.eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 24px;
+}
+
+.code {
+  font-family: 'Fraunces', Georgia, serif;
+  font-variation-settings: "opsz" 144, "SOFT" 60, "WONK" 1;
+  font-weight: 360;
+  font-style: italic;
+  font-size: clamp(72px, 16vw, 150px);
+  line-height: 0.9;
+  letter-spacing: -0.03em;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+
+h1 {
+  font-family: 'Fraunces', Georgia, serif;
+  font-variation-settings: "opsz" 144, "SOFT" 50;
+  font-weight: 420;
+  font-size: clamp(34px, 5vw, 48px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin-bottom: 28px;
+  color: var(--ink);
+}
+h1 em {
+  font-style: italic;
+  font-variation-settings: "opsz" 144, "SOFT" 100;
+  color: var(--accent);
+}
+
+.lede {
+  font-family: 'Newsreader', Georgia, serif;
+  font-size: 21px;
+  line-height: 1.55;
+  font-weight: 380;
+  font-style: italic;
+  color: var(--ink-soft);
+  margin-bottom: 48px;
+  padding-bottom: 36px;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.routes-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+.routes {
+  list-style: none;
+  margin: 0 0 8px;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+}
+.routes a {
+  display: block;
+  text-decoration: none;
+  color: var(--ink);
+  border: 1px solid var(--hairline);
+  border-radius: 6px;
+  padding: 16px 18px;
+  line-height: 1.4;
+  transition: border-color 0.18s ease, background-color 0.18s ease;
+}
+.routes a:hover { border-color: var(--hairline-strong); background-color: rgba(168, 66, 28, 0.04); }
+.routes a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.routes .t {
+  display: block;
+  font-family: 'Fraunces', Georgia, serif;
+  font-variation-settings: "opsz" 24;
+  font-weight: 500;
+  font-size: 17px;
+  margin-bottom: 2px;
+}
+.routes .d {
+  display: block;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* ---------- FOOTER (harmoniserad licensstruktur) ---------- */
+footer {
+  border-top: 1px solid var(--hairline);
+  margin-top: 80px;
+  padding: 32px 0 40px;
+  flex-shrink: 0;
+}
+.foot-stack {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.foot-license {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 20px;
+  background: rgba(168, 66, 28, 0.04);
+  border: 1px solid rgba(168, 66, 28, 0.2);
+  border-radius: 4px;
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  font-family: 'Newsreader', serif;
+  font-weight: 400;
+}
+.cc-badge {
+  display: inline-flex;
+  align-items: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  padding: 5px 10px;
+  border: 1.5px solid var(--ink);
+  border-radius: 3px;
+  color: var(--ink);
+  background: var(--bg);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.foot-license .work-title {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  color: var(--ink);
+  font-size: 14px;
+}
+.foot-license strong { color: var(--ink); font-weight: 500; }
+.foot-license em { font-style: italic; color: var(--ink); }
+.foot-license a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+}
+.foot-license a:hover { color: var(--ink); }
+.foot-meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 12px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.foot-meta a {
+  color: var(--muted);
+  text-decoration: none;
+  border-bottom: 1px solid var(--hairline);
+  padding-bottom: 1px;
+}
+.foot-meta a:hover { color: var(--ink); }
+
+@media (max-width: 720px) {
+  main { padding: 56px 24px 40px; }
+  .routes { grid-template-columns: 1fr; }
+  .header-inner { padding: 16px 24px; }
+  .foot-stack { padding: 0 24px; }
+  .foot-meta { flex-direction: column; }
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 999;
+  padding: 12px 18px;
+  background: var(--ink, #161821);
+  color: var(--bg, #EFE8DA);
+  text-decoration: none;
+  font-family: 'JetBrains Mono', 'IBM Plex Mono', monospace;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+}
+.skip-link:focus {
+  left: 12px;
+  top: 12px;
+  outline: 2px solid var(--accent, #A8421C);
+  outline-offset: 3px;
+}
+</style>
+</head>
+<body>
+
+
+<a class="skip-link" href="#main">Hoppa till innehåll</a>
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo"><svg class="logo-symbol" viewBox="13 18 48 48" aria-hidden="true" focusable="false"><path transform="matrix(1,0,0,-1,41.7099,35.5766)" d="M0 0C-2.539-2.539-6.656-2.539-9.195 0-11.735 2.539-11.735 6.656-9.195 9.195-6.656 11.735-2.539 11.735 0 9.195 2.539 6.656 2.539 2.539 0 0M1.367 10.629C-1.904 13.9-7.207 13.9-10.478 10.629L-21.934-.826C-25.205-4.097-25.205-9.4-21.934-12.671-18.663-15.942-13.359-15.942-10.088-12.671L1.367-1.216C4.638 2.055 4.638 7.358 1.367 10.629" fill="currentColor"/><path transform="matrix(1,0,0,-1,42.1838,58.6592)" d="M0 0C-2.539-2.539-6.656-2.539-9.195 0-11.735 2.539-11.735 6.656-9.195 9.195-6.656 11.735-2.539 11.735 0 9.195 2.539 6.656 2.539 2.539 0 0M12.738 21.867V21.867C9.467 25.138 4.164 25.138 .893 21.867L-10.562 10.411C-13.833 7.14-13.833 1.837-10.562-1.434-7.291-4.705-1.988-4.705 1.283-1.434L12.738 10.021C16.009 13.292 16.009 18.596 12.738 21.867" fill="currentColor"/></svg>simplineers</a>
+    <a href="index.html" class="back-link">← Till start</a>
+  </div>
+</header>
+
+<main id="main">
+  <div class="eyebrow">Fel 404</div>
+  <div class="code" aria-hidden="true">404</div>
+  <h1>Den här sidan finns <em>inte</em>.</h1>
+  <p class="lede">
+    Länken kan vara gammal, felstavad eller så har sidan flyttat. Inget är trasigt — adressen leder bara ingenstans. Här är vägarna vidare.
+  </p>
+
+  <p class="routes-label">Vägar vidare</p>
+  <ul class="routes">
+    <li><a href="index.html"><span class="t">Start</span><span class="d">Vad vi gör, metod, verktyg och manifest.</span></a></li>
+    <li><a href="metod_god_efterlevnad.html"><span class="t">Metod för god efterlevnad</span><span class="d">Sju faser från lagens syfte till kontroll och evidens.</span></a></li>
+    <li><a href="gdpr_infosak_venn.html"><span class="t">GDPR &amp; informationssäkerhet</span><span class="d">GDPR-artiklar mot CIA-triaden i ett Venn-diagram.</span></a></li>
+    <li><a href="llm-arkitektur-sakerhetsgranskning.html"><span class="t">LLM-arkitektur — granskning</span><span class="d">Storskalig LLM-arkitektur ur säkerhets- och granskningsperspektiv.</span></a></li>
+    <li><a href="gdpr-llm-audit-kravkarta.html"><span class="t">Audit-kravkarta för LLM</span><span class="d">24 moduler mappade mot risker, kontroller och artiklar.</span></a></li>
+    <li><a href="verksamhetsprocesser-aktiebolag.html"><span class="t">Verksamhetsprocesser i aktiebolag</span><span class="d">Referenskatalog för processkartläggning och ROPA.</span></a></li>
+  </ul>
+</main>
+
+<footer>
+  <div class="foot-stack">
+    <div class="foot-license">
+      <span class="cc-badge">CC BY 4.0</span>
+      <span>
+        <span class="work-title">gdpr.simplineers.se</span>
+        av <strong>Kim Hindart, Simplineers AB</strong> är licensierad under
+        <a href="https://creativecommons.org/licenses/by/4.0/deed.sv" target="_blank" rel="noopener noreferrer">Creative Commons Erkännande 4.0 Internationell</a>.
+        <em>Fri att dela, kopiera och anpassa — även kommersiellt — så länge upphovsperson anges.</em>
+      </span>
+    </div>
+    <div class="foot-meta">
+      <span>© 2026 Kim Hindart · Simplineers AB · Stockholm</span>
+      <span><a href="index.html">gdpr.simplineers.se</a></span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

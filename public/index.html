@@ -9,7 +9,8 @@
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-<meta name="theme-color" content="#6268db">
+<meta name="theme-color" content="#f1ebdf" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1b1e28" media="(prefers-color-scheme: dark)">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://gdpr.simplineers.se/">
 <meta property="og:title" content="Simplineers AB — Process- och metodexperter inom IT och regelefterlevnad">
@@ -1614,8 +1615,15 @@ footer > * { position: relative; z-index: 1; }
 
 </main>
 
-<footer>
+<footer itemscope itemtype="https://schema.org/Organization">
   <div class="container">
+    <meta itemprop="name" content="Simplineers AB">
+    <meta itemprop="legalName" content="Simplineers AB">
+    <span itemprop="identifier" itemscope itemtype="https://schema.org/PropertyValue"><meta itemprop="propertyID" content="Organisationsnummer"><meta itemprop="value" content="559374-5986"></span>
+    <link itemprop="url" href="https://gdpr.simplineers.se/">
+    <link itemprop="logo" href="https://gdpr.simplineers.se/apple-touch-icon.png">
+    <meta itemprop="description" content="Process- och metodexperter inom IT och regelefterlevnad.">
+    <span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress"><meta itemprop="addressLocality" content="Stockholm"><meta itemprop="addressCountry" content="SE"></span>
     <div class="footer-grid">
       <div class="footer-brand">
         <em>Simplineers&nbsp;AB</em> &nbsp;—&nbsp; där paragrafer möter protokoll.
@@ -1641,8 +1649,8 @@ footer > * { position: relative; z-index: 1; }
       <div class="footer-col">
         <h3>Kontakt &amp; om</h3>
         <ul>
-          <li><a href="mailto:info@simplineers.se">info@simplineers.se</a></li>
-          <li><a href="https://www.linkedin.com/company/simplineers" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="mailto:info@simplineers.se" itemprop="email">info@simplineers.se</a></li>
+          <li><a href="https://www.linkedin.com/company/simplineers" target="_blank" rel="noopener noreferrer" itemprop="sameAs">LinkedIn</a></li>
           <li><a href="integritet.html">Integritet</a></li>
         </ul>
       </div>

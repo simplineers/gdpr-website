@@ -9,7 +9,8 @@
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-<meta name="theme-color" content="#6268db">
+<meta name="theme-color" content="#f1ebdf" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1b1e28" media="(prefers-color-scheme: dark)">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://gdpr.simplineers.se/gdpr-llm-audit-kravkarta.html">
 <meta property="og:title" content="GDPR-funktionens audit-kravkarta för LLM">
@@ -683,21 +684,32 @@
   .page-topbar { padding: 12px 16px; font-size: 12px; }
 }
 
+
+/* ── Relaterat / korslänkning (tillagt – paletteneutralt via currentColor) ── */
+.see-also{max-width:880px;margin:5rem auto 0;padding:2.4rem 1.5rem 0;border-top:1px solid color-mix(in srgb,currentColor 16%,transparent)}
+.see-also__label{font-family:'JetBrains Mono','IBM Plex Mono',ui-monospace,monospace;font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;opacity:.55;margin:0 0 1.1rem}
+.see-also__grid{list-style:none;margin:0;padding:0;display:grid;gap:.7rem;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.see-also__grid a{display:block;color:inherit;text-decoration:none;padding:.85rem 1rem;border:1px solid color-mix(in srgb,currentColor 14%,transparent);border-radius:9px;line-height:1.4;transition:border-color .15s ease,background-color .15s ease}
+.see-also__grid a:hover{border-color:color-mix(in srgb,currentColor 38%,transparent);background-color:color-mix(in srgb,currentColor 4%,transparent)}
+.see-also__grid a:focus-visible{outline:2px solid currentColor;outline-offset:2px}
+.see-also__t{display:block;font-weight:600;font-size:.96rem;margin-bottom:.18rem}
+.see-also__d{display:block;font-size:.8rem;opacity:.6}
+@media(max-width:520px){.see-also__grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 
 <a class="skip-link" href="#main">Hoppa till innehåll</a>
 
-<div class="page-topbar">
+<header class="page-topbar">
   <a href="index.html" class="page-topbar-brand" aria-label="Simplineers — startsida">
     <svg class="logo-symbol" viewBox="13 18 48 48" aria-hidden="true" focusable="false"><path transform="matrix(1,0,0,-1,41.7099,35.5766)" d="M0 0C-2.539-2.539-6.656-2.539-9.195 0-11.735 2.539-11.735 6.656-9.195 9.195-6.656 11.735-2.539 11.735 0 9.195 2.539 6.656 2.539 2.539 0 0M1.367 10.629C-1.904 13.9-7.207 13.9-10.478 10.629L-21.934-.826C-25.205-4.097-25.205-9.4-21.934-12.671-18.663-15.942-13.359-15.942-10.088-12.671L1.367-1.216C4.638 2.055 4.638 7.358 1.367 10.629" fill="currentColor"/><path transform="matrix(1,0,0,-1,42.1838,58.6592)" d="M0 0C-2.539-2.539-6.656-2.539-9.195 0-11.735 2.539-11.735 6.656-9.195 9.195-6.656 11.735-2.539 11.735 0 9.195 2.539 6.656 2.539 2.539 0 0M12.738 21.867V21.867C9.467 25.138 4.164 25.138 .893 21.867L-10.562 10.411C-13.833 7.14-13.833 1.837-10.562-1.434-7.291-4.705-1.988-4.705 1.283-1.434L12.738 10.021C16.009 13.292 16.009 18.596 12.738 21.867" fill="currentColor"/></svg><span>simplineers</span>
   </a>
-</div>
+</header>
 
 <div class="container">
 
-  <header class="header">
+  <div class="header">
     <h1>GDPR-funktionens audit-kravkarta för LLM-applikationsarkitektur</h1>
     <p>Karta över applikationslager, RAG, minne, inferens/serving, verktyg, loggning och leverantörsled — ur GDPR-, säkerhets- och internrevisionsperspektiv. Modellens interna Transformer-komponenter behandlas endast översiktligt.</p>
     <div class="scope-note" role="note" aria-label="Avgränsning och tillämplighet">
@@ -709,7 +721,7 @@
       <div class="legend-item"><span class="dot control"></span>Kontroll behövs</div>
       <div class="legend-item"><span class="dot log"></span>Loggningspunkt</div>
     </div>
-  </header>
+  </div>
 
   <main id="main">
   <section class="categories">
@@ -996,6 +1008,16 @@
   </div>
 
   </main>
+
+<nav class="see-also" aria-label="Relaterade sidor">
+  <p class="see-also__label">Relaterat</p>
+  <ul class="see-also__grid">
+    <li><a href="metod_god_efterlevnad.html"><span class="see-also__t">Metod för god efterlevnad</span><span class="see-also__d">Sju faser från lagens syfte till kontroll och evidens.</span></a></li>
+    <li><a href="gdpr_infosak_venn.html"><span class="see-also__t">GDPR &amp; informationssäkerhet</span><span class="see-also__d">GDPR-artiklar mot CIA-triaden i ett Venn-diagram.</span></a></li>
+    <li><a href="llm-arkitektur-sakerhetsgranskning.html"><span class="see-also__t">LLM-arkitektur — granskning</span><span class="see-also__d">Storskalig LLM-arkitektur ur säkerhets- och granskningsperspektiv.</span></a></li>
+    <li><a href="verksamhetsprocesser-aktiebolag.html"><span class="see-also__t">Verksamhetsprocesser i aktiebolag</span><span class="see-also__d">Referenskatalog för processkartläggning och ROPA.</span></a></li>
+  </ul>
+</nav>
 
   <footer class="site-foot">
     <div class="foot-privacy">

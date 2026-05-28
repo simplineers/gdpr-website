@@ -926,6 +926,43 @@ nav a:hover::after { width: 100%; }
 }
 .contact-cta:hover .contact-cta-arrow { transform: translateX(6px); }
 
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 14px;
+}
+.contact-linkedin {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 22px 26px;
+  background: transparent;
+  color: var(--ink);
+  text-decoration: none;
+  border: 1px solid var(--hairline-strong);
+  border-radius: 4px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 16px;
+  letter-spacing: 0.04em;
+  font-weight: 500;
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.contact-linkedin svg {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+.contact-linkedin:hover {
+  background: var(--accent);
+  color: var(--bg);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px -10px rgba(168, 66, 28, 0.4);
+}
+.contact-linkedin:hover svg { transform: translateY(-1px) scale(1.06); }
+
 .contact-secondary {
   margin-top: 22px;
   font-family: 'Newsreader', serif;
@@ -1559,10 +1596,16 @@ footer > * { position: relative; z-index: 1; }
         <h2 class="contact-headline">Vill ni veta mer om hur metoden kan <em>tillämpas</em> hos er?</h2>
         <div>
           <p class="contact-body">Vi tar gärna ett samtal om var era kritiska beroenden ligger, vilka regelverk som faktiskt rör er och hur ni kan börja bygga en evidensstruktur som <em>håller över tid</em>.</p>
-          <a href="mailto:info@simplineers.se" class="contact-cta">
-            info@simplineers.se
-            <span class="contact-cta-arrow">→</span>
-          </a>
+          <div class="contact-actions">
+            <a href="mailto:info@simplineers.se" class="contact-cta">
+              info@simplineers.se
+              <span class="contact-cta-arrow">→</span>
+            </a>
+            <a href="https://www.linkedin.com/company/simplineers" class="contact-linkedin" target="_blank" rel="noopener noreferrer" aria-label="Simplineers på LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zm1.78 13.02H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
+              LinkedIn
+            </a>
+          </div>
           <p class="contact-secondary">Simplineers&nbsp;AB · Stockholm · Process- och metodexperter inom IT och regelefterlevnad.</p>
         </div>
       </div>
@@ -1599,6 +1642,7 @@ footer > * { position: relative; z-index: 1; }
         <h3>Kontakt &amp; om</h3>
         <ul>
           <li><a href="mailto:info@simplineers.se">info@simplineers.se</a></li>
+          <li><a href="https://www.linkedin.com/company/simplineers" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
           <li><a href="integritet.html">Integritet</a></li>
         </ul>
       </div>

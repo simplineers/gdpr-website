@@ -108,10 +108,10 @@ notisen.
 ## Licens
 
 Hela projektet — kod och innehåll — är licensierat under
-**[Creative Commons Erkännande 4.0 Internationell (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/deed.sv)**.
+**[Creative Commons Erkännande 4.0 Internationell (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/)**.
 
 Fri att dela, kopiera och anpassa — även kommersiellt — så länge upphovsperson anges.
-Se `LICENSE` för fullständiga villkor. Upphovsangivelse: *Kim Hindart, Simplineers*.
+Se `LICENSE` för fullständiga villkor. Upphovsangivelse: *Kim Hindart, Simplineers* — för metodsidan (`metod_god_efterlevnad.html`): *Daniel Gustafsson, Kim Hindart och Thomas Svensson, Simplineers AB*.
 
 > CC BY 4.0 är vald för enhetlighet eftersom kod, innehåll och visualiseringar är
 > tätt sammanvävda på sidan. För återanvändning av enbart kodfragment (HTML/CSS/JS

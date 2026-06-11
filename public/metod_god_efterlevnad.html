@@ -1031,9 +1031,14 @@
   .method-figure.wide{max-width:940px;}
   .method-figure svg{width:100%;height:auto;display:block;}
   .method-figure figcaption{font-family:var(--mono);font-size:10.5px;line-height:1.55;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-mute);text-align:center;margin:16px auto 0;max-width:660px;}
+
+  /* ── Skip-link (tillgänglighet) ─────────────────────────────────── */
+  .skip-link{position:absolute;left:-9999px;top:0;z-index:999;padding:12px 18px;background:var(--ink,#131a23);color:var(--paper,#f1ebdf);text-decoration:none;font-family:var(--mono,'JetBrains Mono',monospace);font-size:13px;letter-spacing:.04em;}
+  .skip-link:focus{left:12px;top:12px;outline:2px solid var(--accent,#A8421C);outline-offset:3px;}
 </style>
 </head>
 <body class="no-js">
+<a class="skip-link" href="#main">Hoppa till innehåll</a>
 
 
 <header class="page-topbar">

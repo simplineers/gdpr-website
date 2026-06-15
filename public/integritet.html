@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Integritet · gdpr.simplineers.se</title>
-<meta name="description" content="Webbplatsen har inte infört någon egen besöksanalys, spårning, cookies eller formulär. Eventuella tekniska driftloggar hos hosting- eller nätverksleverantör används inte av oss för analys eller uppföljning.">
+<meta name="description" content="Webbplatsen har inte infört någon egen besöksanalys, spårning, cookies eller formulär, och webbservern för ingen accesslogg över besök. Eventuella tekniska nätverksloggar hos infrastrukturleverantör används inte av oss för analys eller uppföljning.">
 <link rel="canonical" href="https://gdpr.simplineers.se/integritet.html">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -496,22 +496,27 @@ footer {
     <li>Inga fingerprinting-tekniker</li>
     <li>Inga tredjepartsskript för spårning</li>
     <li>Ingen egen besöksanalys</li>
-    <li>Inga egna accessloggar för analys</li>
+    <li>Ingen egen accesslogg över besök</li>
     <li>Ingen profilering</li>
     <li>Ingen statistik på individnivå</li>
     <li>Ingen återkoppling om vad du läst</li>
   </ul>
 
-  <p>Webbplatsen är medvetet utformad för att inte ha någon operativ insamling eller behandling av personuppgifter om dig som besökare. Vi har inte aktiverat någon egen statistik, spårning eller logginsamling ovanpå hosting-nivån.</p>
+  <p>Webbplatsen är medvetet utformad för att inte ha någon operativ insamling eller behandling av personuppgifter om dig som besökare. Vi driftar servern själva och har aktivt stängt av accessloggning på den — det skrivs alltså ingen logg över ditt besök hos oss.</p>
 
   <h2>Hosting och driftloggar</h2>
 
-  <p>För att en webbsida ska kunna levereras till din webbläsare passerar tekniska uppgifter — som din IP-adress, din webbläsares identifierare och vilken fil som efterfrågas — normalt hosting- och nätverksleverantörens infrastruktur. Det är hur webben fungerar och något varje webbplats är beroende av.</p>
+  <p>Webbplatsen driftas på en egen server (webbservern Caddy på en virtuell server hos en EU-baserad infrastrukturleverantör). För att en sida ska kunna levereras till din webbläsare passerar tekniska uppgifter — som din IP-adress, din webbläsares identifierare och vilken fil som efterfrågas — alltid serverns infrastruktur i själva överföringsögonblicket. Det är hur webben fungerar och något varje webbplats är beroende av. Skillnaden ligger i vad som sparas efteråt.</p>
 
   <div class="hosting-note">
-    <span class="label">Vad gäller hos hostingleverantör</span>
-    <p>Sådana leverantörer kan ha tekniska driftloggar för felsökning, säkerhet och leverans av tjänsten. Vi som operatör av webbplatsen har inte tillgång till dessa loggar för analysändamål, och vi använder dem inte för att profilera, följa eller mäta dig som besökare.</p>
-    <p>Det finns alltså ingen identifierbar bild av dig hos oss — men på leverantörsnivå kan tekniska uppgifter förekomma momentant eller under en kortare retention enligt deras egna villkor.</p>
+    <span class="label">Vad vi gör på vår egen server</span>
+    <p>Eftersom vi driftar servern själva styr vi exakt vad som loggas — och vi har valt att <strong>inte föra någon accesslogg</strong>. Webbservern sparar ingen post över ditt besök: ingen IP-adress, ingen webbläsaridentifierare och ingen förteckning över efterfrågade sidor lagras av oss. De tekniska uppgifterna passerar i överföringen men skrivs aldrig ner.</p>
+  </div>
+
+  <div class="hosting-note">
+    <span class="label">Vad som kan finnas på leverantörsnivå</span>
+    <p>Den underliggande infrastrukturleverantören kan på nätverksnivå ha egna tekniska loggar för säkerhet, överbelastningsskydd och drift, som vi varken styr över eller använder för analys. I undantagsfall kan en teknisk driftnotering från servern innehålla en IP-adress, men sådana noteringar är inte ett besöksregister och används aldrig för att profilera, följa eller mäta dig.</p>
+    <p>Eftersom infrastrukturen är EU-baserad sker ingen tredjelandsöverföring för själva webbhostingen.</p>
   </div>
 
   <h2>Det betyder i praktiken</h2>
@@ -559,7 +564,7 @@ footer {
 
   <p>För uppgifter som du själv lämnar via <strong>e-postkontakt</strong> gäller GDPR:s vanliga rättigheter: information, registerutdrag, rättelse, radering, begränsning av behandling, dataportabilitet och invändning. Kontakta <a href="mailto:info@simplineers.se">info@simplineers.se</a> för att utöva dem. Du har också rätt att lämna klagomål till Integritetsskyddsmyndigheten (<a href="https://www.imy.se" target="_blank" rel="noopener noreferrer">imy.se</a>).</p>
 
-  <p>Om du vill veta hur driftloggar hanteras hos vår hostingleverantör hänvisar vi till leverantörens egen integritetsinformation. Vi har ingen avtalsmässig användning av sådana loggar för analys, profilering eller marknadsföring.</p>
+  <p>Den infrastrukturleverantör vi driftar webbplatsen hos är EU-baserad, vilket innebär att själva webbhostingen inte medför någon tredjelandsöverföring. Vill du veta hur leverantören hanterar tekniska nätverksloggar hänvisar vi till deras egen integritetsinformation. Vi för ingen egen accesslogg och har ingen avtalsmässig användning av leverantörens tekniska loggar för analys, profilering eller marknadsföring.</p>
 
   <p><em>Det är avsiktligt.</em> Vi har valt bort egen datainsamling i stället för att försöka motivera den.</p>
 
@@ -569,7 +574,7 @@ footer {
 
   <div class="short-summary">
     <span class="label">Sammanfattning</span>
-    <p>Webbplatsen har inte infört någon egen besöksanalys, spårning, cookies eller formulär. Vi använder inga analytics, inga pixlar, inga sessioner och inga inloggningar. Om tekniska driftloggar förekommer hos hosting- eller nätverksleverantör används de inte av oss för analys, profilering eller uppföljning av besökare. Vi har ingen identifierbar bild av dig som besökare.</p>
+    <p>Webbplatsen har inte infört någon egen besöksanalys, spårning, cookies eller formulär, och vår webbserver för ingen accesslogg över ditt besök. Vi använder inga analytics, inga pixlar, inga sessioner och inga inloggningar. Tekniska loggar på infrastrukturleverantörens nätverksnivå används aldrig av oss för analys, profilering eller uppföljning av besökare. Vi har ingen identifierbar bild av dig som besökare.</p>
   </div>
 </main>
 

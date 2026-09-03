@@ -13,11 +13,17 @@ resten av organisationens GRC-arbete.
 
 - **`index.html`** — startsida för Simplineers AB: vad vi gör, ingång till metod,
   verktyg och manifest.
-- **`metod_god_efterlevnad.html`** — *Simplineers metod för god efterlevnad*:
-  sju faser som binder samman styrning, process, information, risk och kontroll.
-  Fyra riskperspektiv (dataskydd, informationssäkerhet, leverantör, kontinuitet)
-  och referensbibliotek över relevanta regelverk (GDPR, DORA, NIS2/CSL, AI Act,
-  ISO 27001/27701/22301/42001 m.fl.).
+- **`metod_god_efterlevnad.html`** — *VTJ-metoden — metod för god efterlevnad*
+  (uppkallad efter de tre parter den för samman: verksamheten, tekniken och
+  juridiken): beroendekedjans sju nivåer, sju faser som binder samman styrning,
+  process, information, risk och kontroll, samt arbetsflödets nio rörelser.
+  Fyra riskperspektiv (dataskydd, informationssäkerhet, leverantör, kontinuitet),
+  begreppsnyckel med metodens bärande begrepp och referensbibliotek över
+  relevanta regelverk (GDPR, DORA, NIS2/CSL, AI Act,
+  ISO 27001/27701/22301/42001 m.fl.). Sidan är referensverk till boken
+  Svensson, Gustafsson & Hindart, *Metod för god efterlevnad av GDPR*
+  (Studentlitteratur, utkommer december 2026), och håller de rörliga
+  uppgifterna — regelverkens status, praxis och bevakning.
 - **`gdpr_infosak_venn.html`** — GDPR-artiklar placerade mot CIA-triaden
   (Art. 32.1(b)) som ett interaktivt Venn-diagram, med övriga artiklar i en
   dataskyddsram runt om.
@@ -111,7 +117,7 @@ Hela projektet — kod och innehåll — är licensierat under
 **[Creative Commons Erkännande 4.0 Internationell (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/)**.
 
 Fri att dela, kopiera och anpassa — även kommersiellt — så länge upphovsperson anges.
-Se `LICENSE` för fullständiga villkor. Upphovsangivelse: *Kim Hindart, Simplineers* — för metodsidan (`metod_god_efterlevnad.html`): *Daniel Gustafsson, Kim Hindart och Thomas Svensson, Simplineers AB*.
+Se `LICENSE` för fullständiga villkor. Upphovsangivelse: *Kim Hindart, Simplineers* — för metodsidan (`metod_god_efterlevnad.html`): *Thomas Svensson, Daniel Gustafsson och Kim Hindart, Simplineers AB*.
 
 > CC BY 4.0 är vald för enhetlighet eftersom kod, innehåll och visualiseringar är
 > tätt sammanvävda på sidan. För återanvändning av enbart kodfragment (HTML/CSS/JS

@@ -908,7 +908,7 @@ nav a:hover::after { width: 100%; }
 }
 .people-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
   gap: 28px;
 }
 .person {
@@ -1728,7 +1728,7 @@ footer > * { position: relative; z-index: 1; }
       <div class="section-label">§ 05 &nbsp;—&nbsp; Vilka vi är</div>
       <div class="people-header">
         <h2 class="people-title">Vi har suttit på <em>andra sidan bordet.</em></h2>
-        <p class="people-aside">Bakom Simplineers står praktiker som själva har burit ansvaret — som säkerhetschef, dataskyddsombud och systemägare — och som i dag undervisar i metoden de arbetar efter.</p>
+        <p class="people-aside">Bakom Simplineers står praktiker som själva har burit ansvaret — som säkerhetschef, dataskyddsombud, systemägare och bankjurist.</p>
       </div>
 
       <div class="people-grid">
@@ -1758,6 +1758,20 @@ footer > * { position: relative; z-index: 1; }
             <div><dt>Lösenordsfritt</dt><dd>8&nbsp;000 anställda, 19&nbsp;000 servrar och 1&nbsp;600 system utan lösenord</dd></div>
             <div><dt>Krypterat moln</dt><dd>Helkrypterade virtuella maskiner mot egna HSM:er i tre svenska regioner</dd></div>
             <div><dt>Teknik</dt><dd>PKI och HSM; governance och compliance som kod i Go och Python</dd></div>
+          </dl>
+        </article>
+
+        <article class="person" itemscope itemtype="https://schema.org/Person">
+          <span itemprop="worksFor" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="Simplineers AB"></span>
+          <div class="person-role" itemprop="jobTitle">Chefsjurist</div>
+          <h3 class="person-name" itemprop="name">Marie Leffler</h3>
+          <p class="person-focus">Dataskydd, affärs- och bankjuridik</p>
+          <p class="person-bio">Marie är jurist och tidigare advokat med drygt 20 års erfarenhet från bank, advokatbyrå och domstol. På Handelsbanken har Marie först arbetat med dataskydd, leverantörsavtal och outsourcing på den centrala juristavdelningen och sedan, som chef och senior jurist på bankens Group Privacy Office, lett en grupp om tio medarbetare inom dataskydd i första linjen. Till det kommer bred erfarenhet av affärs- och bankjuridik: avtal och avtalsförhandlingar, bolagsstyrning, transaktioner, styrdokumentation och banksekretess.</p>
+          <dl class="person-facts">
+            <div><dt>Dataskydd</dt><dd>ROPA, DPIA, personuppgiftsincidenter, registrerades rättigheter, DPA och privacy by design and default</dd></div>
+            <div><dt>Systemstöd</dt><dd>Införande av GRC-stöd för ROPA och DPIA, med tillhörande processer och styrdokument</dd></div>
+            <div><dt>Advokatbyrå</dt><dd>Advokatfirman Cederquist (advokat 2011–2012) och Baker &amp; McKenzie</dd></div>
+            <div><dt>Domstol</dt><dd>Tingsnotarie vid Eskilstuna och Gotlands tingsrätter</dd></div>
           </dl>
         </article>
 

@@ -12,7 +12,7 @@ resten av organisationens GRC-arbete.
 ## Sidor
 
 - **`index.html`** — startsida för Simplineers AB: vad vi gör, ingång till metod,
-  verktyg och manifest.
+  verktyg och manifest, och vilka vi är.
 - **`metod_god_efterlevnad.html`** — *VTJ-metoden — metod för god efterlevnad*
   (uppkallad efter de tre parter den för samman: verksamheten, tekniken och
   juridiken): beroendekedjans sju nivåer, sju faser som binder samman styrning,

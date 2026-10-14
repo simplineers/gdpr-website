@@ -874,6 +874,118 @@ nav a:hover::after { width: 100%; }
   font-weight: 350;
 }
 
+/* ---------- VILKA VI ÄR ---------- */
+.people {
+  padding: 130px 0;
+  border-top: 1px solid var(--hairline-strong);
+}
+.people-header {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 80px;
+  align-items: end;
+  margin-bottom: 64px;
+}
+.people-title {
+  font-family: 'Fraunces', serif;
+  font-variation-settings: "SOFT" 30;
+  font-weight: 360;
+  font-size: clamp(40px, 5vw, 76px);
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+}
+.people-title em {
+  font-style: italic;
+  color: var(--accent);
+  font-variation-settings: "SOFT" 90;
+}
+.people-aside {
+  font-family: 'Newsreader', serif;
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  max-width: 540px;
+}
+.people-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+.person {
+  display: flex;
+  flex-direction: column;
+  padding: 36px 32px 32px;
+  background: var(--bg);
+  border: 1px solid var(--hairline-strong);
+}
+.person-role {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 14px;
+}
+.person-name {
+  font-family: 'Fraunces', serif;
+  font-variation-settings: "SOFT" 20;
+  font-weight: 400;
+  font-size: 34px;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+.person-focus {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-variation-settings: "SOFT" 100;
+  font-weight: 320;
+  font-size: 18px;
+  line-height: 1.3;
+  color: var(--accent);
+  margin-bottom: 22px;
+}
+.person-bio {
+  font-family: 'Newsreader', serif;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  margin-bottom: 26px;
+  flex-grow: 1;
+}
+.person-facts { border-top: 1px solid var(--hairline); }
+.person-facts > div {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 18px;
+  align-items: baseline;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--hairline);
+}
+.person-facts dt {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.person-facts dd {
+  font-family: 'Newsreader', serif;
+  font-size: 16px;
+  line-height: 1.45;
+  color: var(--ink);
+}
+.people-note {
+  margin-top: 40px;
+  max-width: 760px;
+  font-family: 'Newsreader', serif;
+  font-size: 17px;
+  font-style: italic;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+.people-note em { font-style: normal; }
+
 /* ---------- KONTAKT ---------- */
 .contact {
   padding: 130px 0;
@@ -1169,6 +1281,7 @@ footer > * { position: relative; z-index: 1; }
 @media (max-width: 1100px) {
   .method-teaser-grid { grid-template-columns: 1fr; gap: 48px; }
   .contact-inner { grid-template-columns: 1fr; gap: 36px; }
+  .people-header { grid-template-columns: 1fr; gap: 28px; }
 }
 @media (max-width: 900px) {
   .container { padding: 0 24px; }
@@ -1185,6 +1298,8 @@ footer > * { position: relative; z-index: 1; }
   .tools-grid { grid-template-columns: 1fr; }
   .tools-header { flex-direction: column; align-items: flex-start; gap: 24px; }
   .principles { grid-template-columns: 1fr; gap: 36px; }
+  .people-grid { grid-template-columns: 1fr; }
+  .person { padding: 28px 24px 24px; }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
   .footer-bottom { flex-direction: column; gap: 12px; }
   .footer-license { padding: 18px 20px; }
@@ -1196,6 +1311,7 @@ footer > * { position: relative; z-index: 1; }
   .logo span { display: none; }
   .hero-stats { grid-template-columns: 1fr; }
   .contact-cta { font-size: 14px; padding: 18px 24px; }
+  .person-facts > div { grid-template-columns: 1fr; gap: 4px; }
 }
 
 .skip-link {
@@ -1234,6 +1350,7 @@ footer > * { position: relative; z-index: 1; }
         <li><a href="#metod">Metod</a></li>
         <li><a href="#verktyg">Verktyg</a></li>
         <li><a href="#manifest">Manifest</a></li>
+        <li><a href="#vilka-vi-ar">Om oss</a></li>
         <li><a href="#kontakt" class="nav-cta">Kontakt</a></li>
       </ul>
     </nav>
@@ -1606,10 +1723,55 @@ footer > * { position: relative; z-index: 1; }
     </div>
   </section>
 
+  <!-- VILKA VI ÄR -->
+  <section class="people" id="vilka-vi-ar">
+    <div class="container">
+      <div class="section-label">§ 05 &nbsp;—&nbsp; Vilka vi är</div>
+      <div class="people-header">
+        <h2 class="people-title">Vi har suttit på <em>andra sidan bordet.</em></h2>
+        <p class="people-aside">Bakom Simplineers står praktiker som själva har burit ansvaret — som säkerhetschef, dataskyddsombud och systemägare — och som i dag undervisar i metoden de arbetar efter.</p>
+      </div>
+
+      <div class="people-grid">
+
+        <article class="person" itemscope itemtype="https://schema.org/Person">
+          <span itemprop="worksFor" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="Simplineers AB"></span>
+          <div class="person-role" itemprop="jobTitle">Medgrundare</div>
+          <h3 class="person-name" itemprop="name">Daniel Gustafsson</h3>
+          <p class="person-focus">Compliance, IT-governance och ledarskap</p>
+          <p class="person-bio">Daniel har arbetat inom IT sedan 1997 och fungerar som en bro mellan operativa IT-enheter och ledningen. På Cleura, tidigare City Network, var Daniel med och grundade Compliant Cloud — ett IaaS-moln för hårt reglerad industri som bank och finans — och var tjänstens systemägare. I dag arbetar Daniel med EU-regelefterlevnad för molntjänster och moderna IT-leveranser.</p>
+          <dl class="person-facts">
+            <div><dt>Certifiering</dt><dd>ISO 22301 (ytterst ansvarig) och ISO/IEC 27001 (delansvarig) på Cleura</dd></div>
+            <div><dt>Transformation</dt><dd>Coachning i agila arbetssätt, GRC och DevSecOps hos fler än 20 kunder, främst inom bank och finans</dd></div>
+            <div><dt>Ledarskap</dt><dd>Grupp- och ledarutveckling enligt UGL och IMGD — även ideellt inom svensk ishockey</dd></div>
+            <div><dt>Poddar</dt><dd>Programledare för Stacken, med över 250 avsnitt, och för GDPR-podden</dd></div>
+          </dl>
+        </article>
+
+        <article class="person" itemscope itemtype="https://schema.org/Person">
+          <span itemprop="worksFor" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="Simplineers AB"></span>
+          <div class="person-role" itemprop="jobTitle">CTO och delägare</div>
+          <h3 class="person-name" itemprop="name">Kim Hindart</h3>
+          <p class="person-focus">Cybersäkerhet, dataskydd och regelefterlevnad</p>
+          <p class="person-bio">Kim har arbetat inom IT sedan 1997, under större delen av tiden som chef för cybersäkerhet — som anställd CSO och som CISO i konsultuppdrag. Som CSO och dataskyddsombud på City Network Hosting ansvarade Kim för att införa GDPR-efterlevnad i en multinationell molninfrastruktur. Engagemanget för dataskydd går tillbaka till politiskt arbete på EU-nivå 1996, och i botten är Kim fortfarande utvecklare.</p>
+          <dl class="person-facts">
+            <div><dt>Certifiering</dt><dd>Har ägt genomförandet av bland annat ISO/IEC 27001, 27701 och 42001 samt ISO 22301</dd></div>
+            <div><dt>Lösenordsfritt</dt><dd>8&nbsp;000 anställda, 19&nbsp;000 servrar och 1&nbsp;600 system utan lösenord</dd></div>
+            <div><dt>Krypterat moln</dt><dd>Helkrypterade virtuella maskiner mot egna HSM:er i tre svenska regioner</dd></div>
+            <div><dt>Teknik</dt><dd>PKI och HSM; governance och compliance som kod i Go och Python</dd></div>
+          </dl>
+        </article>
+
+      </div>
+
+      <p class="people-note">Daniel och Kim håller kurser i VTJ-metoden, där var och en av metodens sju faser i praktiken är en egen kurs, och har tillsammans med Thomas Svensson skrivit <em>Metod för god efterlevnad av GDPR</em> (Studentlitteratur, utkommer december 2026).</p>
+    </div>
+  </section>
+
   <!-- KONTAKT -->
   <section class="contact" id="kontakt">
     <div class="container">
-      <div class="section-label">§ 05 &nbsp;—&nbsp; Kontakt</div>
+      <div class="section-label">§ 06 &nbsp;—&nbsp; Kontakt</div>
       <div class="contact-inner">
         <h2 class="contact-headline">Vill ni veta mer om hur VTJ-metoden kan <em>tillämpas</em> hos er?</h2>
         <div>
@@ -1652,6 +1814,7 @@ footer > * { position: relative; z-index: 1; }
           <li><a href="metod_god_efterlevnad.html">Metod</a></li>
           <li><a href="#verktyg">Verktyg</a></li>
           <li><a href="#manifest">Manifest</a></li>
+          <li><a href="#vilka-vi-ar">Vilka vi är</a></li>
         </ul>
       </div>
       <div class="footer-col">

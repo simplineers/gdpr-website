@@ -12,7 +12,7 @@ resten av organisationens GRC-arbete.
 ## Sidor
 
 - **`index.html`** — startsida för Simplineers AB: vad vi gör, ingång till metod,
-  verktyg och manifest.
+  verktyg och manifest, och vilka vi är.
 - **`metod_god_efterlevnad.html`** — *VTJ-metoden — metod för god efterlevnad*
   (uppkallad efter de tre parter den för samman: verksamheten, tekniken och
   juridiken): beroendekedjans sju nivåer, sju faser som binder samman styrning,
@@ -117,7 +117,7 @@ Hela projektet — kod och innehåll — är licensierat under
 **[Creative Commons Erkännande 4.0 Internationell (CC BY 4.0)](https://creativecommons.org/licenses/by/4.0/)**.
 
 Fri att dela, kopiera och anpassa — även kommersiellt — så länge upphovsperson anges.
-Se `LICENSE` för fullständiga villkor. Upphovsangivelse: *Kim Hindart, Simplineers* — för metodsidan (`metod_god_efterlevnad.html`): *Thomas Svensson, Daniel Gustafsson och Kim Hindart, Simplineers AB*.
+Se `LICENSE` för fullständiga villkor. Upphovsangivelse: *Thomas Svensson, Daniel Gustafsson och Kim Hindart, Simplineers AB*.
 
 > CC BY 4.0 är vald för enhetlighet eftersom kod, innehåll och visualiseringar är
 > tätt sammanvävda på sidan. För återanvändning av enbart kodfragment (HTML/CSS/JS
@@ -125,6 +125,6 @@ Se `LICENSE` för fullständiga villkor. Upphovsangivelse: *Kim Hindart, Simplin
 > räcker. Om en framtida uppdelning till MIT/Apache-2.0 för kod och CC BY 4.0 för
 > innehåll skulle bli aktuellt görs den explicit och dokumenteras här.
 
-## Upphovsperson
+## Upphovspersoner
 
-Kim Hindart · [Simplineers](https://gdpr.simplineers.se) · Stockholm
+Thomas Svensson, Daniel Gustafsson och Kim Hindart · [Simplineers AB](https://gdpr.simplineers.se) · Stockholm

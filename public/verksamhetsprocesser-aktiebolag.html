@@ -1016,6 +1016,13 @@ body.filter-active .cat:not(.has-match) { display: none; }
 .see-also__t{display:block;font-weight:600;font-size:.96rem;margin-bottom:.18rem}
 .see-also__d{display:block;font-size:.8rem;opacity:.6}
 @media(max-width:520px){.see-also__grid{grid-template-columns:1fr}}
+/* ── Kontaktväg (paletteneutralt via currentColor) ── */
+.page-cta{max-width:880px;margin:5rem auto 0;padding:2.4rem 1.5rem 0;border-top:1px solid color-mix(in srgb,currentColor 16%,transparent)}
+.page-cta + .see-also{margin-top:2.6rem}
+.page-cta__q{font-size:1.1rem;line-height:1.5;max-width:60ch;margin:0 0 1rem}
+.page-cta__a{display:inline-flex;align-items:center;gap:.5rem;color:inherit;font-weight:600;text-decoration:none;padding:.6rem 1.05rem;border:1px solid color-mix(in srgb,currentColor 38%,transparent);border-radius:999px;transition:border-color .15s ease,background-color .15s ease}
+.page-cta__a:hover{border-color:currentColor;background-color:color-mix(in srgb,currentColor 6%,transparent)}
+.page-cta__a:focus-visible{outline:2px solid currentColor;outline-offset:2px}
 </style>
 </head>
 <body>
@@ -1636,6 +1643,12 @@ body.filter-active .cat:not(.has-match) { display: none; }
   </section>
 
   <!-- FOOTER -->
+<aside class="page-cta" aria-labelledby="page-cta-label">
+  <p class="see-also__label" id="page-cta-label">Kontakt</p>
+  <p class="page-cta__q">Vill ni göra katalogen till er egen — som ankare för ROPA, riskanalys och internkontroll?</p>
+  <a class="page-cta__a" href="mailto:info@simplineers.se?subject=Processkartl%C3%A4ggning">Skriv till info@simplineers.se <span aria-hidden="true">→</span></a>
+</aside>
+
 <nav class="see-also" aria-label="Relaterade sidor">
   <p class="see-also__label">Relaterat</p>
   <ul class="see-also__grid">
@@ -1654,13 +1667,13 @@ body.filter-active .cat:not(.has-match) { display: none; }
       <span class="cc-badge">CC BY 4.0</span>
       <span>
         <span class="work-title">Verksamhetsprocesser i aktiebolag</span>
-        av <strong>Kim Hindart, Simplineers AB</strong> är licensierad under
+        av <strong>Thomas Svensson, Daniel Gustafsson och Kim Hindart, Simplineers AB</strong> är licensierad under
         <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">Creative Commons Erkännande 4.0 Internationell</a>.
         <em>Fri att dela, kopiera och anpassa — även kommersiellt — så länge upphovsperson anges.</em>
       </span>
     </div>
     <div class="foot-meta">
-      <span>© 2026 Kim Hindart · Simplineers AB · Stockholm</span>
+      <span>© 2026 Thomas Svensson, Daniel Gustafsson och Kim Hindart · Simplineers AB · org.nr 559374-5986 · Stockholm</span>
       <span><a href="index.html">gdpr.simplineers.se</a></span>
     </div>
   </footer>

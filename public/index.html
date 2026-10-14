@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Simplineers AB — Process- och metodexperter inom IT och regelefterlevnad</title>
-<meta name="description" content="Simplineers AB är process- och metodexperter inom IT och regelefterlevnad. Vi binder samman dataskydd, informationssäkerhet och affärskontinuitet under ett samlat riskramverk med VTJ-metoden — och kombinerar IT- och compliance-konsulting med juridisk rådgivning genom vårt partnernätverk.">
+<meta name="description" content="Simplineers AB är process- och metodexperter inom IT och regelefterlevnad. Vi binder samman dataskydd, informationssäkerhet och affärskontinuitet under ett samlat riskramverk med VTJ-metoden — där verksamhet, teknik och juridik möts.">
 <link rel="canonical" href="https://gdpr.simplineers.se/">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -14,7 +14,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://gdpr.simplineers.se/">
 <meta property="og:title" content="Simplineers AB — Process- och metodexperter inom IT och regelefterlevnad">
-<meta property="og:description" content="Simplineers AB är process- och metodexperter inom IT och regelefterlevnad. Vi binder samman dataskydd, informationssäkerhet och affärskontinuitet under ett samlat riskramverk med VTJ-metoden — och kombinerar IT- och compliance-konsulting med juridisk rådgivning genom vårt partnernätverk.">
+<meta property="og:description" content="Simplineers AB är process- och metodexperter inom IT och regelefterlevnad. Vi binder samman dataskydd, informationssäkerhet och affärskontinuitet under ett samlat riskramverk med VTJ-metoden — där verksamhet, teknik och juridik möts.">
 <meta property="og:image" content="https://gdpr.simplineers.se/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -22,7 +22,7 @@
 <meta property="og:locale" content="sv_SE">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Simplineers AB — Process- och metodexperter inom IT och regelefterlevnad">
-<meta name="twitter:description" content="Simplineers AB är process- och metodexperter inom IT och regelefterlevnad. Vi binder samman dataskydd, informationssäkerhet och affärskontinuitet under ett samlat riskramverk med VTJ-metoden — och kombinerar IT- och compliance-konsulting med juridisk rådgivning genom vårt partnernätverk.">
+<meta name="twitter:description" content="Simplineers AB är process- och metodexperter inom IT och regelefterlevnad. Vi binder samman dataskydd, informationssäkerhet och affärskontinuitet under ett samlat riskramverk med VTJ-metoden — där verksamhet, teknik och juridik möts.">
 <meta name="twitter:image" content="https://gdpr.simplineers.se/og-image.png">
 <link rel="preload" href="fonts/fraunces-latin-full-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/newsreader-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
@@ -581,6 +581,16 @@ nav a:hover::after { width: 100%; }
   box-shadow: 0 12px 24px -8px rgba(168, 66, 28, 0.4);
 }
 .method-teaser-cta:hover .cta-arrow { transform: translateX(5px); }
+.method-teaser-book {
+  margin-top: 22px;
+  max-width: 480px;
+  font-family: 'Newsreader', serif;
+  font-size: 14.5px;
+  font-style: italic;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+.method-teaser-book em { font-style: normal; }
 
 /* Metod-faktarutor (höger kolumn) */
 .method-facts {
@@ -847,7 +857,7 @@ nav a:hover::after { width: 100%; }
   line-height: 1;
   font-variation-settings: "SOFT" 100;
 }
-.principle h4 {
+.principle h3 {
   font-family: 'Fraunces', serif;
   font-variation-settings: "SOFT" 20;
   font-weight: 400;
@@ -863,6 +873,118 @@ nav a:hover::after { width: 100%; }
   color: rgba(239, 232, 218, 0.75);
   font-weight: 350;
 }
+
+/* ---------- VILKA VI ÄR ---------- */
+.people {
+  padding: 130px 0;
+  border-top: 1px solid var(--hairline-strong);
+}
+.people-header {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 80px;
+  align-items: end;
+  margin-bottom: 64px;
+}
+.people-title {
+  font-family: 'Fraunces', serif;
+  font-variation-settings: "SOFT" 30;
+  font-weight: 360;
+  font-size: clamp(40px, 5vw, 76px);
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+}
+.people-title em {
+  font-style: italic;
+  color: var(--accent);
+  font-variation-settings: "SOFT" 90;
+}
+.people-aside {
+  font-family: 'Newsreader', serif;
+  font-size: 18px;
+  line-height: 1.55;
+  color: var(--ink-soft);
+  max-width: 540px;
+}
+.people-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px;
+}
+.person {
+  display: flex;
+  flex-direction: column;
+  padding: 36px 32px 32px;
+  background: var(--bg);
+  border: 1px solid var(--hairline-strong);
+}
+.person-role {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 14px;
+}
+.person-name {
+  font-family: 'Fraunces', serif;
+  font-variation-settings: "SOFT" 20;
+  font-weight: 400;
+  font-size: 34px;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  margin-bottom: 8px;
+}
+.person-focus {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-variation-settings: "SOFT" 100;
+  font-weight: 320;
+  font-size: 18px;
+  line-height: 1.3;
+  color: var(--accent);
+  margin-bottom: 22px;
+}
+.person-bio {
+  font-family: 'Newsreader', serif;
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  margin-bottom: 26px;
+  flex-grow: 1;
+}
+.person-facts { border-top: 1px solid var(--hairline); }
+.person-facts > div {
+  display: grid;
+  grid-template-columns: 130px 1fr;
+  gap: 18px;
+  align-items: baseline;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--hairline);
+}
+.person-facts dt {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.person-facts dd {
+  font-family: 'Newsreader', serif;
+  font-size: 16px;
+  line-height: 1.45;
+  color: var(--ink);
+}
+.people-note {
+  margin-top: 40px;
+  max-width: 760px;
+  font-family: 'Newsreader', serif;
+  font-size: 17px;
+  font-style: italic;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+.people-note em { font-style: normal; }
 
 /* ---------- KONTAKT ---------- */
 .contact {
@@ -1034,6 +1156,7 @@ footer > * { position: relative; z-index: 1; }
 .footer-bottom {
   display: flex;
   justify-content: space-between;
+  gap: 32px;
   padding-top: 32px;
   border-top: 1px solid rgba(239, 232, 218, 0.2);
   font-family: 'JetBrains Mono', monospace;
@@ -1158,6 +1281,7 @@ footer > * { position: relative; z-index: 1; }
 @media (max-width: 1100px) {
   .method-teaser-grid { grid-template-columns: 1fr; gap: 48px; }
   .contact-inner { grid-template-columns: 1fr; gap: 36px; }
+  .people-header { grid-template-columns: 1fr; gap: 28px; }
 }
 @media (max-width: 900px) {
   .container { padding: 0 24px; }
@@ -1174,6 +1298,8 @@ footer > * { position: relative; z-index: 1; }
   .tools-grid { grid-template-columns: 1fr; }
   .tools-header { flex-direction: column; align-items: flex-start; gap: 24px; }
   .principles { grid-template-columns: 1fr; gap: 36px; }
+  .people-grid { grid-template-columns: 1fr; }
+  .person { padding: 28px 24px 24px; }
   .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
   .footer-bottom { flex-direction: column; gap: 12px; }
   .footer-license { padding: 18px 20px; }
@@ -1185,6 +1311,7 @@ footer > * { position: relative; z-index: 1; }
   .logo span { display: none; }
   .hero-stats { grid-template-columns: 1fr; }
   .contact-cta { font-size: 14px; padding: 18px 24px; }
+  .person-facts > div { grid-template-columns: 1fr; gap: 4px; }
 }
 
 .skip-link {
@@ -1223,6 +1350,7 @@ footer > * { position: relative; z-index: 1; }
         <li><a href="#metod">Metod</a></li>
         <li><a href="#verktyg">Verktyg</a></li>
         <li><a href="#manifest">Manifest</a></li>
+        <li><a href="#vilka-vi-ar">Om oss</a></li>
         <li><a href="#kontakt" class="nav-cta">Kontakt</a></li>
       </ul>
     </nav>
@@ -1248,7 +1376,7 @@ footer > * { position: relative; z-index: 1; }
 
       <div class="hero-grid">
         <p class="hero-lede">
-          Simplineers&nbsp;AB binder samman <em>dataskydd, informationssäkerhet och affärskontinuitet</em> under ett samlat riskramverk med VTJ-metoden — och kombinerar IT- och compliance-konsulting med juridisk rådgivning genom vårt partnernätverk.
+          Simplineers&nbsp;AB binder samman <em>dataskydd, informationssäkerhet och affärskontinuitet</em> under ett samlat riskramverk med VTJ-metoden — där verksamhet, teknik och juridik möts.
         </p>
         <div class="hero-side">
           <div class="hero-cta-row">
@@ -1286,7 +1414,6 @@ footer > * { position: relative; z-index: 1; }
         <div class="intro-body">
           <p>De flesta organisationer hanterar dataskydd, informationssäkerhet och affärskontinuitet som tre parallella stuprör. Resultatet blir tre dokumentförråd, tre riskbedömningar, tre uppföljningar — och en efterlevnad som är svår att visa upp när tillsynen frågar.</p>
           <p>Simplineers&nbsp;AB bygger den <strong>sammanhållna strukturen</strong> som gör att dokumenten håller över tid, att kontrollerna går att spåra till lagkravet och att risken faktiskt mäts där den uppstår. Vi är process- och metodspecialister — inte mall&shy;leverantörer.</p>
-          <p>Genom ett <strong>starkt partnernätverk med juristfirmor</strong> kombinerar vi IT- och compliance-konsulting med juridisk rådgivning och legala bedömningar där det krävs.</p>
 
           <div class="intro-pillars">
             <div class="pillar">
@@ -1320,12 +1447,18 @@ footer > * { position: relative; z-index: 1; }
             Uppkallad efter de tre parter den för samman — verksamheten, tekniken och juridiken. Metoden binder samman styrning, process, information, risk och kontroll så att tekniska val och juridiska krav talar samma språk, dokumenteras i samma evidensstruktur och kan granskas mot samma mål.
           </p>
           <p class="method-teaser-lede">
+            Den är konstruerad för att möta de regelverk som styr verksamhet, information och teknik — GDPR, NIS2 och cybersäkerhetslagen, DORA, AI-förordningen och ISO 27001 med angränsande standarder.
+          </p>
+          <p class="method-teaser-lede">
             Sju faser, nio rörelser, fyra perspektiv på risk, en enda spårbarhet — från <em>lagkrav till loggrad</em>.
           </p>
           <a href="metod_god_efterlevnad.html" class="method-teaser-cta">
             Läs hela metoden
             <span class="cta-arrow">→</span>
           </a>
+          <p class="method-teaser-book">
+            Metoden beskrivs i sin helhet i Svensson, Gustafsson &amp; Hindart, <em>Metod för god efterlevnad av GDPR</em>, Studentlitteratur (utkommer december 2026).
+          </p>
         </div>
 
         <div class="method-facts" aria-label="VTJ-metoden i siffror">
@@ -1589,10 +1722,55 @@ footer > * { position: relative; z-index: 1; }
     </div>
   </section>
 
+  <!-- VILKA VI ÄR -->
+  <section class="people" id="vilka-vi-ar">
+    <div class="container">
+      <div class="section-label">§ 05 &nbsp;—&nbsp; Vilka vi är</div>
+      <div class="people-header">
+        <h2 class="people-title">Vi har suttit på <em>andra sidan bordet.</em></h2>
+        <p class="people-aside">Bakom Simplineers står praktiker som själva har burit ansvaret — som säkerhetschef, dataskyddsombud och systemägare — och som i dag undervisar i metoden de arbetar efter.</p>
+      </div>
+
+      <div class="people-grid">
+
+        <article class="person" itemscope itemtype="https://schema.org/Person">
+          <span itemprop="worksFor" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="Simplineers AB"></span>
+          <div class="person-role" itemprop="jobTitle">Medgrundare</div>
+          <h3 class="person-name" itemprop="name">Daniel Gustafsson</h3>
+          <p class="person-focus">Compliance, IT-governance och ledarskap</p>
+          <p class="person-bio">Daniel har arbetat inom IT sedan 1997 och fungerar som en bro mellan operativa IT-enheter och ledningen. På Cleura, tidigare City Network, var Daniel med och grundade Compliant Cloud — ett IaaS-moln för hårt reglerad industri som bank och finans — och var tjänstens systemägare. I dag arbetar Daniel med EU-regelefterlevnad för molntjänster och moderna IT-leveranser.</p>
+          <dl class="person-facts">
+            <div><dt>Certifiering</dt><dd>ISO 22301 (ytterst ansvarig) och ISO/IEC 27001 (delansvarig) på Cleura</dd></div>
+            <div><dt>Transformation</dt><dd>Coachning i agila arbetssätt, GRC och DevSecOps hos fler än 20 kunder, främst inom bank och finans</dd></div>
+            <div><dt>Ledarskap</dt><dd>Grupp- och ledarutveckling enligt UGL och IMGD — även ideellt inom svensk ishockey</dd></div>
+            <div><dt>Poddar</dt><dd>Programledare för Stacken, med över 250 avsnitt, och för GDPR-podden</dd></div>
+          </dl>
+        </article>
+
+        <article class="person" itemscope itemtype="https://schema.org/Person">
+          <span itemprop="worksFor" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="Simplineers AB"></span>
+          <div class="person-role" itemprop="jobTitle">CTO och delägare</div>
+          <h3 class="person-name" itemprop="name">Kim Hindart</h3>
+          <p class="person-focus">Cybersäkerhet, dataskydd och regelefterlevnad</p>
+          <p class="person-bio">Kim har arbetat inom IT sedan 1997, under större delen av tiden som chef för cybersäkerhet — som anställd CSO och som CISO i konsultuppdrag. Som CSO och dataskyddsombud på City Network Hosting ansvarade Kim för att införa GDPR-efterlevnad i en multinationell molninfrastruktur. Engagemanget för dataskydd går tillbaka till politiskt arbete på EU-nivå 1996, och i botten är Kim fortfarande utvecklare.</p>
+          <dl class="person-facts">
+            <div><dt>Certifiering</dt><dd>Har ägt genomförandet av bland annat ISO/IEC 27001, 27701 och 42001 samt ISO 22301</dd></div>
+            <div><dt>Lösenordsfritt</dt><dd>8&nbsp;000 anställda, 19&nbsp;000 servrar och 1&nbsp;600 system utan lösenord</dd></div>
+            <div><dt>Krypterat moln</dt><dd>Helkrypterade virtuella maskiner mot egna HSM:er i tre svenska regioner</dd></div>
+            <div><dt>Teknik</dt><dd>PKI och HSM; governance och compliance som kod i Go och Python</dd></div>
+          </dl>
+        </article>
+
+      </div>
+
+      <p class="people-note">Daniel och Kim håller kurser i VTJ-metoden, där var och en av metodens sju faser i praktiken är en egen kurs, och har tillsammans med Thomas Svensson skrivit <em>Metod för god efterlevnad av GDPR</em> (Studentlitteratur, utkommer december 2026).</p>
+    </div>
+  </section>
+
   <!-- KONTAKT -->
   <section class="contact" id="kontakt">
     <div class="container">
-      <div class="section-label">§ 05 &nbsp;—&nbsp; Kontakt</div>
+      <div class="section-label">§ 06 &nbsp;—&nbsp; Kontakt</div>
       <div class="contact-inner">
         <h2 class="contact-headline">Vill ni veta mer om hur VTJ-metoden kan <em>tillämpas</em> hos er?</h2>
         <div>
@@ -1623,7 +1801,7 @@ footer > * { position: relative; z-index: 1; }
     <link itemprop="url" href="https://gdpr.simplineers.se/">
     <link itemprop="logo" href="https://gdpr.simplineers.se/apple-touch-icon.png">
     <meta itemprop="description" content="Process- och metodexperter inom IT och regelefterlevnad.">
-    <span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress"><meta itemprop="addressLocality" content="Stockholm"><meta itemprop="addressCountry" content="SE"></span>
+    <span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress"><meta itemprop="streetAddress" content="Mailbox 2318"><meta itemprop="postalCode" content="111 75"><meta itemprop="addressLocality" content="Stockholm"><meta itemprop="addressCountry" content="SE"></span>
     <div class="footer-grid">
       <div class="footer-brand">
         <em>Simplineers&nbsp;AB</em> &nbsp;—&nbsp; där paragrafer möter protokoll.
@@ -1635,6 +1813,7 @@ footer > * { position: relative; z-index: 1; }
           <li><a href="metod_god_efterlevnad.html">Metod</a></li>
           <li><a href="#verktyg">Verktyg</a></li>
           <li><a href="#manifest">Manifest</a></li>
+          <li><a href="#vilka-vi-ar">Vilka vi är</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -1665,12 +1844,12 @@ footer > * { position: relative; z-index: 1; }
     <div class="footer-license">
       <span class="cc-badge">CC BY 4.0</span>
       <span>
-        <span class="work-title">gdpr.simplineers.se</span> av <strong>Kim Hindart, Simplineers AB</strong> är licensierad under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">Creative Commons Erkännande 4.0 Internationell</a>. <em>Fri att dela, kopiera och anpassa — även kommersiellt — så länge upphovsperson anges.</em>
+        <span class="work-title">gdpr.simplineers.se</span> av <strong>Thomas Svensson, Daniel Gustafsson och Kim Hindart, Simplineers AB</strong> är licensierad under <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">Creative Commons Erkännande 4.0 Internationell</a>. <em>Fri att dela, kopiera och anpassa — även kommersiellt — så länge upphovsperson anges.</em>
       </span>
     </div>
 
     <div class="footer-bottom">
-      <div>© 2026 Kim Hindart · Simplineers AB · Stockholm</div>
+      <div>© 2026 Thomas Svensson, Daniel Gustafsson och Kim Hindart · Simplineers AB<br>org.nr 559374-5986 · Mailbox 2318, 111 75 Stockholm</div>
       <div>Skriven i Fraunces, Newsreader &amp; JetBrains Mono.</div>
     </div>
   </div>

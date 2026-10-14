@@ -695,6 +695,13 @@
 .see-also__t{display:block;font-weight:600;font-size:.96rem;margin-bottom:.18rem}
 .see-also__d{display:block;font-size:.8rem;opacity:.6}
 @media(max-width:520px){.see-also__grid{grid-template-columns:1fr}}
+/* ── Kontaktväg (paletteneutralt via currentColor) ── */
+.page-cta{max-width:880px;margin:5rem auto 0;padding:2.4rem 1.5rem 0;border-top:1px solid color-mix(in srgb,currentColor 16%,transparent)}
+.page-cta + .see-also{margin-top:2.6rem}
+.page-cta__q{font-size:1.1rem;line-height:1.5;max-width:60ch;margin:0 0 1rem}
+.page-cta__a{display:inline-flex;align-items:center;gap:.5rem;color:inherit;font-weight:600;text-decoration:none;padding:.6rem 1.05rem;border:1px solid color-mix(in srgb,currentColor 38%,transparent);border-radius:999px;transition:border-color .15s ease,background-color .15s ease}
+.page-cta__a:hover{border-color:currentColor;background-color:color-mix(in srgb,currentColor 6%,transparent)}
+.page-cta__a:focus-visible{outline:2px solid currentColor;outline-offset:2px}
 </style>
 </head>
 <body>
@@ -1008,6 +1015,12 @@
   </div>
 
   </main>
+
+<aside class="page-cta" aria-labelledby="page-cta-label">
+  <p class="see-also__label" id="page-cta-label">Kontakt</p>
+  <p class="page-cta__q">Kartan är ett generiskt exempel. Vill ni anpassa den för er egen AI-tjänst, en DPIA eller en leverantörsgranskning?</p>
+  <a class="page-cta__a" href="mailto:info@simplineers.se?subject=Audit-kravkarta%20f%C3%B6r%20LLM">Skriv till info@simplineers.se <span aria-hidden="true">→</span></a>
+</aside>
 
 <nav class="see-also" aria-label="Relaterade sidor">
   <p class="see-also__label">Relaterat</p>
